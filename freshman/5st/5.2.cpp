@@ -1,3 +1,7 @@
+/*****************
+ * Author: MRain
+ * Homework 5.2
+*****************/
 class SavingAccount {
 private:
 	double rate, savings;
