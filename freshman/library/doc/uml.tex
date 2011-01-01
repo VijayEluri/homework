@@ -1,0 +1,287 @@
+\documentclass{minimal}
+\usepackage[paperwidth=50cm,paperheight=50cm,margin=1cm,landscape]{geometry}
+\usepackage{tikz}
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\usetikzlibrary{positioning,shapes,shadows,arrows}
+
+\begin{document}
+
+\tikzstyle{abstract} = [
+    rectangle, draw=black, rounded corners, fill=blue!20, drop shadow,
+    anchor=north, text=black, text width=3cm, rectangle split, rectangle split parts=3
+]
+
+\tikzstyle{concrete} = [
+    rectangle, draw=black, rounded corners, fill=yellow!40, drop shadow,
+    anchor=north, text=black, text width=4cm, rectangle split, rectangle split parts=3
+]
+
+\tikzstyle{arrow}=[->,>=open triangle 90, thick]
+\tikzstyle{connect}=[thick]
+
+\begin{sffamily}
+\begin{tikzpicture}
+    \node (Date) [concrete] {
+        \begin{center}
+            \textbf{Date}
+        \end{center}
+        \nodepart{second}
+		- timestamp : time\_t
+        \nodepart{third}
+        + getYear() : int\\
+        + getMonth() : int\\
+        + getDay() : int
+    };
+
+    \node (System) [concrete, above=of Date, text width=7cm] {
+        \begin{center}
+            \textbf{System}
+        \end{center}
+        \nodepart{second}
+        - currentDate : Date
+        \nodepart{third}
+        + getCurrentDate() : Date\\
+        + getWorkingDirectory() : wstring\\
+        + getReaderFileName() : wstring\\
+        + getAdminFileName() : wstring\\
+        + getKindFileName() : wstring\\
+        + getBookFileName() : wstring\\
+        + getBorrowedBookExpiredDays() : int\\
+        + getReservedBookExpiredDays() : int\\
+        \# initialize() : void
+    };
+
+    \node (User) [abstract, text width=5cm, below=of Date] {
+        \begin{center}
+            \textbf{User}
+        \end{center}
+        \nodepart{second}
+        - username : string\\
+        - password : string\\
+        \nodepart{third}
+        + getUsername() : string\\
+        + getPassword() : string\\
+        + setUsername() : void\\
+    };
+
+    \node (Reader) [abstract, text width=7cm, below=of User, xshift=-4cm] {
+        \begin{center}
+            \textbf{Reader}
+        \end{center}
+        \nodepart{second}
+        \# borrowed : vector<Book*>\\
+        \# reserved : vector<Book*>\\
+        \# penalty : int\\
+        \nodepart{third}
+        + getType() : Type\\
+        + getBorrowLimit() : int\\
+        + borrow(book : Book\&) : bool\\
+        + returnBook(book : Book\&) : bool\\
+        + renew(book : Book\&) : bool\\
+        + reserve(book : Book\&) : bool\\
+        + getBorrowedBooks() : vector<Book*>\\
+        + getReservedBooks() : vector<Book*>\\
+        + getPenalty() : int\\
+    };
+
+    \node (Admin) [concrete, text width=13cm, below=of User, xshift=8cm] {
+        \begin{center}
+            \textbf{Admin}
+        \end{center}
+        \nodepart{second}
+        \nodepart{third}
+        + createReader(username : string, password : string) : bool\\
+        + removeReader(username : string) : bool\\
+        + createAdmin(username : string, password : string) : bool\\
+        + removeAdmin(username : string) : bool\\
+        + createKind(isbn : string, name : wstring, authors : wstring, index : wstring) : bool\\
+        + removeKind(isbn : string) : bool\\
+        + createBook(kind : Kind\&, borrorwable : bool) : bool\\
+        + removeBook(book : Book\&) : bool\\
+        + getAllReaders() : vector<Reader const*>\\
+        + getAllAdmins() : vector<Reader const*>\\
+        + getReaderByName() : Reader*\\
+        + getAdminByName() : Admin*\\
+    };
+
+    \node (Teacher) [concrete, text width=5cm, below=of Reader, xshift=-3cm] {
+        \begin{center}
+            \textbf{Teacher}
+        \end{center}
+        \nodepart{second}
+        \nodepart{third}
+        + getType() : Type\\
+        + getBorrowLimit() : int\\
+    };
+
+    \node (Student) [concrete, text width=5cm, below=of Reader, xshift=3cm] {
+        \begin{center}
+            \textbf{Student}
+        \end{center}
+        \nodepart{second}
+        \nodepart{third}
+        + getType() : Type\\
+        + getBorrowLimit() : int\\
+    };
+
+    \node (AdminDAO) [concrete, text width=7cm, right=2cm of Admin] {
+        \begin{center}
+            \textbf{AdminDAO}
+        \end{center}
+        \nodepart{second}
+        + all : vector<Admin*>\\
+        \nodepart{third}
+        + loadAll() : void\\
+        + saveAll() : vold\\
+        + getAll() : vector<Admin const*>\\
+        + create() : bool\\
+        + remove() : bool\\
+    };
+
+    \node (ReaderDAO) [concrete, text width=7cm, left=2cm of Reader] {
+        \begin{center}
+            \textbf{ReaderDAO}
+        \end{center}
+        \nodepart{second}
+        + all : vector<Reader*>\\
+        \nodepart{third}
+        + loadAll() : void\\
+        + saveAll() : vold\\
+        + getAll() : vector<Reader const*>\\
+        + create() : bool\\
+        + remove() : bool\\
+    };
+
+    \node (ILibrary) [abstract, text width=7cm, left=of System] {
+        \begin{center}
+            \textbf{ILibrary}
+        \end{center}
+        \nodepart{second}
+        \nodepart{third}
+        + initialize() : bool\\
+        + finalize() : void\\
+        + readerLogin() : Reader*\\
+        + adminLogin() : Admin*\\
+        + searchByISBN() : vector<Kind*>\\
+        + searchByName() : vector<Kind*>\\
+        + searchByAuthor() : vector<Kind*>\\
+        + searchByIndex() : vector<Kind*>\\
+        + searchByExpression() : vector<Kind*>\\
+        + searchLikeName() : vector<Kind*>\\
+        + reorderResults() : void\\
+    };
+
+    \node (Library) [concrete, below=of ILibrary] {
+        \begin{center}
+            \textbf{Library}
+        \end{center}
+        \nodepart{second}
+        \nodepart{third}
+    };
+
+    \node (Book) [concrete, right=of System, text width=5cm] {
+        \begin{center}
+            \textbf{Book}
+        \end{center}
+        \nodepart{second}
+		- id : int\\
+        - kind : Kind*\\
+        - reader : Reader*\\
+        - reserver : Reader*\\
+        - borrowed : Date\\
+        - reserved : Date\\
+        \nodepart{third}
+        + getKind() : Kind\\
+        + setKind(kind : Kind const\&) : void\\
+        + getReader() : Reader*\\
+        + setReader(reader : Reader*) : void\\
+        + getReserver() : Reader*\\
+        + setReserver(reader : Reader*) : void\\
+        + isAvailable() : bool\\
+        + isLentOut() : bool\\
+    };
+
+    \node (Kind) [concrete, right=2 cm of Book, text width=7cm] {
+        \begin{center}
+            \textbf{Kind}
+        \end{center}
+        \nodepart{second}
+        - vector<Book*> all\\
+        - ISBN : string\\
+        - name : wstring\\
+        - authors : wstring\\
+        - index : wstring\\
+        - availableIDs : set<int>\\
+        \nodepart{third}
+        + getISBN() : string\\
+        + getName() : wstring\\
+        + getAuthors() : vector<wstring>\\
+        + getIndex() : wstring\\
+        + setISBN(ISBN : string) : void\\
+        + setName(name : wstring) : void\\
+        + setAuthors(authors : wstring) : void\\
+        + setIndex(index : wstring) : void\\
+        + countBooks() : size\_t\\
+    };
+
+    \node (KindDAO) [concrete, text width=7cm, right=2cm of Kind] {
+        \begin{center}
+            \textbf{KindDAO}
+        \end{center}
+        \nodepart{second}
+        - all : vector<Kind*>\\
+        - mapByISBN : map<string, Kind*>\\
+        - mapByAuthor : map<wstring, set<Kind*> >\\
+        - mapByIndex : map<wstring, set<Kind*> >\\
+        - mapByName : map<wstring, set<Kind*> >\\
+        \nodepart{third}
+        + loadAll() : void\\
+        + saveAll() : vold\\
+        + insert(kind : Kind) : bool\\
+        + erase(isbn : string) : bool\\
+        + searchByISBN(ISBN : string)\\
+        + searchByAuthor(author : wstring)\\
+        + searchByIndex(index : wstring)\\
+        + searchByName(name : wstring)\\
+    };
+
+    \node (BookDAO) [concrete, text width=6cm, below=of Book] {
+        \begin{center}
+            \textbf{BookDAO}
+        \end{center}
+        \nodepart{second}
+        + all : vector<Book*>\\
+        \nodepart{third}
+        + loadAll() : bool\\
+        + saveAll() : bool\\
+        + getAll() : vector<Book const*>\\
+        + create() : bool\\
+        + remove() : bool\\
+    };
+
+    \draw[arrow] (Reader.north) -- ++(0,.5) -| (User);
+    \draw[arrow] (Admin.north) -- ++(0,.5) -| (User);
+    \draw[arrow] (Teacher.north) -- ++(0,.5) -| (Reader);
+    \draw[arrow] (Student.north) -- ++(0,.5) -| (Reader);
+    \draw[arrow] (Library) -- (ILibrary);
+    \draw[dashed] (Book) -- (Kind)
+        node[near end, above]{1}
+        node[near start, above]{0..*};
+    \draw[dashed] (AdminDAO) -- (Admin)
+        node[near start, above]{1}
+        node[near end, above]{0..*};
+    \draw[dashed] (BookDAO) -- (Book)
+        node[near start, left]{1}
+        node[near end, left]{0..*};
+    \draw[dashed] (ReaderDAO) -- (Reader)
+        node[near start, above]{1}
+        node[near end, above]{0..*};
+    \draw[dashed] (KindDAO) -- (Kind)
+        node[near start, above]{1}
+        node[near end, above]{0..*};
+
+\end{tikzpicture}
+\end{sffamily}
+\end{document}
+
