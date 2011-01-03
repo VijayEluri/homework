@@ -35,9 +35,10 @@ public:
 };
 
 saveint saveint::operator +(const saveint &t) const {
-	if ((data & (1 << 31)) && (t.data & (1 << 31)))
+	long long res = (long long)data + (long long)t.data;
+	if (res < -2147483648ll || res > 2147483647)
 		throw IntException("Result out of bound.");
-	return data + t.data;
+	return (int)res;
 }
 
 saveint saveint::operator -(const saveint &t) const {
