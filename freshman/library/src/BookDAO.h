@@ -6,9 +6,9 @@
 #include "System.h"
 #include "KindDAO.h"
 #include "ReaderDAO.h"
+#include "Book.h"
+#include "Reader.h"
 #pragma once
-
-class Book;
 
 class BookDAO {
 public:
@@ -25,8 +25,9 @@ public:
 	 *	You are supposed to call this method only once in ILibrary::finalize().
 	 */
 	static bool saveAll();
-	static vector <const Book *> getAll();
+	static vector <Book *> getAll();
 	static int getNextBookID();
+	static Book *searchByID(int);
 private:
 	static vector <Book *> all;
 	static int nextID;

@@ -31,8 +31,8 @@ public:
 	size_t countBooks() const;
 	vector<Book *> getBooks() const;
 
+	vector <Book *> all;
 private:
 	wstring name, index, authors;
 	string isbn;
-	vector <Book *> all;
 };

@@ -9,6 +9,7 @@ class Date
 {
 public:
 	Date(int year, int month, int day);
+	Date(time_t x) : timestamp(x) {}
 	
 	int getYear() const;
 	int getMonth() const;

@@ -41,10 +41,10 @@ bool KindDAO::saveAll() {
 	if (!file.open(L"dat/kinds.dat", O_READ)) return false;
 	for (int i = 0; i < (int)all.size(); ++ i) {
 		bool flag = true;
-		flag &= file.write(all[i]->getISBN().c_str(), all[i]->getISBN().length() + 1);
-		flag &= file.write(all[i]->getName().c_str(), all[i]->getName().length() + 1);
-		flag &= file.write(all[i]->getAuthorstr().c_str(), all[i]->getAuthorstr().length() + 1);
-		flag &= file.write(all[i]->getIndex().c_str(), all[i]->getIndex().length() + 1);
+		flag &= file.write(all[i]->getISBN().c_str(), all[i]->getISBN().length() * sizeof(char));
+		flag &= file.write(all[i]->getName().c_str(), all[i]->getName().length() * sizeof(wchar_t));
+		flag &= file.write(all[i]->getAuthorstr().c_str(), all[i]->getAuthorstr().length() * sizeof(wchar_t));
+		flag &= file.write(all[i]->getIndex().c_str(), all[i]->getIndex().length() * sizeof(wchar_t));
 		if (!flag) {
 			file.close();
 			return false;

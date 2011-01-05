@@ -29,6 +29,7 @@ public:
 	static vector <Reader *> getAll();
 	static bool insert(Reader *);
 	static bool erase(const string &);
+	static Reader *searchByName(const string &);
 private:
 	static vector <Reader *> all;
 };

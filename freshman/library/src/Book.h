@@ -27,6 +27,7 @@ public:
 	void setReserver(const Reader *);
 	
 	Date getBorrowedDate() const;
+	Date getReservedDate() const;
 	
 	/**
 	 *	Return whether this book is available to borrow or not.
@@ -42,10 +43,10 @@ public:
 	
 	// TODO: add whatever you need
 	int getID() const;
+	bool available;
 private:
 	int id;
 	Kind *kind;
 	Reader *reader, *reserver;
 	Date borrowed, reserved;
-	bool available;
 };

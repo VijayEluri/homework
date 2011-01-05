@@ -7,12 +7,13 @@
 #include <vector>
 #include <string>
 #include "User.h"
-
-class Book;
+#include "Book.h"
+#include "basesystem"
 
 class Reader : public User {
 public:
-	Reader(std::string const &username, std::string const &password);
+	Reader(std::string const &username, std::string const &password)
+		: User(username, password) {}
 	virtual ~Reader();
 	
 	enum Type { STUDENT, TEACHER };
@@ -26,4 +27,7 @@ public:
 	virtual std::vector<Book *> getBorrowedBooks() = 0;
 	virtual std::vector<Book *> getReservedBooks() = 0;
 	virtual int getPenalty() = 0;
+
+	vector <Book *> borrowed;
+	vector <Book *> reserved;
 };
