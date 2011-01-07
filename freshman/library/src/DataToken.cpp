@@ -46,10 +46,11 @@ bool DataToken::write(const void *dat, size_t size) {
 void *DataToken::read() {
 	if (!active || O_MODE != O_READ) return false;
 	size_t size;
-	if (::read(fd, (void *)&size, sizeof(size_t)) == -1) return 0;
+	if (::read(fd, (void *)&size, sizeof(size_t)) == 0) return 0;
 	void *dat = malloc(size + 10);
+	if (!dat) return 0;
 	memset(dat, 0, size + 10);
-	if (::read(fd, dat, size) == -1) {
+	if (::read(fd, dat, size) == 0) {
 		free(dat);
 		dat = 0;
 		return 0;

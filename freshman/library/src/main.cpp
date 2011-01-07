@@ -5,6 +5,8 @@
 #include "ILibrary.h"
 #include "Library.h"
 #include "Reader.h"
+#include <iostream>
+using namespace std;
 
 int main() {
 	ILibrary *lib = new Library();
