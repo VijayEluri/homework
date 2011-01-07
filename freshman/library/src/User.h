@@ -11,7 +11,7 @@ class User {
 public:
 	User(std::string const &username, std::string const &password)
 		: username(username), password(password) {}
-	virtual ~User();
+	virtual ~User() {};
 	
 	virtual std::string getUsername() const;
 	virtual std::string getPassword() const;

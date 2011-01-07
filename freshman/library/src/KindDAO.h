@@ -2,9 +2,12 @@
 // Author: Xiao Jia
 // Date: 2010/12/02
 
-#include "basesystem"
 #include "System.h"
-#include "Kind.h"
+#include <vector>
+#include <string>
+#include <map>
+#include <set>
+using namespace std;
 #pragma once
 
 class Kind;

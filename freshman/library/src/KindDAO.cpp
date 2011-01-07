@@ -1,6 +1,23 @@
 #include "KindDAO.h"
+#include "DataToken.h"
+#include "Kind.h"
+#include <cstdlib>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+vector <Kind *> KindDAO::all;
+map <wstring, set<Kind *> > KindDAO::mapByAuthor;
+map <wstring, set<Kind *> > KindDAO::mapByIndex;
+map <wstring, set<Kind *> > KindDAO::mapByName;
+map <string, Kind *> KindDAO::mapByISBN;
 
 bool KindDAO::loadAll() {
+	all.clear();
+	mapByISBN.clear();
+	mapByName.clear();
+	mapByAuthor.clear();
+	mapByIndex.clear();
 	DataToken file;
 	System sys;
 	if (!file.open(sys.getWorkingDirectory() + sys.getKindFileName(), O_READ)) return false;
@@ -38,7 +55,8 @@ bool KindDAO::loadAll() {
 
 bool KindDAO::saveAll() {
 	DataToken file;
-	if (!file.open(L"dat/kinds.dat", O_READ)) return false;
+	System sys;
+	if (!file.open(sys.getWorkingDirectory() + sys.getKindFileName(), O_WRITE)) return false;
 	for (int i = 0; i < (int)all.size(); ++ i) {
 		bool flag = true;
 		flag &= file.write(all[i]->getISBN().c_str(), all[i]->getISBN().length() * sizeof(char));

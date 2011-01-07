@@ -5,8 +5,6 @@
 #pragma once
 
 #include "Date.h"
-#include "basesystem"
-
 class Kind;
 class Reader;
 
@@ -15,16 +13,16 @@ class Book
 public:
 	Book(int id, Kind *kind, Reader *reader, Reader *reserver, const Date &borrowed, const Date &reserved, bool avail)
 		: id(id), kind(kind), reader(reader), reserver(reserver), borrowed(borrowed), reserved(reserved), available(avail) {}
-	virtual ~Book();
+	virtual ~Book() {}
 	
 	Kind &getKind() const;
 	void setKind(Kind const &);
 	
 	Reader *getReader() const;
-	void setReader(Reader const *);
+	void setReader(Reader *);
 
 	Reader *getReserver() const;
-	void setReserver(const Reader *);
+	void setReserver(Reader *);
 	
 	Date getBorrowedDate() const;
 	Date getReservedDate() const;

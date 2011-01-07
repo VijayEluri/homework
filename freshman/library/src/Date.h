@@ -9,16 +9,18 @@ class Date
 {
 public:
 	Date(int year, int month, int day);
-	Date(time_t x) : timestamp(x) {}
+	Date(int);
 	
 	int getYear() const;
 	int getMonth() const;
 	int getDay() const;
-	time_t getTime() const;
-	void setTime(time_t);
+	int getTotalDays() const;
 	void operator +=(int);
+	void operator -=(int);
+	int operator -(const Date &);
 	
 	// TODO: add whatever you need
 private:
-	time_t timestamp;
+	int year, month, day;
+	int count;
 };

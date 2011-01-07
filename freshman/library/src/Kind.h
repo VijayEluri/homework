@@ -4,11 +4,9 @@
 
 #pragma once
 
-#include "basesystem"
 #include <string>
 #include <vector>
-
-class KindDAO;
+using namespace std;
 class Book;
 
 class Kind
@@ -31,7 +29,6 @@ public:
 	size_t countBooks() const;
 	vector<Book *> getBooks() const;
 
-	vector <Book *> all;
 private:
 	wstring name, index, authors;
 	string isbn;

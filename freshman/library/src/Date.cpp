@@ -1,18 +1,54 @@
 #include "Date.h"
 #include <memory.h>
 
-Date::Date(int year, int month, int day) {
-	tm *timeinfo = new(tm);
-	memset(timeinfo, 0, sizeof(tm));
-	timeinfo->tm_year = year - 1900;
-	timeinfo->tm_mon = month - 1;
-	timeinfo->tm_mday = day;
-	timestamp = mktime(timeinfo);
+Date::Date(int year, int month, int day)
+	: year(year), month(month), day(day) {
+	int y = year, m = month, d = day;
+	if (m > 2) m -= 3;
+	else {
+		m += 9;
+		-- y;
+	}
+	int c = y / 100, ya = y - 100 * c;
+	count = 1721119 + d + (146097 * c) / 4 + (1461 * ya) / 4 + (153 * m + 2) / 5;
 }
 
-int Date::getYear() const { return localtime(&timestamp)->tm_year + 1900; }
-int Date::getMonth() const { return localtime(&timestamp)->tm_mon + 1; }
-int Date::getDay() const { return localtime(&timestamp)->tm_mday; }
-void Date::operator +=(int d) { timestamp += (time_t)d * 60 * 60 * 24; }
-void Date::setTime(time_t t) { timestamp = t; }
-time_t Date::getTime() const { return timestamp; }
+Date::Date(int tot) {
+	int x, y, m, d, j;
+	count = tot;
+	j = count - 1721119;
+	y = (j * 4 - 1) / 146097;
+	j = j*4 - 146097*y - 1;
+	x = j/4;
+	j = (x*4 + 3) / 1461;
+	y = 100*y + j;
+	x = (x*4) + 3 - 1461*j;
+	x = (x + 4)/4;
+	m = (5*x - 3)/153;
+	x = 5*x - 3 - 153*m;
+	d = (x + 5)/5;
+	if ( m < 10 ) {
+		m += 3;
+	} else {
+		m -= 9;
+		y ++;
+	}
+	year = y, month = m, day = d;
+}
+
+int Date::getYear() const { return year; }
+int Date::getMonth() const { return month; }
+int Date::getDay() const { return day; }
+int Date::getTotalDays() const { return count; }
+
+void Date::operator += (int days) {
+	*this = Date(count + days);
+}
+
+void Date::operator -= (int days) {
+	*this = Date(count - days);
+}
+
+int Date::operator -(const Date &t) {
+	return count - t.count;
+}

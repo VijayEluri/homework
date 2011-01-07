@@ -2,13 +2,12 @@
 // Author: Xiao Jia
 // Date: 2010/12/02
 
-#include "basesystem"
 #include "System.h"
-#include "KindDAO.h"
-#include "ReaderDAO.h"
-#include "Book.h"
-#include "Reader.h"
+#include <vector>
+using namespace std;
 #pragma once
+
+class Book;
 
 class BookDAO {
 public:
@@ -28,6 +27,8 @@ public:
 	static vector <Book *> getAll();
 	static int getNextBookID();
 	static Book *searchByID(int);
+	static bool insert(Book *);
+	static bool erase(int id);
 private:
 	static vector <Book *> all;
 	static int nextID;

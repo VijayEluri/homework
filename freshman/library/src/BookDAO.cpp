@@ -1,8 +1,17 @@
 #include "BookDAO.h"
+#include "Kind.h"
+#include "KindDAO.h"
+#include "ReaderDAO.h"
+#include "Book.h"
+#include "Reader.h"
+#include "DataToken.h"
+#include <cstdlib>
+
+int BookDAO::nextID;
+vector <Book *> BookDAO::all;
 
 bool BookDAO::loadAll() {
-	KindDAO kinddao;
-	ReaderDAO readerdao;
+	all.clear();
 	DataToken file;
 	System sys;
 	if (!file.open(sys.getWorkingDirectory() + sys.getBookFileName(), O_READ)) return false;
@@ -37,9 +46,9 @@ bool BookDAO::loadAll() {
 		Avail = *((bool *)token);
 		free(token);
 		//TO DO
-		Reader *_Reader = readerdao.searchByName(reader);
-		Reader *Reserver = readerdao.searchByName(reserver);
-		kind = kinddao.searchByISBN(ISBN);
+		Reader *_Reader = ReaderDAO::searchByName(reader);
+		Reader *Reserver = ReaderDAO::searchByName(reserver);
+		kind = KindDAO::searchByISBN(ISBN);
 		Book *p = new Book(id,
 					kind,
 					_Reader,
@@ -49,7 +58,6 @@ bool BookDAO::loadAll() {
 					Avail );
 		_Reader->borrowed.push_back(p);
 		Reserver->reserved.push_back(p);
-		kind->all.push_back(p);
 		all.push_back(p);
 	}
 	file.close();
@@ -70,10 +78,10 @@ bool BookDAO::saveAll() {
 		if (!file.write((void *)kind.getISBN().c_str(), kind.getISBN().length() * sizeof(char))) return false;
 		if (!file.write((void *)reader->getUsername().c_str(), reader->getUsername().length() * sizeof(char))) return false;
 		if (!file.write((void *)reserver->getUsername().c_str(), reserver->getUsername().length() * sizeof(char))) return false;
-		time_t tmp = all[i]->getBorrowedDate().getTime();
-		if (!file.write((void *)&tmp, sizeof(time_t))) return false;
-		tmp = all[i]->getReservedDate().getTime();
-		if (!file.write((void *)&tmp, sizeof(time_t))) return false;
+		int tmp = all[i]->getBorrowedDate().getTotalDays();
+		if (!file.write((void *)&tmp, sizeof(int))) return false;
+		tmp = all[i]->getReservedDate().getTotalDays();
+		if (!file.write((void *)&tmp, sizeof(int))) return false;
 		if (!file.write((void *)&all[i]->available, sizeof(bool))) return false;
 	}
 	file.close();
@@ -88,4 +96,20 @@ Book *BookDAO::searchByID(int id) {
 		if (all[i]->getID() == id)
 			return all[i];
 	return 0;
+}
+
+bool BookDAO::insert(Book *p) {
+	for (int i = 0; i < (int)all.size(); ++ i)
+		if (all[i]->getID() == p->getID()) return false;
+	all.push_back(p);
+}
+
+bool BookDAO::erase(int id) {
+	for (int i = 0; i < (int)all.size(); ++ i)
+		if (all[i]->getID() == id) {
+			delete all[i];
+			all.erase(all.begin() + i);
+			return true;
+		}
+	return false;
 }

@@ -9,8 +9,9 @@
 class Teacher : public Reader
 {
 public:
-	Teacher(std::string const &username, std::string const &password);
-	virtual ~Teacher();
+	Teacher(std::string const &username, std::string const &password)
+		: Reader(username, password) {}
+	virtual ~Teacher() {}
 	
 	virtual Type getType() const { return TEACHER; }
 	virtual int getBorrowLimit() const { return 10; }

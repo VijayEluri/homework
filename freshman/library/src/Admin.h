@@ -7,6 +7,7 @@
 #include <vector>
 #include <string>
 #include "User.h"
+#include "Reader.h"
 
 class Reader;
 class Admin;
@@ -16,12 +17,13 @@ class Book;
 class Admin : public User
 {
 public:
-	virtual ~Admin();
+	virtual ~Admin() {}
 	
 	/**
 	 *	Construct an Admin object using the pair of username and password provided.
 	 */
-	Admin(std::string const &username, std::string const &password);
+	Admin(std::string const &username, std::string const &password)
+		: User(username, password) {}
 
 	/**
 	 *	This method is called to create a new object as provided.
@@ -96,12 +98,12 @@ public:
 	 *	Return the pointer to a loaded object if successfully founded.
 	 *	Otherwise, return NULL to indicate error.
 	 */
-	Reader *getReaderByName(std::wstring const &name);
+	Reader *getReaderByName(std::string const &name);
 	
 	/**
 	 *	This method is called to find an Admin object with the name provided.
 	 *	Return the pointer to a loaded object if successfully founded.
 	 *	Otherwise, return NULL to indicate error.
 	 */
-	Admin *getAdminByName(std::wstring const &name);
+	Admin *getAdminByName(std::string const &name);
 };

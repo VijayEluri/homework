@@ -13,7 +13,7 @@ class Kind;
 
 class ILibrary {
 public:
-	virtual ~ILibrary();
+	virtual ~ILibrary() {}
 	
 	/**
 	 *	This method is called when the system starts up and will not be called again.

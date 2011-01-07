@@ -3,9 +3,9 @@
 // Date: 2010/12/02
 
 #pragma once
-#include "basesystem"
-#include "Reader.h"
-
+#include <vector>
+#include <string>
+using namespace std;
 class Reader;
 
 class ReaderDAO
