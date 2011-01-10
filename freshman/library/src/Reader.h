@@ -29,6 +29,9 @@ public:
 	std::vector<Book *> getReservedBooks();
 	int getPenalty();
 
+	void __insert_borrowed(Book *);
+	void __insert_reserved(Book *);
+private:
 	vector <Book *> borrowed;
 	vector <Book *> reserved;
 };

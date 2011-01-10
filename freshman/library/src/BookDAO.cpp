@@ -4,7 +4,7 @@
 #include "ReaderDAO.h"
 #include "Book.h"
 #include "Reader.h"
-#include "DataToken.h"
+#include "Date.h"
 #include <cstdlib>
 
 int BookDAO::nextID;
@@ -56,8 +56,8 @@ bool BookDAO::loadAll() {
 					Date(borrowed),
 					Date(reserved),
 					Avail );
-		_Reader->borrowed.push_back(p);
-		Reserver->reserved.push_back(p);
+		_Reader->__insert_borrowed(p);
+		Reserver->__insert_reserved(p);
 		all.push_back(p);
 	}
 	file.close();
@@ -82,7 +82,8 @@ bool BookDAO::saveAll() {
 		if (!file.write((void *)&tmp, sizeof(int))) return false;
 		tmp = all[i]->getReservedDate().getTotalDays();
 		if (!file.write((void *)&tmp, sizeof(int))) return false;
-		if (!file.write((void *)&all[i]->available, sizeof(bool))) return false;
+		bool availmark = all[i]->isAvailable();
+		if (!file.write((void *)&availmark, sizeof(bool))) return false;
 	}
 	file.close();
 	return true;

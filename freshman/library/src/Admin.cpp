@@ -12,16 +12,15 @@
 using namespace std;
 
 bool Admin::createReader(const string &username, const string &password, Reader::Type type) {
-	ReaderDAO t;
 	if (type == Reader::TEACHER) {
 		Teacher *p = new Teacher(username, password);
-		if (!t.insert(p)) {
+		if (!ReaderDAO::insert(p)) {
 			delete p;
 			return false;
 		}
 	} else {
 		Student *p = new Student(username, password);
-		if (!t.insert(p)) {
+		if (!ReaderDAO::insert(p)) {
 			delete p;
 			return false;
 		}
@@ -30,18 +29,16 @@ bool Admin::createReader(const string &username, const string &password, Reader:
 }
 
 bool Admin::removeReader(const string &username) {
-	ReaderDAO t;
-	Reader *p = t.searchByName(username);
+	Reader *p = ReaderDAO::searchByName(username);
 	if (!p) return false;
-	t.erase(username);
+	ReaderDAO::erase(username);
 	delete p;
 	return true;
 }
 
 bool Admin::createAdmin(const string &username, const string &password) {
-	AdminDAO t;
 	Admin *p = new Admin(username, password);;
-	if (!t.insert(p)) {
+	if (!AdminDAO::insert(p)) {
 		delete p;
 		return false;
 	}
@@ -49,26 +46,24 @@ bool Admin::createAdmin(const string &username, const string &password) {
 }
 
 bool Admin::removeAdmin(const string &username) {
-	AdminDAO t;
-	Admin *p = t.searchByName(username);
+	Admin *p = AdminDAO::searchByName(username);
 	if (!p) return false;
-	t.erase(username);
+	AdminDAO::erase(username);
 	delete p;
 	return true;
 }
 
 bool Admin::createKind(const string &isbn, const wstring &name, const wstring &authors, const wstring &index) {
-	KindDAO t;
-	if (t.searchByISBN(isbn)) return false;
+	if (KindDAO::searchByISBN(isbn)) return false;
 	Kind *p = new Kind(isbn, name, authors, index);
-	t.insert(p);
+	KindDAO::insert(p);
+	return true;
 }
 
 bool Admin::removeKind(const string &isbn) {
-	KindDAO t;
-	Kind *p = t.searchByISBN(isbn);
+	Kind *p = KindDAO::searchByISBN(isbn);
 	if (!p || p->countBooks() > 0) return false;
-	t.erase(isbn);
+	KindDAO::erase(isbn);
 	return true;
 }
 

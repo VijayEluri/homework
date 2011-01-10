@@ -1,5 +1,5 @@
 #include "KindDAO.h"
-#include "DataToken.h"
+#include "Date.h"
 #include "Kind.h"
 #include <cstdlib>
 #include <vector>
@@ -73,7 +73,7 @@ bool KindDAO::saveAll() {
 }
 
 bool KindDAO::insert(Kind *kind) {
-	if (mapByISBN.count(kind->getISBN())) return false;
+	if (searchByISBN(kind->getISBN())) return false;
 	all.push_back(kind);
 	mapByISBN[kind->getISBN()] = kind;
 	mapByIndex[kind->getIndex()].insert(kind);
@@ -85,7 +85,7 @@ bool KindDAO::insert(Kind *kind) {
 }
 
 bool KindDAO::erase(const string &isbn) {
-	if (!mapByISBN.count(isbn)) return false;
+	if (!searchByISBN(isbn)) return false;
 	Kind *target = mapByISBN[isbn];
 	for (int i = 0; i < (int)all.size(); ++ i)
 		if (all[i]->getISBN() == isbn) {

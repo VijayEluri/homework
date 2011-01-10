@@ -41,10 +41,10 @@ public:
 	
 	// TODO: add whatever you need
 	int getID() const;
-	bool available;
 private:
 	int id;
 	Kind *kind;
 	Reader *reader, *reserver;
 	Date borrowed, reserved;
+	bool available;
 };

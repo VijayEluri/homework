@@ -2,7 +2,6 @@
 #include "KindDAO.h"
 #include "BookDAO.h"
 #include "Kind.h"
-#include "DataToken.h"
 
 Kind::~Kind() {}
 

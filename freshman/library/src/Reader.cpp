@@ -57,3 +57,11 @@ int Reader::getPenalty() {
 	}
 	return cnt;
 }
+
+void Reader::__insert_borrowed(Book *book) {
+	borrowed.push_back(book);
+}
+
+void Reader::__insert_reserved(Book *book) {
+	reserved.push_back(book);
+}
