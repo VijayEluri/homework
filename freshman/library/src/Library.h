@@ -11,6 +11,17 @@
  */
 class Library : public ILibrary
 {
+	struct Record {
+		Kind *kind;
+		int score;
+		Record() {}
+		Record(Kind *kind, int score)
+			: kind(kind), score(score) {}
+		bool operator <(const Record &t) const {
+			return score > t.score;
+		}
+	};
+
 public:
 	// TODO: add whatever you need
 	~Library();

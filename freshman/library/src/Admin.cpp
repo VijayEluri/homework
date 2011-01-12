@@ -117,3 +117,4 @@ Admin *Admin::getAdminByName(const string &name) {
 	AdminDAO admindao;
 	return admindao.searchByName(name);
 }
+

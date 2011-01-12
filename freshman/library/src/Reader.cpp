@@ -3,6 +3,9 @@
 #include "Reader.h"
 #include "Book.h"
 
+Reader::Reader(const string &username, const string &password)
+	: User(username, password) {}
+
 bool Reader::borrow(Book &x) {
 	if (getPenalty()) return false;
 	Book *t = BookDAO::searchByID(x.getID());
@@ -58,10 +61,3 @@ int Reader::getPenalty() {
 	return cnt;
 }
 
-void Reader::__insert_borrowed(Book *book) {
-	borrowed.push_back(book);
-}
-
-void Reader::__insert_reserved(Book *book) {
-	reserved.push_back(book);
-}

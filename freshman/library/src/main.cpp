@@ -36,6 +36,7 @@ int main() {
 	for (int i = 0; i < (int)all.size(); ++ i) {
 		cout << "ISBN\t:\t" << all[i]->getISBN() << endl;
 	}
+	admin->removeKind("0-1234567");
 
 	lib->finalize();
 	delete lib;

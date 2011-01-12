@@ -9,12 +9,12 @@
 #include "User.h"
 using namespace std;
 
+class BookDAO;
 class Book;
 
 class Reader : public User {
 public:
-	Reader(std::string const &username, std::string const &password)
-		: User(username, password) {}
+	Reader(std::string const &username, std::string const &password);
 	virtual ~Reader() {}
 	
 	enum Type { STUDENT, TEACHER };
@@ -29,8 +29,7 @@ public:
 	std::vector<Book *> getReservedBooks();
 	int getPenalty();
 
-	void __insert_borrowed(Book *);
-	void __insert_reserved(Book *);
+	friend class BookDAO;
 private:
 	vector <Book *> borrowed;
 	vector <Book *> reserved;

@@ -64,9 +64,31 @@ vector <Kind *> Library::searchByExpression(const wstring &expr) {
 	return ret;
 }
 
+int compare_string(const wstring &s, const wstring &t) {
+	int score = 0;
+	int n = t.length();
+	for (int j = 1; j <= n; ++ j)
+		for (int i = 0; i + j < n; ++ i) {
+			wstring sub = t.substr(i, j);
+			if (s.find(sub) != wstring::npos) {
+				score += sub.length();
+			}
+		}
+	return score;
+}
+
 vector <Kind *> Library::searchLikeName(const wstring &name) {
-	vector <Kind *> ret;
-	//TO DO
+	vector <Kind *> ret = KindDAO::getAll();
+	vector <Record> rec;
+
+	for (int i = 0; i < (int)ret.size(); ++ i) {
+		int score = compare_string(ret[i]->getName(), name);
+		if (score > 0) rec.push_back(Record(ret[i], score));
+	}
+	sort(rec.begin(), rec.end());
+	ret.clear();
+	for (int i = 0; i < (int)rec.size(); ++ i)
+		ret.push_back(rec[i].kind);
 	return ret;
 }
 

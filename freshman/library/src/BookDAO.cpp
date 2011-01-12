@@ -56,8 +56,10 @@ bool BookDAO::loadAll() {
 					Date(borrowed),
 					Date(reserved),
 					Avail );
-		_Reader->__insert_borrowed(p);
-		Reserver->__insert_reserved(p);
+		//_Reader->__insert_borrowed(p);
+		//Reserver->__insert_reserved(p);
+		if (_Reader) _Reader->borrowed.push_back(p);
+		if (Reserver) Reserver->reserved.push_back(p);
 		all.push_back(p);
 	}
 	file.close();
