@@ -16,6 +16,7 @@ public:
 	virtual std::string getUsername() const;
 	virtual std::string getPassword() const;
 	virtual void setPassword(std::string const &);
-	
+
+protected:
 	string username, password;
 };

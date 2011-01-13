@@ -27,11 +27,15 @@
             \textbf{Date}
         \end{center}
         \nodepart{second}
-		- timestamp : time\_t
+		- year : int\\
+		- month : int\\
+		- day : int\\
+		- count : int\\
         \nodepart{third}
         + getYear() : int\\
         + getMonth() : int\\
-        + getDay() : int
+        + getDay() : int\\
+		+ getTotalDays() : int
     };
 
     \node (System) [concrete, above=of Date, text width=7cm] {
@@ -62,7 +66,7 @@
         \nodepart{third}
         + getUsername() : string\\
         + getPassword() : string\\
-        + setUsername() : void\\
+		+ setPassword() : void
     };
 
     \node (Reader) [abstract, text width=7cm, below=of User, xshift=-4cm] {
@@ -72,7 +76,6 @@
         \nodepart{second}
         \# borrowed : vector<Book*>\\
         \# reserved : vector<Book*>\\
-        \# penalty : int\\
         \nodepart{third}
         + getType() : Type\\
         + getBorrowLimit() : int\\
@@ -134,9 +137,10 @@
         \nodepart{third}
         + loadAll() : void\\
         + saveAll() : vold\\
-        + getAll() : vector<Admin const*>\\
-        + create() : bool\\
-        + remove() : bool\\
+        + getAll() : vector<Admin*>\\
+        + insert(admin : Admin*) : bool\\
+        + erase(name : string) : bool\\
+		+ searchByName(string name) : Admin*
     };
 
     \node (ReaderDAO) [concrete, text width=7cm, left=2cm of Reader] {
@@ -149,8 +153,9 @@
         + loadAll() : void\\
         + saveAll() : vold\\
         + getAll() : vector<Reader const*>\\
-        + create() : bool\\
-        + remove() : bool\\
+        + insert(reader : Reader*) : bool\\
+        + erase(name : string) : bool\\
+		+ searchByName(name : string) : Reader*
     };
 
     \node (ILibrary) [abstract, text width=7cm, left=of System] {
@@ -191,6 +196,7 @@
         - reserver : Reader*\\
         - borrowed : Date\\
         - reserved : Date\\
+		- available : bool
         \nodepart{third}
         + getKind() : Kind\\
         + setKind(kind : Kind const\&) : void\\
@@ -200,6 +206,9 @@
         + setReserver(reader : Reader*) : void\\
         + isAvailable() : bool\\
         + isLentOut() : bool\\
+		+ getBorrowedDate() : Date\\
+		+ getReservedDate() : Date\\
+		+ getID() : int
     };
 
     \node (Kind) [concrete, right=2 cm of Book, text width=7cm] {
@@ -207,12 +216,10 @@
             \textbf{Kind}
         \end{center}
         \nodepart{second}
-        - vector<Book*> all\\
-        - ISBN : string\\
+        - isbn : string\\
         - name : wstring\\
         - authors : wstring\\
         - index : wstring\\
-        - availableIDs : set<int>\\
         \nodepart{third}
         + getISBN() : string\\
         + getName() : wstring\\
@@ -223,6 +230,8 @@
         + setAuthors(authors : wstring) : void\\
         + setIndex(index : wstring) : void\\
         + countBooks() : size\_t\\
+		+ getAuthorstr() : wstring\\
+		+ getBooks() : vector<Book*>
     };
 
     \node (KindDAO) [concrete, text width=7cm, right=2cm of Kind] {
@@ -240,10 +249,10 @@
         + saveAll() : vold\\
         + insert(kind : Kind) : bool\\
         + erase(isbn : string) : bool\\
-        + searchByISBN(ISBN : string)\\
-        + searchByAuthor(author : wstring)\\
-        + searchByIndex(index : wstring)\\
-        + searchByName(name : wstring)\\
+        + searchByISBN(ISBN : string) : Kind *\\
+        + searchByAuthor(author : wstring) : vector<Kind*>\\
+        + searchByIndex(index : wstring) : vector<Kind*>\\
+        + searchByName(name : wstring) : vector<Kind*>\\
     };
 
     \node (BookDAO) [concrete, text width=6cm, below=of Book] {
@@ -256,9 +265,24 @@
         + loadAll() : bool\\
         + saveAll() : bool\\
         + getAll() : vector<Book const*>\\
-        + create() : bool\\
-        + remove() : bool\\
+        + insert(book : Book*) : bool\\
+        + erase(id : int) : bool\\
+		+ getNextBookID() : int\\
+		+ searchByID(id : int) : Book*
     };
+	\node (DataToken) [concrete, below=of Kind, text width=6cm] {
+		\begin{center}
+			\textbf{DataToken}
+		\end{center}
+		\nodepart{second}
+		- active : bool\\
+		- fd : int
+		\nodepart{third}
+		+ open(filename : const wstring\&, openmode : DT\_MODE) : bool\\
+		+ close() : bool\\
+		+ read() : void *\\
+		+ write(buf : const void *, size : size\_t) : bool
+	};
 
     \draw[arrow] (Reader.north) -- ++(0,.5) -| (User);
     \draw[arrow] (Admin.north) -- ++(0,.5) -| (User);
