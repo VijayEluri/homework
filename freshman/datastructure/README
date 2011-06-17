@@ -19,6 +19,8 @@ DEMOSTRATION
 Just type "make test" (without quotes) you can see a test for this
 code library. The codes of this test is in *main.cpp*.
 
+IMPORTANT: gcc 4.4.0+ required.
+
 FURTHER DESCRIPTIONS
 --------------------
 

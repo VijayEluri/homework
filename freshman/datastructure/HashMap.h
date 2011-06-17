@@ -332,7 +332,7 @@ public:
 			if (entry.key == key) {
 				-- _size;
 				it.remove();
-				return entry;
+				return entry.value;
 			}
 		}
 		throw ElementNotExist();

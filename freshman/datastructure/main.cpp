@@ -296,6 +296,79 @@ bool LinkedList_Test() {
 	return true;
 }
 
+bool TreeMap_Test() {
+	TreeMap<int, double> t;
+	for (int i = 0; i < 13; ++ i)
+		t.put(i, i);
+
+	TreeMap<int, double>::Iterator it = t.iterator();
+	while (it.hasNext()) {
+		Entry<int, double> tmp = it.next();
+		if (tmp.key != tmp.value) return false;
+	}
+	TreeMap<int, double>::ConstIterator cit = t.constIterator();
+	while (cit.hasNext()) {
+		Entry<int, double> tmp = cit.next();
+		if (tmp.key != tmp.value) return false;
+	}
+	for (int i = 0; i < 13; ++ i)
+		if (t.get(i) != i) return false;
+
+	t.put(10, 0);
+	if (t.size() != 13) return false;
+	if (t.firstKey() != 0) return false;
+	if (t.lastKey() != 12) return false;
+	if (t.lastEntry().value != 12 || t.lastEntry().key != 12) return false;
+	if (t.firstEntry().value != 0 || t.firstEntry().key != 0) return false;
+	if (t.containsValue(10)) return false;
+	if (!t.containsKey(10)) return false;
+	t.remove(10);
+	t.remove(0);
+	if (t.containsValue(0)) return false;
+	if (t.size() != 11) return false;
+	if (t.containsKey(0)) return false;
+
+	t.clear();
+	return true;
+}
+
+bool HashMap_Test() {
+	HashMap<int, double, Hash> t;
+	for (int i = 0; i < 13; ++ i)
+		t.put(i, i);
+
+	HashMap<int, double, Hash>::Iterator it = t.iterator();
+	while (it.hasNext()) {
+		Entry<int, double> tmp = it.next();
+		if (tmp.key != tmp.value) return false;
+	}
+	HashMap<int, double, Hash>::ConstIterator cit = t.constIterator();
+	while (cit.hasNext()) {
+		Entry<int, double> tmp = cit.next();
+		if (tmp.key != tmp.value) return false;
+	}
+	for (int i = 0; i < 13; ++ i)
+		if (t.get(i) != i) return false;
+
+	t.put(10, 0);
+	if (t.size() != 13) return false;
+	if (t.containsValue(10)) return false;
+	if (!t.containsKey(10)) return false;
+	t.remove(10);
+	t.remove(0);
+	if (t.containsValue(0)) return false;
+	if (t.size() != 11) return false;
+	if (t.containsKey(0)) return false;
+
+	t.clear();
+	return true;
+}
+
+void Comparation_Set() {
+	cout << "Comparation between TreeSet and std::set" << endl;
+	TreeSet<int> t; 
+}
+
 int main() {
 	cout.setf(ios::fixed);
 	cout.precision(3);
@@ -304,9 +377,14 @@ int main() {
 	RUN(TreeSet_Test);
 	RUN(HashSet_Test);
 	RUN(LinkedList_Test);
+	RUN(TreeMap_Test);
+	RUN(HashMap_Test);
 	RUN(ArrayList_Insert_Test);
 	RUN(TreeSet_Insert_Test);
 	RUN(HashSet_Insert_Test);
 	RUN(set_Insert_Test);
+
+	//Special Part
+	Comparation_Set();
 	return 0;
 }

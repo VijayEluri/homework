@@ -106,7 +106,7 @@ private:
 		return null;
 	}
 
-	Node *find(const K &key) {
+	Node *find(const K &key) const {
 		Node *cur = root;
 		while (cur != null) {
 			if (cur->data.key == key) return cur;
@@ -116,11 +116,12 @@ private:
 		return cur;
 	}
 
-	bool findvalue(Node *cur, const V &value) {
+	bool findvalue(Node *cur, const V &value) const {
 		if (cur == null) return false;
 		if (cur->data.value == value) return true;
 		if (findvalue(cur->lch, value)) return true;
 		if (findvalue(cur->rch, value)) return true;
+		return false;
 	}
 public:
     class ConstIterator {
@@ -425,8 +426,11 @@ public:
      * @throw ElementNotExist
      */
     V remove(const K& key) {
-		if (!containsKey(key)) throw ElementNotExist();
+		Node *cur = find(key);
+		if (cur == null) throw ElementNotExist();
+		V ret = cur->data.value;
 		root = erase(root, key);
+		return ret;
 	}
 
     /**
