@@ -60,7 +60,7 @@ private:
 		return tmp;
 	}
 
-	Node *insert(Node *cur, const Entry<K, V> &data) {
+	Node *insert(Node *cur, Entry<K, V> &data) {
 		if (cur == null) {
 			cur = new Node(data);
 			cur->lch = cur->rch = cur->father = null;
@@ -77,6 +77,10 @@ private:
 //			if (cur->lch != null)
 				if (cur->rch->rch->cnt > cur->lch->cnt)
 					cur = leftrotate(cur);
+		} else if (data.key == cur->data.key) {
+			V tmp = data.value;
+			data.value = cur->data.value;
+			cur->data.value = tmp;
 		}
 		update(cur);
 		return cur;
@@ -409,15 +413,16 @@ public:
      * O(logn).
      */
     V put(const K& key, const V& value) {
-		Node *cur = find(key);
+		/*Node *cur = find(key);
 		if (cur != null) {
 			V ret = cur->data.value;
 			cur->data.value = value;
 			return ret;
-		} else {
-			root = insert(root, Entry<K, V>(key, value));
-			return V();
-		}
+		} else {*/
+		Entry<K, V> p(key, value);
+		root = insert(root, p);
+		return p.value;
+		/*}*/
 	}
 
     /**
