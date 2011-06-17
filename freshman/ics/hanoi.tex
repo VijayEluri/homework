@@ -1,0 +1,98 @@
+\documentclass{article}
+\usepackage{xeCJK}
+\usepackage{indentfirst}
+\usepackage{verbatim}
+\setlength{\parindent}{2em}
+\setCJKmainfont{SimSun}
+\title{LC-3上栈的简单实现——求解Hanoi塔问题}
+\author{林承宇 5100309007}
+\date{\today}
+\begin{document}
+\maketitle
+\begin{abstract}
+本文将粗略介绍Hanoi塔问题的一种递归解法，主要讲述这种解法在LC-3上如何用栈实现，以及在写汇编程序时的一些小细节。
+\end{abstract}
+\section{什么是Hanoi塔？}
+传说中最早发明这个问题的人是法国数学家爱德华·卢卡斯。有一个传说是这样的：印度某间寺院有三根柱子，上串64个金盘。寺院里的僧侣依照一个古老的预言，以上述规则移动这些盘子；预言说当这些盘子移动完毕，世界就会灭亡。这个传说叫做梵天寺之塔问题。但不知道是卢卡斯自创的这个传说，还是他受其启发。\\
+\indent Hanoi塔问题就由此而来，抽象一下，现在有A、B、C三根柱子，初始情况下A柱子上堆了n个大小各异的圆盘，从大到小依次叠放。每次可以将一根柱子最顶端的一个圆盘取下堆到另外一根柱子的最上层。大的圆盘不能置与小的圆盘上方。然后要求把A柱子上的所有圆盘移动到另外一根柱子上。
+\section{如何解决Hanoi塔问题}
+\subsection{一个简单的想法}
+从缩小问题规模的想法来，假设现在有N个圆盘（编号为1…N）要从A柱子移动到C柱子上，我们可以把前N-1个圆盘移动到B柱子上，然后把第N个圆盘移动到C柱子上，再把B柱子上的N-1个圆盘移动到C柱子上。由于在底部的盘子是最大的，所以在移动前N-1个盘子的时候可以忽略它，不会出现大的圆盘放置在小的圆盘上面。规模为N的问题就简化为规模为N-1的问题了。
+\subsection{C语言的递归实现}
+就依照上面的想法，我们可以很轻松的利用C语言来递归的实现一个Hanoi塔问题求解程序：
+\begin{verbatim}
+void solve(int n, Stack *A, Stack *B, Stack *C) {
+    //表示n个盘子从柱子A移动到柱子C，利用中间柱子B
+    if (n == 1) {
+        //只有一个盘子的情况，就直接处理掉了
+        int x = A.pop();
+        C.push(x);
+        return;
+    }
+    solve(n - 1, A, C, B);	//n-1个盘子从A移动到B
+    int x = A.pop();		//第n个盘子移动到C
+    C.push(x);
+    solve(n - 1, B, A, C);	//n-1个盘子从B移动到C
+}
+\end{verbatim}
+\subsection{在LC-3上用汇编语言实现}
+将C语言翻译成为LC-3上的汇编或许并不是难事，但是要实现一个递归调用的过程并不是那么直白的，因为在LC-3中首先并没有提供给我们一个完善的函数调用的环境。但是我们可以先写出一个简单的模型来：
+\begin{verbatim}
+;约定R3寄存器代表n
+;     R4寄存器代表柱子A的编号
+;     R5寄存器代表柱子B的编号
+;     R6寄存器代表柱子C的标号
+SOLVE   ADD R3, R3, #0
+        BRnz RETURN        ;如果n==0就直接返回
+        ;调用SOLVE R3-1, R4, R6, R5
+        ;移动过程（冗长了就不给出）
+        ;调用SOLVE R3-1, R5, R4, R6
+RETURN  ;返回过程
+\end{verbatim}
+\indent 现在的问题在于我们如何实现函数递归调用过程（移动过程还是很好实现的）。我们不可能对于每个\{R3,R4,R5,R6\}输入组合都写一个过程来，这个工作量太大了。我们想就用上面那个SOLVE程序块来实现整个功能。\\
+\indent 一般程序语言中关于函数递归调用的地方，都是用栈这个工具来解决的。栈支持两种操作：从栈顶取出一个元素，往栈顶上压入一个元素。就像往一个口径和球一样大的试管里面塞球和取球一样，取球只能取最顶上的一个，塞球只能塞到所有管中球的上方。我们可以这么来解决上面调用的问题，在调用之前，先把现在程序块所运算出来的数据压入栈中，然后再给每个寄存器赋值为调用之后要用的数据，在调用完那个过程之后，再将原先压入栈中的数据弹出恢复原本的运算环境。由于栈的特性这并不破坏函数调用中数据的有序性。\\
+\indent 这个可以这么来实现：
+\begin{verbatim}
+PUSH    STI R0, POINTER    ;将R0中数据压入栈中
+        LD R1, POINTER     ;将栈顶指针往后移动一位
+        ADD R1, R1, #1
+        ST R1, POINTER
+        RET
+POP     LDI R0, POINTER    ;将栈顶数据取出放在R0中
+        LD R1, POINTER     ;将栈顶指针后移一位
+        ADD R1, R1, #-1
+        ST R1, POINTER
+        RET
+POINTER .FILL STACK   ;栈顶指针
+STACK   .BLKW 400     ;栈空间
+\end{verbatim}
+\indent 模型中的 ;调用SOLVE R3-1, R4, R6, R5 这个部分就可以这么来实现：
+\begin{verbatim}
+LEA R0, (下一块地址)    ;将调用完要返回的地址压入栈中
+JSR PUSH
+ADD R0, R3, #0
+JSR PUSH
+ADD R0, R4, #0
+JSR PUSH
+ADD R0, R5, #0
+JSR PUSH
+ADD R0, R6, #0
+JSR PUSH
+;对参数重新赋值
+BRnzp SOLVE
+;返回后执行语句
+\end{verbatim}
+\indent 以及RETURN就可以这么写：
+\begin{verbatim}
+JSR POP
+ADD R6, R0, #0        ;顺序要注意
+JSR POP
+ADD R5, R0, #0
+JSR POP
+ADD R4, R0, #0
+JSR POP
+ADD R3, R0, #0
+JSR POP
+JMP R0                ;跳到返回地址
+\end{verbatim}
+\end{document}

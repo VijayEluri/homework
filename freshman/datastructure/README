@@ -1,0 +1,52 @@
+
+INTRODUCTION
+------------
+
+BEES(Beginner's Educational Emulation of STL) is my final project
+for Data Structure Spring 2011. It contains my own implementations
+to be a substitute for *list*, *vector*, *set* and *map* in *c++ stl*.
+
+There are six modules in this project. For detailed usages you can
+visit [here][document] to get an document.
+
+  [document]: http://www.acm-project.org/doc/bees/1.1/
+
+And you may need a technical documentation *BEES.pdf*.
+
+DEMOSTRATION
+------------
+
+Just type "make test" (without quotes) you can see a test for this
+code library. The codes of this test is in *main.cpp*.
+
+FURTHER DESCRIPTIONS
+--------------------
+
+### For all ###
+
+*  The iterator and constiterator is in JAVA STL style.
+*  DO NOT remove an iterator twice, this will cause an exception.
+
+### LinkedList ###
+
+*  Using double linked list to implement this module.
+
+### ArrayList ###
+
+*  Just like *vector* in *c++ stl*.
+*  You can assume that the length of the array is infinity as long as
+   you have enough memory.
+
+### TreeSet &amp; TreeMap ###
+
+*  The implementation of this module is Size Balanced Tree.
+*  It works FASTER than *set* and *map* in *c++ stl*!
+
+### HashSet &amp; HashMap ###
+
+*  Based on LinkedList.
+*  The capacity do not mean the maximum of elements. You can assume
+   that you can put infinity elements as long as you have enough memory.
+*  You'd BETTER to choose an PRIME as the capacity.
+*  The default capacity is 99971.
+
