@@ -87,6 +87,7 @@ private:
 		return cur;
 	}
 	Node *erase(Node *cur, const E &data) {
+		if (cur == null) return cur;
 		if (data < cur->data)
 			cur->lch = erase(cur->lch, data);
 		else if (data > cur->data)
@@ -123,7 +124,7 @@ public:
          * O(logn)
          */
         bool hasNext() {
-			if (p == null) return false;
+			if (p == null || p == NULL) return false;
 			if (p->rch != null || !accessed) return true;
 			Node *q = p, *x = q->father;
 			while (x != null) {
@@ -139,7 +140,7 @@ public:
          * @throw ElementNotExist
          */
         const E& next() {
-			if (p == null) throw ElementNotExist();
+			if (p == null || p == NULL) throw ElementNotExist();
 			if (!accessed) {
 				accessed = true;
 				return p->data;
@@ -172,7 +173,7 @@ public:
          * O(logn)
          */
         bool hasNext() {
-			if (p == null) return false;
+			if (p == null || p == NULL) return false;
 			if (p->rch != null || !accessed) return true;
 			Node *q = p, *x = q->father;
 			while (x != null) {
@@ -188,7 +189,7 @@ public:
          * @throw ElementNotExist
          */
         const E& next() {
-			if (p == null) throw ElementNotExist();
+			if (p == null || p == NULL) throw ElementNotExist();
 			if (!accessed) {
 				accessed = true;
 				return p->data;
@@ -212,13 +213,13 @@ public:
          * @throw ElementNotExist
          */
         void remove() {
-			if (!accessed) throw ElementNotExist();
+			if (!accessed || p == NULL) throw ElementNotExist();
 			if (p == null) throw ElementNotExist();
 			if (!s->remove(p->data)) throw ElementNotExist();
 			p = null;
 		}
 
-		Iterator(Node *p, Node *null, TreeSet<E> *s)
+		Iterator(Node *p = NULL, Node *null = NULL, TreeSet<E> *s = NULL)
 			: p(p), null(null), s(s) { accessed = false; }
     };
 
@@ -361,9 +362,11 @@ public:
      * O(logn)
      */
     bool remove(const E& e) {
-		if (!contains(e)) return false;
+//		if (!contains(e)) return false;
+		int pre = root->cnt;
 		root = erase(root, e);
-		return true;
+		return pre != root->cnt;
+//		return true;
 	}
 
     /**

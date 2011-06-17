@@ -48,6 +48,7 @@ public:
          * O(n) for iterating through the container
          */
         bool hasNext() {
+			if (s == NULL) return false;
 			if (s->size() == 0) return false;
 			if (curp == -1) return true;
 			if (cur.hasNext()) return true;
@@ -63,6 +64,7 @@ public:
          * @throw ElementNotExist
          */
         const T& next() {
+			if (s == NULL) throw ElementNotExist();
 			if (s->size() == 0) throw ElementNotExist();
 			if (curp == -1) {
 				while (storage[++ curp].isEmpty());
@@ -79,7 +81,7 @@ public:
 			throw ElementNotExist();
 		}
 
-		ConstIterator(int _capacity, LinkedList<T> *storage, HashSet<T, H> *s)
+		ConstIterator(int _capacity = 0, LinkedList<T> *storage = NULL, HashSet<T, H> *s = NULL)
 			: _capacity(_capacity), curp(-1), storage(storage), cur(storage[0].iterator()), s(s) {}
     };
 
@@ -95,6 +97,7 @@ public:
          * O(n) for iterating through the container.
          */
         bool hasNext() {
+			if (s == NULL) return false;
 			if (s->size() == 0) return false;
 			if (curp == -1) return true;
 			if (cur.hasNext()) return true;
@@ -110,6 +113,7 @@ public:
          * @throw ElementNotExist
          */
         const T& next() {
+			if (s == NULL) throw ElementNotExist();
 			if (s->size() == 0) throw ElementNotExist();
 			if (curp == -1) {
 				while (storage[++ curp].isEmpty());
@@ -133,13 +137,14 @@ public:
          * @throw ElementNotExist
          */
         void remove() {
+			if (s == NULL) throw ElementNotExist();
 			if (curp == -1) throw ElementNotExist();
 			cur.remove();
 			curp = -1;
 			-- s->_size;
 		}
 
-		Iterator(int _capacity, LinkedList<T> *storage, HashSet<T, H> *s)
+		Iterator(int _capacity = 0, LinkedList<T> *storage = NULL, HashSet<T, H> *s = NULL)
 			: _capacity(_capacity), curp(-1), storage(storage), cur(storage[0].iterator()), s(s) {}
     };
 	friend void Iterator::remove();

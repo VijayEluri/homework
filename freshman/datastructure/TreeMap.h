@@ -65,6 +65,7 @@ private:
 			cur = new Node(data);
 			cur->lch = cur->rch = cur->father = null;
 			cur->cnt = 1;
+			data.value = V();
 		} else if (data.key < cur->data.key) {
 			cur->lch = insert(cur->lch, data);
 			cur->lch->father = cur;
@@ -85,18 +86,20 @@ private:
 		update(cur);
 		return cur;
 	}
-	Node *erase(Node *cur, const K &key) {
+	Node *erase(Node *cur, const K &key, V &value) {
+		if (cur == null) return null;
 		if (key < cur->data.key)
-			cur->lch = erase(cur->lch, key);
+			cur->lch = erase(cur->lch, key, value);
 		else if (key > cur->data.key)
-			cur->rch = erase(cur->rch, key);
+			cur->rch = erase(cur->rch, key, value);
 		else if (cur->lch == null && cur->rch == null) {
+			value = cur->data.value;
 			delete cur;
 			cur = null;
 		} else {
 			if (cur->lch->cnt < cur->rch->cnt) cur = leftrotate(cur);
 			else cur = rightrotate(cur);
-			cur = erase(cur, key);
+			cur = erase(cur, key, value);
 		}
 		update(cur);
 		return cur;
@@ -138,7 +141,7 @@ public:
          * Amortized O(1).
          */
         bool hasNext() {
-			if (p == null) return false;
+			if (p == null || p == NULL) return false;
 			if (p->rch != null || !accessed) return true;
 			Node *q = p, *x = q->father;
 			while (x != null) {
@@ -154,7 +157,7 @@ public:
          * @throw ElementNotExist
          */
         const Entry<K, V>& next() {
-			if (p == null) throw ElementNotExist();
+			if (p == NULL || p == null) throw ElementNotExist();
 			if (!accessed) {
 				accessed = true;
 				return p->data;
@@ -186,7 +189,7 @@ public:
          * Amortized O(1).
          */
         bool hasNext() {
-			if (p == null) return false;
+			if (p == null || p == NULL) return false;
 			if (p->rch != null || !accessed) return true;
 			Node *q = p, *x = q->father;
 			while (x != null) {
@@ -202,7 +205,7 @@ public:
          * @throw ElementNotExist
          */
         Entry<K, V>& next() {
-			if (p == null) throw ElementNotExist();
+			if (p == null || p == NULL) throw ElementNotExist();
 			if (!accessed) {
 				accessed = true;
 				return p->data;
@@ -227,13 +230,13 @@ public:
          * @throw ElementNotExist
          */
         void remove() {
-			if (p == null) throw ElementNotExist();
+			if (p == null || p == NULL) throw ElementNotExist();
 			if (!s->containsKey(p->data->key)) throw ElementNotExist();
 			s->remove(p->key);
 			p = null;
 		}
 
-		Iterator(Node *p, Node *null, TreeMap<K, V> *s)
+		Iterator(Node *p = NULL, Node *null = NULL, TreeMap<K, V> *s = NULL)
 			: p(p), null(null), s(s) { accessed = false; }
     };
 
@@ -431,10 +434,10 @@ public:
      * @throw ElementNotExist
      */
     V remove(const K& key) {
-		Node *cur = find(key);
-		if (cur == null) throw ElementNotExist();
-		V ret = cur->data.value;
-		root = erase(root, key);
+		V ret;
+		int pre = root->cnt;
+		root = erase(root, key, ret);
+		if (pre == root->cnt) throw ElementNotExist();
 		return ret;
 	}
 

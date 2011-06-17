@@ -46,6 +46,7 @@ public:
 		 * O(1).
 		 */
 		bool hasNext() {
+			if (p == NULL) return false;
 			return p->next != NULL;
 		}
 
@@ -55,11 +56,12 @@ public:
 		 * @throw ElementNotExist exception when hasNext() == false
 		 */
 		const T& next() {
+			if (p == NULL) throw ElementNotExist();
 			if (p->next == NULL) throw ElementNotExist();
 			return *((p = p->next)->data);
 		}
 
-//		ConstIterator() { p = NULL; }
+		ConstIterator() { p = NULL; }
 		ConstIterator(Node *p) : p(p) {}
 	};
 
@@ -73,6 +75,7 @@ public:
          * O(1).
          */
         bool hasNext() {
+			if (p == NULL) return false;
 			return p->next != NULL;
 		}
 
@@ -82,6 +85,7 @@ public:
          * @throw ElementNotExist exception when hasNext() == false
          */
         T& next() {
+			if (p == NULL) throw ElementNotExist();
 			if (p->next == NULL) throw ElementNotExist();
 			p = p->next;
 			return *(p->data);
@@ -109,7 +113,7 @@ public:
 			*p->data = elem;
 		}
 
-//		Iterator() { p = NULL; }
+		Iterator() { p = NULL; }
 		Iterator(Node *p, LinkedList <T> *s) : p(p), s(s) {}
     };
 
@@ -343,7 +347,7 @@ public:
      * @throw IndexOutOfBound exception when index is out of bound
      */
     T removeIndex(int index) {
-		Iterator cur(_head, this);
+		/*Iterator cur(_head, this);
 		try {
 			T ret;
 			for (int i = 0; i <= index; ++ i)
@@ -352,7 +356,15 @@ public:
 			return ret;
 		} catch (ElementNotExist e) {
 			throw IndexOutOfBound();
-		}
+		}*/
+		if (index >= _size || index < 0) throw IndexOutOfBound();
+		Node *cur = _head;
+		for (int i = 0; i <= index; ++ i)
+			cur = cur->next;
+		T ret = *cur->data;
+		Iterator it(cur, this);
+		it.remove();
+		return ret;
 	}
 
     /**

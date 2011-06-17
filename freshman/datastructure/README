@@ -27,7 +27,7 @@ FURTHER DESCRIPTIONS
 ### For all ###
 
 *  The iterator and constiterator are in JAVA STL style.
-*  DO NOT remove an iterator twice, that will cause an exception.
+*  The iterator will DEAD after being removed. 
 
 ### LinkedList ###
 

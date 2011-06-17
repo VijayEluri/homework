@@ -15,6 +15,7 @@
 #include <set>
 #include <map>
 #include <vector>
+#include <list>
 using namespace std;
 #define RUN(test) {\
 		cout << #test << ':' << endl; \
@@ -27,6 +28,16 @@ using namespace std;
 		cout << "\tResult: " << (res ? "Pass" : "Failed") << endl; \
 		cout << endl; \
 	}
+
+string itos(int a) {
+	if (a == 0) return "0";
+	string ret = "";
+	while (a) {
+		ret += char((a % 10) + '0');
+		a /= 10;
+	}
+	return ret;
+}
 
 class Hash {
 public:
@@ -387,17 +398,18 @@ void Comparation_Set() {
 	TreeSet<int> t; 
 	for (int i = 0; i < ins; ++ i)
 		t.add(data_ins[i]);
-	cout << "\t" << "Duration for insertions:\t" << curtime() << endl;
+	cout << "\t" << "Duration of insertions:\t\t" << curtime() << endl;
 
 	start = clock();
 	for (int i = 0; i < query; ++ i)
 		t.contains(data_query[i]);
-	cout << "\t" << "Duration for queries:\t\t" << curtime() << endl;
+	cout << "\t" << "Duration of queries:\t\t" << curtime() << endl;
 
 	start = clock();
 	for (int i = 0; i < del; ++ i)
-		t.remove(data_del[i]);
-	cout << "\t" << "Duration for deletions:\t\t" << curtime() << endl;
+		if (t.contains(data_del[i]))
+			t.remove(data_del[i]);
+	cout << "\t" << "Duration of deletions:\t\t" << curtime() << endl;
 	cout << endl;
 
 	cout << "Test for HashSet:" << endl;
@@ -405,17 +417,18 @@ void Comparation_Set() {
 	HashSet<int, Hash> h(333331); 
 	for (int i = 0; i < ins; ++ i)
 		h.add(data_ins[i]);
-	cout << "\t" << "Duration for insertions:\t" << curtime() << endl;
+	cout << "\t" << "Duration of insertions:\t\t" << curtime() << endl;
 
 	start = clock();
 	for (int i = 0; i < query; ++ i)
 		h.contains(data_query[i]);
-	cout << "\t" << "Duration for queries:\t\t" << curtime() << endl;
+	cout << "\t" << "Duration of queries:\t\t" << curtime() << endl;
 
 	start = clock();
 	for (int i = 0; i < del; ++ i)
-		h.remove(data_del[i]);
-	cout << "\t" << "Duration for deletions:\t\t" << curtime() << endl;
+		if (h.contains(data_del[i]))
+			h.remove(data_del[i]);
+	cout << "\t" << "Duration of deletions:\t\t" << curtime() << endl;
 	cout << endl;
 
 	cout << "Test for std::set:" << endl;
@@ -423,17 +436,18 @@ void Comparation_Set() {
 	set<int> s; 
 	for (int i = 0; i < ins; ++ i)
 		s.insert(data_ins[i]);
-	cout << "\t" << "Duration for insertions:\t" << curtime() << endl;
+	cout << "\t" << "Duration of insertions:\t\t" << curtime() << endl;
 
 	start = clock();
 	for (int i = 0; i < query; ++ i)
 		s.count(data_query[i]);
-	cout << "\t" << "Duration for queries:\t\t" << curtime() << endl;
+	cout << "\t" << "Duration of queries:\t\t" << curtime() << endl;
 
 	start = clock();
 	for (int i = 0; i < del; ++ i)
-		s.erase(data_del[i]);
-	cout << "\t" << "Duration for deletions:\t\t" << curtime() << endl;
+		if (s.count(data_del[i]))
+			s.erase(data_del[i]);
+	cout << "\t" << "Duration of deletions:\t\t" << curtime() << endl;
 	cout << endl;
 #undef curtime
 }
@@ -442,7 +456,7 @@ void Comparation_Map() {
 	const int ins = 1000000;
 	const int query = 1000000;
 	const int del = 1000000;
-	cout << "Comparation between TreeSet and std::set" << endl;
+	cout << "Comparation between TreeMap and std::map" << endl;
 	cout << "\t" << ins << " randomized insertions" << endl;
 	cout << "\t" << query << " randomized queries" << endl;
 	cout << "\t" << del << " randomized deletions" << endl;
@@ -461,18 +475,18 @@ void Comparation_Map() {
 	TreeMap<int, int> t; 
 	for (int i = 0; i < ins; ++ i)
 		t.put(data_ins[i], data_ins[i]);
-	cout << "\t" << "Duration for insertions:\t" << curtime() << endl;
+	cout << "\t" << "Duration of insertions:\t\t" << curtime() << endl;
 
 	start = clock();
 	for (int i = 0; i < query; ++ i)
 		t.containsKey(data_query[i]);
-	cout << "\t" << "Duration for queries:\t\t" << curtime() << endl;
+	cout << "\t" << "Duration of queries:\t\t" << curtime() << endl;
 
 	start = clock();
 	for (int i = 0; i < del; ++ i)
 		if (t.containsKey(data_del[i]))
 			t.remove(data_del[i]);
-	cout << "\t" << "Duration for deletions:\t\t" << curtime() << endl;
+	cout << "\t" << "Duration of deletions:\t\t" << curtime() << endl;
 	cout << endl;
 
 	cout << "Test for HashMap:" << endl;
@@ -480,18 +494,18 @@ void Comparation_Map() {
 	HashMap<int, int, Hash> h(333331); 
 	for (int i = 0; i < ins; ++ i)
 		h.put(data_ins[i], data_ins[i]);
-	cout << "\t" << "Duration for insertions:\t" << curtime() << endl;
+	cout << "\t" << "Duration of insertions:\t\t" << curtime() << endl;
 
 	start = clock();
 	for (int i = 0; i < query; ++ i)
 		h.containsKey(data_query[i]);
-	cout << "\t" << "Duration for queries:\t\t" << curtime() << endl;
+	cout << "\t" << "Duration of queries:\t\t" << curtime() << endl;
 
 	start = clock();
 	for (int i = 0; i < del; ++ i)
 		if (h.containsKey(data_del[i]))
 			h.remove(data_del[i]);
-	cout << "\t" << "Duration for deletions:\t\t" << curtime() << endl;
+	cout << "\t" << "Duration of deletions:\t\t" << curtime() << endl;
 	cout << endl;
 
 	cout << "Test for std::map:" << endl;
@@ -499,19 +513,107 @@ void Comparation_Map() {
 	map<int, int> s; 
 	for (int i = 0; i < ins; ++ i)
 		s[data_ins[i]] = data_ins[i];
-	cout << "\t" << "Duration for insertions:\t" << curtime() << endl;
+	cout << "\t" << "Duration of insertions:\t\t" << curtime() << endl;
 
 	start = clock();
 	for (int i = 0; i < query; ++ i)
 		s.count(data_query[i]);
-	cout << "\t" << "Duration for queries:\t\t" << curtime() << endl;
+	cout << "\t" << "Duration of queries:\t\t" << curtime() << endl;
 
 	start = clock();
 	for (int i = 0; i < del; ++ i)
 		if (s.count(data_del[i]))
 			s.erase(data_del[i]);
-	cout << "\t" << "Duration for deletions:\t\t" << curtime() << endl;
+	cout << "\t" << "Duration of deletions:\t\t" << curtime() << endl;
 	cout << endl;
+#undef curtime
+}
+
+void Comparation_List() {
+	const int n = 5000000;
+	const int del = 200;
+	cout << "Comparation between LinkedList and std::list" << endl;
+	cout << "\t" << n << " randomized insertions" << endl;
+	cout << "\t" << del << " randomized deletions" << endl;
+	cout << endl;
+
+	LinkedList<int> t;
+	list<int> s;
+	vector <int> data;
+	for (int i = 0; i < n; ++ i)
+		data.push_back(i);
+	random_shuffle(data.begin(), data.end());
+	data.erase(data.begin() + del, data.end());
+#define curtime() (((double)clock()-start)/CLOCKS_PER_SEC)
+
+	cout << "Test for LinkedList:" << endl;
+	clock_t start = clock();
+	for (int i = 0; i < n; ++ i)
+		t.add(i);
+	cout << "\t" << "Duration of insertions:\t\t" << curtime() << endl;
+	start = clock();
+	for (int i = 0; i < del; ++ i)
+		t.removeIndex(data[i]);
+	cout << "\t" << "Duration of deletions:\t\t" << curtime() << endl;
+	cout << endl;
+	
+	cout << "Test for std::list:" << endl;
+	start = clock();
+	for (int i = 0; i < n; ++ i)
+		s.push_back(i);
+	cout << "\t" << "Duration of insertions:\t\t" << curtime() << endl;
+	start = clock();
+	for (int i = 0; i < del; ++ i) {
+		list<int>::iterator it = s.begin();
+		advance(it, data[i]);
+		s.erase(it);
+	}
+	cout << "\t" << "Duration of deletions:\t\t" << curtime() << endl;
+	cout << endl;
+#undef curtime
+}
+
+void Comparation_Array() {
+	const int n = 500000;
+	const int del = 200;
+	cout << "Comparation between ArrayList and std::vector" << endl;
+	cout << "\t" << n << " randomized insertions" << endl;
+	cout << "\t" << del << " randomized deletions" << endl;
+	cout << endl;
+
+	ArrayList<string> t;
+	vector<string> s;
+	vector <int> data;
+	for (int i = 0; i < n; ++ i)
+		data.push_back(i);
+	random_shuffle(data.begin(), data.end());
+	data.erase(data.begin() + del, data.end());
+#define curtime() (((double)clock()-start)/CLOCKS_PER_SEC)
+
+	cout << "Test for ArrayList:" << endl;
+	clock_t start = clock();
+	for (int i = 0; i < n; ++ i)
+		t.add(itos(i));
+	cout << "\t" << "Duration of insertions:\t\t" << curtime() << endl;
+	start = clock();
+	for (int i = 0; i < del; ++ i)
+		t.removeIndex(data[i]);
+	cout << "\t" << "Duration of deletions:\t\t" << curtime() << endl;
+	cout << endl;
+	
+	cout << "Test for std::vector:" << endl;
+	start = clock();
+	for (int i = 0; i < n; ++ i)
+		s.push_back(itos(i));
+	cout << "\t" << "Duration of insertions:\t\t" << curtime() << endl;
+	start = clock();
+	for (int i = 0; i < del; ++ i)
+		s.erase(s.begin() + data[i]);
+	cout << "\t" << "Duration of deletions:\t\t" << curtime() << endl;
+	cout << endl;
+
+	for (int i = 0; i < t.size(); ++ i)
+		if (t.get(i) != s[i]) cout << "!!!" << endl;
 #undef curtime
 }
 
@@ -519,7 +621,6 @@ int main() {
 	cout.setf(ios::fixed);
 	cout.precision(3);
 	srand(time(0));
-	/*
 	RUN(ArrayList_Test);
 	RUN(TreeSet_Test);
 	RUN(HashSet_Test);
@@ -530,10 +631,11 @@ int main() {
 	RUN(TreeSet_Insert_Test);
 	RUN(HashSet_Insert_Test);
 	RUN(set_Insert_Test);
-	*/
 
 	//Special Part
-//	Comparation_Set();
+	Comparation_Set();
 	Comparation_Map();
+	Comparation_List();
+	Comparation_Array();
 	return 0;
 }

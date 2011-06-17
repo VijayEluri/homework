@@ -3,6 +3,7 @@
 #define __ARRAYLIST_H
 
 #include "Utility.h"
+#include <memory.h>
 
 /**
  * The ArrayList is just like vector in C++.
@@ -17,7 +18,7 @@ class ArrayList
 {
 private:
 	int _capacity, _size;
-	E *data;
+	E **data;
 public:
     class ConstIterator
     {
@@ -92,7 +93,7 @@ public:
     ArrayList() {
 		_capacity = 10;
 		_size = 0;
-		data = new E[_capacity];
+		data = new E*[_capacity];
 	}
 
     /**
@@ -104,7 +105,7 @@ public:
 		_capacity = x.size() * 2;
 		if (_capacity < 10) _capacity = 10;
 		_size = 0;
-		data = new E[_capacity];
+		data = new E*[_capacity];
 		typename E2::ConstIterator it = x.constIterator();
 		while (it->hasNext())
 			add(it->next());
@@ -116,13 +117,14 @@ public:
     ArrayList(int initialCapacity) {
 		_capacity = initialCapacity;
 		_size = 0;
-		data = new E[_capacity];
+		data = new E*[_capacity];
 	}
 
     /**
      * Destructor
      */
     ~ArrayList() {
+		clear();
 		if (data) delete []data;
 	}
 
@@ -130,13 +132,17 @@ public:
      * Assignment operator
      */
     ArrayList& operator=(const ArrayList& x) {
-		_capacity = x.size() * 2;
+		/*_capacity = x.size() * 2;
 		if (_capacity < 10) _capacity = 10;
 		delete []data;
-		data = new E[_capacity];
+		data = new E*[_capacity];
 		for (int i = 0; i < x.size(); ++ i)
-			data[i] = x.get(i);
+			*data[i] = x.get(i);
 		_size = x.size();
+		return *this;*/
+		clear();
+		for (int i = 0; i < x.size(); ++ i)
+			add(x.get(i));
 		return *this;
 	}
 
@@ -146,10 +152,9 @@ public:
     ArrayList(const ArrayList& x) {
 		_capacity = x.size() * 2;
 		if (_capacity < 10) _capacity = 10;
-		data = new E[_capacity];
+		data = new E*[_capacity];
 		for (int i = 0; i < x.size(); ++ i)
-			data[i] = x.get(i);
-		_size = x.size();
+			add(x.get(i));
 	}
 
     /**
@@ -171,16 +176,9 @@ public:
      * O(1)
      */
     bool add(const E& e) {
-		if (_size == _capacity) {
-			_capacity *= 2;
-			E *renew = new E[_capacity];
-			if (!renew) return false;
-			for (int i = 0; i < _size; ++ i)
-				renew[i] = data[i];
-			delete []data;
-			data = renew;
-		}
-		data[_size ++] = e;
+		if (_size == _capacity)
+			ensureCapacity(_capacity * 2);
+		data[_size ++] = new E(e);
 		return true;
 	}
 
@@ -192,25 +190,19 @@ public:
      */
     void add(int index, const E& element) {
 		if (index > _size || index < 0) throw IndexOutOfBound();
-		if (_size == _capacity) {
-			_capacity *= 2;
-			E *renew = new E[_capacity];
-			for (int i = 0; i < _size; ++ i)
-				renew[i] = data[i];
-			delete []data;
-			data = renew;
-		}
+		if (_size == _capacity)
+			ensureCapacity(_capacity * 2);
+		memmove(data + index + 1, data + index, (_size - index) * sizeof(E));
 		++ _size;
-		for (int i = _size - 1; i > index; -- i)
-			data[i] = data[i - 1];
-		data[index] = element;
+		data[index] = new E(element);
 	}
 
     /**
      * Removes all of the elements from this list.
      */
     void clear() {
-		_size = 0;
+		while (_size)
+			delete data[-- _size];
 	}
 
     /**
@@ -219,7 +211,7 @@ public:
      */
     bool contains(const E& e) const {
 		for (int i = 0; i < _size; ++ i)
-			if (data[i] == e) return true;
+			if (*data[i] == e) return true;
 		return false;
 	}
 
@@ -229,9 +221,8 @@ public:
     void ensureCapacity(int minCapacity) {
 		if (_capacity >= minCapacity) return;
 		_capacity = minCapacity;
-		E *renew = new E[_capacity];
-		for (int i = 0; i < _size; ++ i)
-			renew[i] = data[i];
+		E **renew = new E*[_capacity];
+		memcpy(renew, data, _size * sizeof(E));
 		delete []data;
 		data = renew;
 	}
@@ -243,7 +234,7 @@ public:
      */
     E& get(int index) {
 		if (index >= _size || index < 0) throw IndexOutOfBound();
-		return data[index];
+		return *data[index];
 	}
 
     /**
@@ -253,7 +244,7 @@ public:
      */
     const E& get(int index) const {
 		if (index >= _size || index < 0) throw IndexOutOfBound();
-		return data[index];
+		return *data[index];
 	}
 
     /**
@@ -262,7 +253,7 @@ public:
      */
     int indexOf(const E& e) const {
 		for (int i = 0; i < _size; ++ i)
-			if (data[i] == e) return i;
+			if (*data[i] == e) return i;
 		return -1;
 	}
 
@@ -278,7 +269,7 @@ public:
      */
     int lastIndexOf(const E& e) const {
 		for (int i = _size - 1; i >= 0; -- i)
-			if (data[i] == e) return i;
+			if (*data[i] == e) return i;
 		return -1;
 	}
 
@@ -290,10 +281,10 @@ public:
      */
     E removeIndex(int index) {
 		if (index >= _size || index < 0) throw IndexOutOfBound();
-		E ret = data[index];
+		E ret = *data[index];
+		delete data[index];
 		-- _size;
-		for (int i = index; i < _size; ++ i)
-			data[i] = data[i + 1];
+		memmove(data + index, data + index + 1, (_size - index) * sizeof(E));
 		return ret;
 	}
 
@@ -316,10 +307,13 @@ public:
     void removeRange(int fromIndex, int toIndex) {
 		if (fromIndex < 0 || fromIndex >= _size) throw IndexOutOfBound();
 		if (toIndex < fromIndex || toIndex > _size) throw IndexOutOfBound();
-		int delta = toIndex - fromIndex;
+		/*int delta = toIndex - fromIndex;
 		for (int i = toIndex; i < _size; ++ i)
-			data[i - delta] = data[i];
-		_size -= delta;
+			data[i - delta] = data[i];*/
+		for (int i = fromIndex; i > toIndex; ++ i)
+			delete data[i];
+		_size -= toIndex - fromIndex;
+		memmove(data + fromIndex, data + toIndex, (_size - fromIndex + 1) * sizeof(E));
 	}
 
     /**
@@ -330,7 +324,7 @@ public:
      */
     E &set(int index, const E& element) {
 		if (index < 0 || index >= _size) throw IndexOutOfBound();
-		return data[index] = element;
+		return *data[index] = element;
 	}
 
     /**
@@ -347,9 +341,9 @@ public:
     ArrayList subList(int fromIndex, int toIndex) const {
 		if (fromIndex < 0 || fromIndex >= _size) throw IndexOutOfBound();
 		if (toIndex < fromIndex || toIndex > _size) throw IndexOutOfBound();
-		ArrayList ret((toIndex - fromIndex) * 2);
+		ArrayList ret;
 		for (int i = fromIndex; i < toIndex; ++ i)
-			ret.add(data[i]);
+			ret.add(*data[i]);
 		return ret;
 	}
 };
