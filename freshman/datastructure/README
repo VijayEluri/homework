@@ -24,8 +24,8 @@ FURTHER DESCRIPTIONS
 
 ### For all ###
 
-*  The iterator and constiterator is in JAVA STL style.
-*  DO NOT remove an iterator twice, this will cause an exception.
+*  The iterator and constiterator are in JAVA STL style.
+*  DO NOT remove an iterator twice, that will cause an exception.
 
 ### LinkedList ###
 
@@ -47,6 +47,7 @@ FURTHER DESCRIPTIONS
 *  Based on LinkedList.
 *  The capacity do not mean the maximum of elements. You can assume
    that you can put infinity elements as long as you have enough memory.
-*  You'd BETTER to choose an PRIME as the capacity.
+*  You'd BETTER to choose a PRIME as the capacity.
 *  The default capacity is 99971.
+*  The capacity will not be modified after initialization.
 
