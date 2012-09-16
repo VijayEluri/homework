@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[top=2cm,bottom=2cm]{geometry}
+\usepackage{enumerate}
+\title{Homework 1}
+\author{Chengyu Lin\footnote{F1003028-5100309007}}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{itemize}
+    \item[Problem 1]
+        \begin{enumerate}[(a)]
+            \item
+                $${10\choose8} = {10\choose2} = \frac{10 \times 9}{2 \times 1} = 45$$
+            \item
+                The inverse of $1, 2, 3, 4, 5, 6$ in $\mathbb{Z}_7$ are
+                $1, 4, 5, 2, 3, 6$.
+            \item
+                8
+        \end{enumerate}
+    \item[Problem 2]
+        For every ordered pair $(A, B)$ which $A \cap B = \emptyset$, 
+        each element $x \in [n]$ has one of these
+        three states: $x \in A$, $x \in B$ and $x \in [n] - A - B$.
+
+        And clearly that the map between ordered pairs and state vector
+        of elements is bijective.
+
+        So the total number of ordered pairs is $3^n$.
+
+    \item[Problem 3]
+        %$$\sum_{r=0}^{n}r^2{n \choose r} = \sum_{A \subseteq [n]}|A|^2$$
+        \begin{align*}
+            (x + y)^n &= \sum_{r=0}^{n} {n \choose r}x^r y^{n-r} \\
+            \frac{d(x + y)^n}{dx} &= \sum_{r=0}^{n} r {n \choose r}x^{r-1} y^{n-r} &= n(x + y)^{n-1} \\
+            \frac{d(nx(x+y)^{n-1})}{dx} &= \sum_{r=0}^{n} r^2 {n \choose r} x^{r-1} y^{n-r} &= n(x+y)^{n-1} + n(n-1)x(x + y)^{n-2} \\
+        \end{align*}
+
+        Let $x = y = 1$, $\sum_{r=0}^{n} r^2 {n \choose r} = n2^{n-1} + n(n-1)2^{n-2} = n(n + 1)2^{n-2}$
+
+    \item[Problem 4]
+        \begin{enumerate}[(a)]
+            \item
+                Let $i$ denotes the size of the blue square.
+
+                $$\sum_{i=1}^{9} (9 - i + 1)^2 = 285$$
+            \item
+                TODO
+        \end{enumerate}
+
+    \item[Problem 5]
+
+\end{itemize}
+
+\end{document}
