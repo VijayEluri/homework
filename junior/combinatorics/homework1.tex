@@ -18,7 +18,10 @@
                 The inverse of $1, 2, 3, 4, 5, 6$ in $\mathbb{Z}_7$ are
                 $1, 4, 5, 2, 3, 6$.
             \item
-                8
+                Easily that ${449 \choose 137} \equiv 0 (\text{mod }2)$ and
+                ${449 \choose 137} \equiv 3 (\text{mod } 5)$.
+
+                By Chinese Remainder Theorem ${449 \choose 137} \equiv 8 (\text{mod } 10)$.
         \end{enumerate}
     \item[Problem 2]
         For every ordered pair $(A, B)$ which $A \cap B = \emptyset$, 
@@ -40,6 +43,18 @@
 
         Let $x = y = 1$, $\sum_{r=0}^{n} r^2 {n \choose r} = n2^{n-1} + n(n-1)2^{n-2} = n(n + 1)2^{n-2}$
 
+        \textit{Combinatorial proof: }
+
+        $\sum_{r=0}^{n}r^2 {n \choose r}$ means choose $r$ elements from $[n]$ and then
+        pick 2 special elements (not necessary distinct) from these $r$ elements. That is
+        the number of triples $\{(a, b), A\}$ where $A \subseteq [n]$ and $a, b \in A$.
+
+        There is another way to count the number above: If $a = b$, the number of ways to pick $a$ and
+        then determine whether the other element is in $A$ is $n2^{n-1}$. Otherwise the
+        number of ways to pick $a$ and $b$ and then determine whether the other element is in $A$ is 
+        $n(n-1)2^{n-2}$. Therefore the total number of ways to count it is $n(n+1)2^{n-2}$.
+
+
     \item[Problem 4]
         \begin{enumerate}[(a)]
             \item
@@ -47,10 +62,34 @@
 
                 $$\sum_{i=1}^{9} (9 - i + 1)^2 = 285$$
             \item
-                TODO
+                First, count the number of disjoint squares which can be
+                divide via a horizontal(or vertical) line ($i$ enumerates the line,
+                $j$ enumerates the size of square):
+                
+                $$2 \times \sum_{i=1}^{8} ((\sum_{j=1}^{i} (9-j+1)(i-j+1)) \times (\sum_{j=1}^{9-i} 9-j+1)) = 37752$$
+
+                Then count the number of disjoint squares which can be divice
+                via a horizontal line and a vertical line.
+
+                $$2 \times \sum_{i=1}^{8} \sum_{j=1}^{8} ((\sum_{k=1}^{min(i, j)} (i-k+1)\times(j-k+1)) 
+                \times \min(9-i, 9-j)) = 11748$$
+
+                So the total number is $2 \times (37752 - 11748) = 52008$.
+
         \end{enumerate}
 
     \item[Problem 5]
+        Fill the 81 entries one-by-one using the ascending sequence from 1 to 81.
+        Consider the first time every row or every column are filled with at least
+        one number. WLOG, let's discuss with the first situation, and the last number
+        placed into the entries is $x$.
+
+        Clearly every row has at least one empty entry which is adjcent to the one
+        was filled before. Otherwize there is some rows full-filled, that is the situation
+        that every column are filled with at least one number. So there are at least
+        9 empty entries which is adjcent to an entry filled with number less or equal
+        than $x$. And there is no way to put the numbers left without violating the 
+        condition given.
 
 \end{itemize}
 
