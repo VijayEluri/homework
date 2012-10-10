@@ -1,0 +1,75 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[top=2cm,bottom=2cm]{geometry}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{amsfonts}
+\title{Homework 3}
+\author{Chengyu Lin\footnote{F1003028-5100309007}}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{itemize}
+    \item[Problem 1]
+        That means choose two permutation from $[6]$ to fill two rows.
+        And satisfies that each column has no repeated number.
+        The answer equals $D_6 \times 6! = 190800$.
+
+    \item[Problem 2]
+        \begin{align*}
+            S(n, n-2) &= {n \choose n-2} (\frac{n-2}{3} + \frac{(n-2)(n-3)}{4}) \\
+                      &= {n \choose 3} + 3 {n \choose 4} \\
+            S(n, n-3) &= {n \choose n-3} (\frac{n-3}{4} + \frac{3(n-3)(n-4)}{6} + \frac{(n-3)(n-4)(n-5)}{8}) \\
+                      &= {n \choose 4} + 10{n \choose 5} + 15{n \choose 6} \\
+            c(n, n-2) &= {n \choose n-2} (\frac{n-2}{3} \times 2! + \frac{(n-2)(n-3)}{4}) \\
+                      &= 2 {n \choose 3} + 3 {n \choose 4} \\
+            c(n, n-3) &= {n \choose n-3} (\frac{n-3}{4} \times 3! + \frac{3(n-3)(n-4)}{6} \times 2! + \frac{(n-3)(n-4)(n-5)}{8}) \\
+                      &= 6 {n \choose 4} + 20{n \choose 5} + 15{n \choose 6}
+        \end{align*}
+
+    \item[Problem 3]
+        \textbf{Proof: } Pick out the cycle with largest size (if there is a tie, choose the one
+        whose minimal item is less). Knowing that $2k < n$, this cycle has a size greater than 2.
+        That means the cycle has an inverse which is not equal to itself.
+
+        So here we can construct an transformation which always transform the 'largest' cycle of
+        one permutation to its inverse and keep other cycles invariant. Easy to see this transformation
+        induces many pairs of permutations which can be transformed into each other.
+
+        Which implies $s(n, k)$ is an even number.
+
+    \item[Problem 4]
+        $$\text{Ans} = \sum_{i=0}^{n}(-2)^i (2n - 2i)! {n \choose i} i! {2n - i + 1 \choose i}$$
+
+        By PIE, first choose $i$ pairs whose sum is $2n + 1$ to put them together.
+        Arrange the rest $2n - 2i$ items and these $i$ pairs. After put these $i$ pairs
+        into items rest which has ${2n - 2i + i + 1 \choose i}$ ways.
+
+        Or in an easy way:
+        Just arrange the $2n - 2i + i$ items.
+
+        $$\text{Ans} = \sum_{i=0}^{n}(-2)^i (2n - i)! {n \choose i}$$
+
+    \item[Problem 5]
+
+        First, by assign all $a_i = 1$ we can see that $a_1a_2a_3a_4 + a_2a_3a_4a_5 + \cdots + a_na_1a_2a_3 = n$.
+        
+        Each time we change the sign of one $a_i$, it will change the sign of 4 items in the formula above.
+        And the sum of these 4 items will be 0, 2, -2, 4 or -4. After change, if the original sum was 2 it will be
+        -2 and vice vesa, so do 4 and -4. So it will always makes a delta of 0, 4 or 8. Which implies the possible value
+        of the formular is in $\{n - 4k | k \in \mathbb{N}\}$. When the formular equals zero, $n = 4k$.
+
+    \item[Problem 6]
+
+        Define $f(A) = \sum_{i=1}^{n} \sum_{j=1}^{n} A_{ij}$ which is the sum of every entries.
+        When there comes a matrix A, if the sum of some lines were negative, just change the sign
+        of every entries in this line. After manipulation $f(A)$ will strictly increase.
+
+        And $f(A)$ has only a limited number of values (at most $2^{n*n}$). That means such a process would end in 
+        finite steps, and every lines has a sum of non-negative number.
+
+\end{itemize}
+
+\end{document}
