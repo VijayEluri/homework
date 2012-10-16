@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[top=2cm,bottom=2cm]{geometry}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{amsfonts}
+\title{Homework 4}
+\author{Chengyu Lin\footnote{F1003028-5100309007}}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{itemize}
+    \item[Problem 1]
+        Counting the squarefree number in $[n]$ which is not a multiplication of
+        any primes. It turns out there is only one number $1$ satisfied
+        this condition.
+
+        On the other hand, count them by PIE:
+
+        Assume that $P_1, P_2, \cdots, P_r$ are the primes less or equal than $n$.
+
+        $$\sum_{S \in [r], m = \Pi_{i \in S}P_i} (-1)^{|S|} \lfloor \frac{n}{m}\rfloor = 1 =
+        \sum_{S \in [r], m = \Pi_{i \in S}P_i} \mu(m) \lfloor \frac{n}{m}\rfloor $$
+
+        And for non-squarefree number $\mu(m) = 0$.
+
+        $$\sum_{1\le m \le n} \mu(m) \lfloor \frac{n}{m} \rfloor = 1$$
+
+    \item[Problem 2]
+        $20121009 = 3 \times 599 \times 11197$
+        Where $3, 599$ and $11197$ are all primes.
+
+        Therefore 
+        $$\sum_{d|20121009} \mu(d)P(\frac{20121009}{d}) = \sum_{S \in 2^3} (-1)^{|S|} (3 - |S|) = 0$$
+
+    \item[Problem 3]
+        $x_1 + x_2 + \cdots + x_t = \frac{1}{2}t(x_1 + x_t) = (x_1 - 1 + t)t = n$
+
+        For every $t | n$ there is an unique $x_1$ which defines an integer partition.
+        Therefore $f(n)$ equals the number of divisors of $n$.
+
+    \item[Problem 4]
+        \begin{enumerate}[(a)]
+            \item
+                For $n=1$, $1=1$.
+
+                For $n=2$, $2 = 1 + 1 = 2$.
+
+                For $n=3$, $3 = 1 + 1 + 1 = 1 + 2 = 3$.
+
+                For $n=4$, $4 = 1 + 1 + 1 + 1 = 1 + 1 + 2 = 1 + 3 = 2 + 2 = 4$.
+
+                For $n=5$, $5 = 1 + 1 + 1 + 1 + 1 = 1 + 1 + 1 + 2 = 1 + 1 + 3 = 1 + 2 + 2 = 1 + 4 = 2 + 3 = 5$.
+
+            \item
+                \textbf{Proof by induction:}
+                    
+                First $p(0) \le F_0, p(1) \le F_1$ holds.
+
+                Assume that $\forall i < n, p(i) \le F_i$.
+
+                For every partitions of $n$, if there is a $1$ in it, remove it then
+                this partition lies in partitions of $n-1$. If there is no $1$ in it,
+                pick the smallest element and decrease it by $2$ then it lies in
+                partitions of $n-2$. And the two transformation above will not produce
+                a collision.
+
+                Which means $p(n) \le p(n - 1) + p(n - 2) \le F_{n-1} + F_{n-2} = F_n$.
+
+                So $p(n) \le F_n$ forall $n \in \mathbb{N}$.
+        \end{enumerate}
+
+\end{itemize}
+
+\end{document}
