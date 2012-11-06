@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[top=2cm,bottom=2cm]{geometry}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{amsfonts}
+\title{Homework 7}
+\author{Chengyu Lin\footnote{F1003028-5100309007}}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{itemize}
+    \item[Problem 1]
+        Let $N = (c + 1)^{c + 1} + 1$.
+
+        Consider the first $c + 1$ columns. There are only $(c + 1)^{c + 1}$ ways to color one row.
+        And $N$ rows imply that there are two rows with the same color of their first $c + 1$ elements.
+        (By pigeonhole principle)
+        Take a look at those two rows. Since we have only $c$ colors by pigeonhole principle there must
+        be two elements have the same color, which construct a axis-parallel rectangle with the same color.
+
+    \item[Problem 2]
+        Proof by v.d.W:
+
+        There exists $N = N(c, r(r + 1))$ such that no matter how we c-color [N], there is an monochromatic
+        A.P. with length $r(r + 1)$. Then assign $x$ with the minimum of A.P. and $y_i = i \times d$ where 
+        $d$ is the common difference. Easy to check that the $2^r$ sums are no bigger than $r(r + 1) \le N$
+        and have the same color.
+
+    \item[Problem 3]
+
+        For any given graph with colors on $N$ nodes. Coloring the edge of $K_n$ in the following way:
+        edge between $a$ and $b$ ($a > b$) are colored with the color of node $b > a$ in previous graph.
+
+        Take $N = N_c(3;2)$, there exists a monochromatic triangle with nodes $A$, $B$ and $C$ ($A > B > C$),
+        which means $A - B$, $B - C$ and $A - C$ has the same color in previous graph $(A - B) + (B - C) = A - C$.
+
+        The only problem happens when $A - B = B - C$. And the solution is to add another $c$ colors, 
+        for every A.P. in $[N]$, color the edge between them alternatively (with $x$ and $-x$).
+        Therefore the theorem holds and $S^*(c) \le N_{2c}(3;2)$.
+
+    \item[Problem 4]
+        \begin{enumerate}[(a)]
+            \item
+                Every vertex of $Q_n$ can be represented with a binary number with length n (leading zero is allowed).
+                And there is one edge between two numbers iff they differ from exactly one bit.
+
+                Let $c(n)$ be the number of '1's in the binary representation of $n$.
+
+                Color the edge between $a$ and $b$ (WLOG, $a < b$) with Y iff $c(a)$ is odd, with B iff $c(a)$ is even.
+
+                For every $Q_2(a, b, c, d)$, the four numbers differ from only two bits. WLOG consider
+                $a = 00, b = 01, c = 10, d = 11$, it's not monochromatic according the color made above.
+
+            \item
+                If $T_2$ has a chain with more then 3 nodes then it does not hold.
+                Since we can randomly pick one node to be root in $T_1$, and color the edge
+                alternatively according to its distance from the root (odd to be Y and even to be B).
+                Clearly that there is no monochromatic chain with length 4 (nodes).
+
+                So the only possible $T_2$ is star-shaple: one $n$-degree node and $n$ 1-degree nodes.
+                And easy to see that the property holds iff there exists a node in $T_1$ with degree
+                greater than $(n - 1)^2$ by pigeonhole principle.
+
+        \end{enumerate}
+
+\end{itemize}
+
+\end{document}
