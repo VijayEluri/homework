@@ -135,30 +135,45 @@ public class PriorityScheduler extends Scheduler {
 	protected class PriorityQueue extends ThreadQueue {
 		PriorityQueue(boolean transferPriority) {
 			this.transferPriority = transferPriority;
-			threadQueue = new LinkedList<ThreadState>();
+			//threadQueue = new LinkedList<ThreadState>();
+			threadQueue = new LinkedList[priorityMaximum + 1];
+			for (int i = priorityMinimum; i <= priorityMaximum; ++ i)
+				threadQueue[i] = new LinkedList<ThreadState>();
+			threadPool = new TreeMap<ThreadState, Integer>();
 		}
 
 		public void waitForAccess(KThread thread) {
 			Lib.assertTrue(Machine.interrupt().disabled());
-			getThreadState(thread).waitForAccess(this);
+			//getThreadState(thread).waitForAccess(this);
+			
+			ThreadState state = getThreadState(thread);
+			int priority = state.getEffectivePriority();
+			threadQueue[priority].add(state);
+			if (priority > donatingPriority) donatingPriority = priority;
+			threadPool.put(state, priority);
+			state.belongingQueue = this;
+			if (transferPriority && owner != null)
+				getThreadState(owner).promote();
 		}
 
 		public void acquire(KThread thread) {
 			Lib.assertTrue(Machine.interrupt().disabled());
+			owner = thread;
 			getThreadState(thread).acquire(this);
 		}
 
 		public KThread nextThread() {
 			Lib.assertTrue(Machine.interrupt().disabled());
 			// implement me
-			KThread ret = null;
-			int currentPriority = priorityMinimum;
-			for (ThreadState thread : threadQueue)
-				if (ret == null || currentPriority < thread.priority) {
-					ret = thread.thread;
-					currentPriority = thread.priority;
-				}
-			return ret;
+			
+			ThreadState nextThread = pickNextThread();
+			if (nextThread == null) return null;
+			getThreadState(owner).ownedQueue.remove(this);
+			owner = nextThread.thread;
+			getThreadState(owner).ownedQueue.add(this);
+			if (transferPriority)
+				getThreadState(owner).promote();
+			return owner;
 		}
 
 		/**
@@ -169,25 +184,78 @@ public class PriorityScheduler extends Scheduler {
 		 */
 		protected ThreadState pickNextThread() {
 			// implement me
-			ThreadState ret = null;
-			for (ThreadState thread : threadQueue)
-				if (ret == null || ret.priority < thread.priority)
-					ret = thread;
-			threadQueue.remove(ret);
+			Lib.assertTrue(Machine.interrupt().disabled());
+			if (isEmpty()) return null;
+			ThreadState ret = threadQueue[donatingPriority].removeFirst();
+			if (donatingPriority > priorityMinimum && threadQueue[donatingPriority].isEmpty()) {
+				while (donatingPriority > priorityMinimum && threadQueue[donatingPriority].isEmpty())
+					-- donatingPriority;
+				if (transferPriority && owner != null)
+					getThreadState(owner).promote();
+			}
 			return ret;
 		}
 
 		public void print() {
 			Lib.assertTrue(Machine.interrupt().disabled());
 			// implement me (if you want)
+			
+			System.out.print('[');
+			for (int i = priorityMaximum; i >= priorityMinimum; -- i) {
+				for (ThreadState state : threadQueue[i])
+					System.out.print("(" + state.thread.toString() + "," + state.getEffectivePriority() + "),");
+			}
+			System.out.print(']');
 		}
 
 		/**
 		 * <tt>true</tt> if this queue should transfer priority from waiting
 		 * threads to the owning thread.
 		 */
+		private KThread owner;
+		private LinkedList<ThreadState> threadQueue[];
+		private TreeMap<ThreadState, Integer> threadPool;
+		private int donatingPriority;
 		public boolean transferPriority;
-		private LinkedList<ThreadState> threadQueue;
+		
+		protected int getPriority() {
+			return donatingPriority;
+		}
+		
+		protected boolean isEmpty() {
+			for (int i = priorityMaximum; i >= priorityMinimum; -- i)
+				if (!threadQueue[i].isEmpty()) return false;
+			return true;
+		}
+		
+		protected void promote(ThreadState thread) {
+			int priority = thread.getEffectivePriority();
+			int oldPriority = threadPool.get(thread);
+			
+			//print();
+			//System.out.println("");
+			//System.out.println(thread.thread.toString() + " " + priority + " " + oldPriority);
+			
+			if (priority == oldPriority) return;
+			else {
+				threadPool.put(thread, priority);
+				threadQueue[oldPriority].remove(thread);
+				threadQueue[priority].addFirst(thread);
+				if (priority > oldPriority) {
+					if (priority > donatingPriority) {
+						donatingPriority = priority;
+						if (transferPriority && owner != null)
+							getThreadState(owner).promote();
+					}
+				} else if (priority < oldPriority) {
+					donatingPriority = priorityMaximum;
+					while (donatingPriority != priorityMinimum && threadQueue[donatingPriority].isEmpty())
+						-- donatingPriority;
+					if (transferPriority && owner != null)
+						getThreadState(owner).promote();
+				}
+			}
+		}
 	}
 
 	/**
@@ -197,7 +265,7 @@ public class PriorityScheduler extends Scheduler {
 	 * 
 	 * @see nachos.threads.KThread#schedulingState
 	 */
-	protected class ThreadState {
+	protected class ThreadState implements Comparable {
 		/**
 		 * Allocate a new <tt>ThreadState</tt> object and associate it with the
 		 * specified thread.
@@ -209,6 +277,8 @@ public class PriorityScheduler extends Scheduler {
 			this.thread = thread;
 
 			setPriority(priorityDefault);
+			
+			ownedQueue = new LinkedList<PriorityQueue>();
 		}
 
 		/**
@@ -227,7 +297,8 @@ public class PriorityScheduler extends Scheduler {
 		 */
 		public int getEffectivePriority() {
 			// implement me
-			return priority;
+			if (donatedPriority > priority) return donatedPriority;
+			else return priority;
 		}
 
 		/**
@@ -243,6 +314,8 @@ public class PriorityScheduler extends Scheduler {
 			this.priority = priority;
 
 			// implement me
+			if (belongingQueue != null)
+				belongingQueue.promote(this);
 		}
 
 		/**
@@ -259,7 +332,7 @@ public class PriorityScheduler extends Scheduler {
 		 */
 		public void waitForAccess(PriorityQueue waitQueue) {
 			// implement me
-			waitQueue.threadQueue.add(this);
+			Lib.assertTrue(Machine.interrupt().disabled());
 		}
 
 		/**
@@ -273,13 +346,36 @@ public class PriorityScheduler extends Scheduler {
 		 * @see nachos.threads.ThreadQueue#nextThread
 		 */
 		public void acquire(PriorityQueue waitQueue) {
-			// implement me
-
+			// TODO: implement me
+			Lib.assertTrue(Machine.interrupt().disabled());
+			Lib.assertTrue(waitQueue.isEmpty());
+			waitQueue.owner = thread;
+			ownedQueue.add(waitQueue);
+		}
+		
+		protected void promote() {
+			int oldDonatedPriority = donatedPriority;
+			donatedPriority = priorityMinimum;
+			for (PriorityQueue queue : ownedQueue) {
+				int priority = queue.getPriority();
+				if (priority > donatedPriority) donatedPriority = priority;
+			}
+			if (donatedPriority != oldDonatedPriority && belongingQueue != null)
+				belongingQueue.promote(this);
 		}
 
 		/** The thread with which this object is associated. */
 		protected KThread thread;
 		/** The priority of the associated thread. */
 		protected int priority;
+		protected int donatedPriority;
+		
+		protected LinkedList<PriorityQueue> ownedQueue;
+		protected PriorityQueue belongingQueue;
+		@Override
+		public int compareTo(Object arg0) {
+			ThreadState state = (ThreadState) arg0;
+			return thread.compareTo(state.thread);
+		}
 	}
 }

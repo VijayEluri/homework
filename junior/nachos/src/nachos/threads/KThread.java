@@ -55,7 +55,11 @@ public class KThread {
 	 * create an idle thread as well.
 	 */
 	public KThread() {
-		joinQueue = new LinkedList<KThread>();
+		boolean intStatus = Machine.interrupt().disable();
+		joinQueue = ThreadedKernel.scheduler.newThreadQueue(true);
+		joinQueue.acquire(this);
+		Machine.interrupt().restore(intStatus);
+		//System.out.println(id);
 		if (currentThread != null) {
 			tcb = new TCB();
 		} else {
@@ -207,8 +211,11 @@ public class KThread {
 
 		currentThread.status = statusFinished;
 
-		while (!currentThread.joinQueue.isEmpty())
-			currentThread.joinQueue.removeFirst().ready();
+		/*while (!currentThread.joinQueue.isEmpty())
+			currentThread.joinQueue.removeFirst().ready();*/
+		KThread nextThread;
+		while ((nextThread = currentThread.joinQueue.nextThread()) != null)
+			nextThread.ready();
 		
 		sleep();
 	}
@@ -292,12 +299,14 @@ public class KThread {
 
 		Lib.assertTrue(this != currentThread);
 
-		joinQueue.add(currentThread);
+		if (this.status == statusFinished)
+			return;
+		boolean intStatus = Machine.interrupt().disable();
+		joinQueue.waitForAccess(currentThread);
 		sleep();
+		Machine.interrupt().restore(intStatus);
 	}
 	
-	//private static TreeMap<KThread, LinkedList<KThread>> joinConnection;
-
 	/**
 	 * Create the idle thread. Whenever there are no threads ready to be run,
 	 * and <tt>runNextThread()</tt> is called, it will run the idle thread. The
@@ -453,7 +462,8 @@ public class KThread {
 	private String name = "(unnamed thread)";
 	private Runnable target;
 	private TCB tcb;
-	private LinkedList<KThread> joinQueue;
+	//private LinkedList<KThread> joinQueue;
+	private ThreadQueue joinQueue;
 
 	/**
 	 * Unique identifer for this thread. Used to deterministically compare
