@@ -37,23 +37,19 @@ public class Communicator {
 	public void speak(int word) {
 		// Phase 0: if there is no listener speaker goes to the queue
 		//			otherwise goes to transfer phase
-		Lib.debug('c', "Speaker (" + KThread.currentThread().toString() + ") comes in");
 		boolean intStatus;
 		transferLock.acquire();
 		if (transfering || listenerQueue.isEmpty()) {
 			intStatus = Machine.interrupt().disable();
 			speakerQueue.add(KThread.currentThread());
-			Lib.debug('c', "Speaker (" + KThread.currentThread().toString() + ") fall asleep");
 			transferLock.release();
 			KThread.sleep();
-			Lib.debug('c', "Speaker (" + KThread.currentThread().toString() + ") wake up");
 			Machine.interrupt().restore(intStatus);
 			transferLock.acquire();
 		}
 		
 		// Phase 1: speaker set the value and wake up listener and fall asleep
 		transfering = true;
-		Lib.debug('c', "Speaker (" + KThread.currentThread().toString() + ") phase 1");
 		intStatus = Machine.interrupt().disable();
 		storedWord = word;
 		listenerQueue.removeFirst().ready();
@@ -63,11 +59,10 @@ public class Communicator {
 		transferLock.acquire();
 		
 		// Phase 3: was waken up by listener and quit
-		transfering = false;
-		Lib.debug('c', "Speaker (" + KThread.currentThread().toString() + ") phase 3, transfer complete");
 		intStatus = Machine.interrupt().disable();
-		if (!speakerQueue.isEmpty())
+		if (!speakerQueue.isEmpty() && !listenerQueue.isEmpty()) {
 			speakerQueue.peekFirst().ready();
+		} else transfering = false;
 		Machine.interrupt().restore(intStatus);
 		transferLock.release();
 		
@@ -82,7 +77,6 @@ public class Communicator {
 	 */
 	public int listen() {
 		int ret = 0;
-		Lib.debug('c', "Listener (" + KThread.currentThread().toString() + ") comes in");
 		// Phase 0: listener goes to the queue and wake up one speaker if there is
 		transferLock.acquire();
 		boolean intStatus = Machine.interrupt().disable();
@@ -90,19 +84,15 @@ public class Communicator {
 		if (!transfering && !speakerQueue.isEmpty()) {
 			transfering = true;
 			speakerQueue.peekFirst().ready();
-			//(speakerThread = speakerQueue.removeFirst()).ready();
 		}
 		transferLock.release();
-		//Lib.debug('c', "Listener (" + KThread.currentThread().toString() + ") fall asleep");
 		KThread.sleep();
-		//Lib.debug('c', "Listener (" + KThread.currentThread().toString() + ") wake up");
 		Machine.interrupt().restore(intStatus);
 		transferLock.acquire();
 		
 		// Phase 1: listener is waken up by speaker and retrieve the value
 		//			then wake up speaker and quit
 		ret = storedWord;
-		//Lib.debug('c', "Listener (" + KThread.currentThread().toString() + ") phase 2 recv word");
 		intStatus = Machine.interrupt().disable();
 		speakerQueue.removeFirst().ready();
 		Machine.interrupt().restore(intStatus);
