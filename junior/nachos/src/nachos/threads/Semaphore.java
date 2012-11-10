@@ -37,7 +37,6 @@ public class Semaphore {
 	 */
 	public void P() {
 		boolean intStatus = Machine.interrupt().disable();
-
 		if (value == 0) {
 			waitQueue.waitForAccess(KThread.currentThread());
 			KThread.sleep();
@@ -54,14 +53,12 @@ public class Semaphore {
 	 */
 	public void V() {
 		boolean intStatus = Machine.interrupt().disable();
-
 		KThread thread = waitQueue.nextThread();
 		if (thread != null) {
 			thread.ready();
 		} else {
 			value++;
 		}
-
 		Machine.interrupt().restore(intStatus);
 	}
 

@@ -211,8 +211,10 @@ public class KThread {
 
 		currentThread.status = statusFinished;
 
-		/*while (!currentThread.joinQueue.isEmpty())
-			currentThread.joinQueue.removeFirst().ready();*/
+		if (currentThread.id == 3) {
+			currentThread.id = 3;
+		}
+		
 		KThread nextThread;
 		while ((nextThread = currentThread.joinQueue.nextThread()) != null)
 			nextThread.ready();

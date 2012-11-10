@@ -42,7 +42,6 @@ public class Lock {
 			waitQueue.acquire(thread);
 			lockHolder = thread;
 		}
-
 		Lib.assertTrue(lockHolder == thread);
 
 		Machine.interrupt().restore(intStatus);

@@ -34,7 +34,7 @@ public class Alarm {
 		long currentTime = Machine.timer().getTime();
 		
 		boolean intStatus = Machine.interrupt().disable();
-		while (!waitQueue.isEmpty() && waitQueue.peek().getTime() > currentTime)
+		while (!waitQueue.isEmpty() && waitQueue.peek().getTime() < currentTime)
 			waitQueue.remove().getThread().ready();
 		Machine.interrupt().restore(intStatus);
 		
@@ -61,6 +61,9 @@ public class Alarm {
 			KThread.yield();*/
 		long wakeTime = Machine.timer().getTime() + x;
 		waitQueue.add(new Waiter(wakeTime, KThread.currentThread()));
+		boolean intStatus = Machine.interrupt().disable();
+		KThread.sleep();
+		Machine.interrupt().restore(intStatus);
 	}
 	
 	public static class Waiter implements Comparable {
