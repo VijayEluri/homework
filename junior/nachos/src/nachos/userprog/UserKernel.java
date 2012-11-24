@@ -1,6 +1,7 @@
 package nachos.userprog;
 
 import nachos.machine.*;
+import java.util.*;
 import nachos.threads.*;
 
 /**
@@ -36,7 +37,7 @@ public class UserKernel extends ThreadedKernel {
 	public void selfTest() {
 		super.selfTest();
 
-		System.out.println("Testing the console device. Typed characters");
+		/*System.out.println("Testing the console device. Typed characters");
 		System.out.println("will be echoed until q is typed.");
 
 		char c;
@@ -46,7 +47,7 @@ public class UserKernel extends ThreadedKernel {
 			console.writeByte(c);
 		} while (c != 'q');
 
-		System.out.println("");
+		System.out.println("");*/
 	}
 
 	/**
@@ -95,11 +96,11 @@ public class UserKernel extends ThreadedKernel {
 		UserProcess process = UserProcess.newUserProcess();
 
 		String shellProgram = Machine.getShellProgramName();
-		Lib.assertTrue(process.execute(shellProgram, new String[] {}));
+		Lib.assertTrue(process.execute(shellProgram, new String[] {"1"}));
 
 		KThread.finish();
 	}
-
+	
 	/**
 	 * Terminate this kernel. Never returns.
 	 */
@@ -109,5 +110,4 @@ public class UserKernel extends ThreadedKernel {
 
 	/** Globally accessible reference to the synchronized console. */
 	public static SynchConsole console;
-
 }
