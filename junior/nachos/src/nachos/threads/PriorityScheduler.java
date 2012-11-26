@@ -3,6 +3,7 @@ package nachos.threads;
 import nachos.machine.Lib;
 import nachos.machine.Machine;
 import java.util.*;
+import java.util.Map.Entry;
 
 /**
  * A scheduler that chooses threads based on their priorities.
@@ -135,11 +136,25 @@ public class PriorityScheduler extends Scheduler {
 	protected class PriorityQueue extends ThreadQueue {
 		PriorityQueue(boolean transferPriority) {
 			this.transferPriority = transferPriority;
-			//threadQueue = new LinkedList<ThreadState>();
-			threadQueue = new TreeSet[priorityMaximum + 1];
-			for (int i = priorityMinimum; i <= priorityMaximum; ++ i)
-				threadQueue[i] = new TreeSet<ThreadState>();
+			threadQueue = new TreeMap<Integer, TreeSet<ThreadState>>();
 			threadPool = new TreeMap<ThreadState, Integer>();
+		}
+		
+		protected void acquire(int priority, ThreadState state) {
+			if (threadQueue.containsKey(priority)) {
+				threadQueue.get(priority).add(state);
+			} else {
+				TreeSet<ThreadState> set = new TreeSet<ThreadState>();
+				set.add(state);
+				threadQueue.put(priority, set);
+			}
+		}
+		
+		protected void remove(int priority, ThreadState state) {
+			if (!threadQueue.containsKey(priority)) return;
+			TreeSet<ThreadState> set = threadQueue.get(priority);
+			set.remove(state);
+			if (set.isEmpty()) threadQueue.remove(priority);
 		}
 
 		public void waitForAccess(KThread thread) {
@@ -149,11 +164,11 @@ public class PriorityScheduler extends Scheduler {
 			ThreadState state = getThreadState(thread);
 			state.incomingTime = Machine.timer().getTime();
 			int priority = state.getEffectivePriority();
-			threadQueue[priority].add(state);
+			acquire(priority, state);
 			if (priority > donatingPriority) {
 				donatingPriority = priority;
 				if (transferPriority && owner != null)
-					getThreadState(owner).promote();
+					promoteState(getThreadState(owner));
 			}
 			threadPool.put(state, priority);
 			state.belongingQueue = this;
@@ -169,16 +184,23 @@ public class PriorityScheduler extends Scheduler {
 			Lib.assertTrue(Machine.interrupt().disabled());
 			// implement me
 			
-			ThreadState nextThread = pickNextThread();
+			if (isEmpty()) return null;
+			TreeSet<ThreadState> set = threadQueue.get(donatingPriority);
+			ThreadState nextThread = set.pollFirst();
+			if (set.isEmpty()) threadQueue.remove(donatingPriority);
+			if (threadQueue.isEmpty()) donatingPriority = 0;
+			else donatingPriority = threadQueue.lastKey();
+			nextThread.belongingQueue = null;
+			threadPool.remove(nextThread);
+
 			if (owner != null && transferPriority) {
 				getThreadState(owner).ownedQueue.remove(this);
-				getThreadState(owner).promote();
+				promoteState(getThreadState(owner));
 			}
-			if (nextThread == null) return null;
 			owner = nextThread.thread; 
 			if (transferPriority) {
 				nextThread.ownedQueue.add(this);
-				nextThread.promote();
+				promoteState(getThreadState(owner));
 			}
 			
 			return owner;
@@ -190,38 +212,42 @@ public class PriorityScheduler extends Scheduler {
 		 * 
 		 * @return the next thread that <tt>nextThread()</tt> would return.
 		 */
-		private ThreadState pickNextThread() {
+		/*private ThreadState pickNextThread() {
 			// implement me
 			Lib.assertTrue(Machine.interrupt().disabled());
 			if (isEmpty()) return null;
-			ThreadState ret = threadQueue[donatingPriority].pollFirst();
-			while (donatingPriority > priorityMinimum && threadQueue[donatingPriority].isEmpty())
-				-- donatingPriority;
+			TreeSet<ThreadState> set = threadQueue.get(donatingPriority);
+			ThreadState ret = set.pollLast();
+			if (set.isEmpty()) threadQueue.remove(donatingPriority);
+			if (threadQueue.isEmpty()) donatingPriority = 0;
+			else donatingPriority = threadQueue.lastKey();
+			
 			ret.belongingQueue = null;
 			threadPool.remove(ret);
 			return ret;
-		}
+		}*/
 
 		public void print() {
 			Lib.assertTrue(Machine.interrupt().disabled());
 			// implement me (if you want)
 			
-			System.out.print('[');
-			for (int i = priorityMaximum; i >= priorityMinimum; -- i) {
-				for (ThreadState state : threadQueue[i])
-					System.out.print("(" + state.thread.toString() + "," + state.getEffectivePriority() + "),");
+			System.out.print('['); 
+			for (Entry<Integer, TreeSet<ThreadState>> entry : threadQueue.entrySet()) {
+				TreeSet<ThreadState> set = entry.getValue();
+				for (ThreadState state : set)
+					System.out.print("(" + entry.getKey() + "," + state.toString() + "),");
 			}
-			System.out.print(']');
+			System.out.println(']');
 		}
 
 		/**
 		 * <tt>true</tt> if this queue should transfer priority from waiting
 		 * threads to the owning thread.
 		 */
-		private KThread owner;
-		private TreeSet<ThreadState> threadQueue[];
-		private TreeMap<ThreadState, Integer> threadPool;
-		private int donatingPriority;
+		protected KThread owner;
+		protected TreeMap<Integer, TreeSet<ThreadState>> threadQueue;
+		protected TreeMap<ThreadState, Integer> threadPool;
+		protected int donatingPriority;
 		public boolean transferPriority;
 		
 		protected int getPriority() {
@@ -229,7 +255,7 @@ public class PriorityScheduler extends Scheduler {
 		}
 		
 		protected boolean isEmpty() {
-			return threadQueue[donatingPriority].isEmpty();
+			return threadQueue.isEmpty();
 		}
 		
 		protected void promote(ThreadState thread) {
@@ -239,21 +265,31 @@ public class PriorityScheduler extends Scheduler {
 			if (priority == oldPriority) return;
 			else {
 				threadPool.put(thread, priority);
-				threadQueue[oldPriority].remove(thread);
-				threadQueue[priority].add(thread);
+				remove(oldPriority, thread);
+				acquire(priority, thread);
 				if (priority > oldPriority) {
 					if (priority > donatingPriority) {
 						donatingPriority = priority;
 						if (transferPriority && owner != null)
-							getThreadState(owner).promote();
+							promoteState(getThreadState(owner));
 					}
-				} else if (threadQueue[donatingPriority].isEmpty()) {
-					while (donatingPriority != priorityMinimum && threadQueue[donatingPriority].isEmpty())
-						-- donatingPriority;
+				} else {
+					donatingPriority = threadQueue.lastKey();
 					if (transferPriority && owner != null)
-						getThreadState(owner).promote();
+						promoteState(getThreadState(owner));
 				}
 			}
+		}
+		
+		protected void promoteState(ThreadState state) {
+			int oldDonatedPriority = state.donatedPriority;
+			state.donatedPriority = priorityMinimum;
+			for (PriorityQueue queue : state.ownedQueue) {
+				int priority = queue.getPriority();
+				if (priority > state.donatedPriority) state.donatedPriority = priority;
+			}
+			if (state.donatedPriority != oldDonatedPriority && state.belongingQueue != null)
+				state.belongingQueue.promote(state);
 		}
 	}
 
@@ -353,15 +389,8 @@ public class PriorityScheduler extends Scheduler {
 				ownedQueue.add(waitQueue);
 		}
 		
-		protected void promote() {
-			int oldDonatedPriority = donatedPriority;
-			donatedPriority = priorityMinimum;
-			for (PriorityQueue queue : ownedQueue) {
-				int priority = queue.getPriority();
-				if (priority > donatedPriority) donatedPriority = priority;
-			}
-			if (donatedPriority != oldDonatedPriority && belongingQueue != null)
-				belongingQueue.promote(this);
+		public String toString() {
+			return "(" + incomingTime + "," + thread.toString() + ")";
 		}
 
 		/** The thread with which this object is associated. */

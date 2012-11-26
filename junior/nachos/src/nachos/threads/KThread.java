@@ -210,10 +210,6 @@ public class KThread {
 		toBeDestroyed = currentThread;
 
 		currentThread.status = statusFinished;
-
-		if (currentThread.id == 3) {
-			currentThread.id = 3;
-		}
 		
 		KThread nextThread;
 		while ((nextThread = currentThread.joinQueue.nextThread()) != null)

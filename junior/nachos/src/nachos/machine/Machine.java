@@ -39,10 +39,10 @@ public final class Machine {
 			testDirectory = new File(testDirectoryName);
 		} else {
 			// use ../test
-			//testDirectory = new File(baseDirectory.getParentFile(), "test");
+			testDirectory = new File(baseDirectory.getParentFile(), "test");
 			
 			// use test
-			testDirectory = new File(baseDirectory, "test");
+			//testDirectory = new File(baseDirectory, "test");
 		}
 
 		securityManager = new NachosSecurityManager(testDirectory);

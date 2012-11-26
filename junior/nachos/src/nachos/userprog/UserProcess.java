@@ -5,6 +5,7 @@ import nachos.threads.*;
 
 import java.io.EOFException;
 import java.util.*;
+import java.util.Map.Entry;
 
 /**
  * Encapsulates the state of a user process that is not contained in its user
@@ -40,6 +41,10 @@ public class UserProcess {
 			allPages.add(new Segment(remainedPages, 1));
 		}
 		
+		pid = nextPID ++;
+		processTable.put(pid, this);
+		
+		childs = new TreeSet<Integer>();
 	}
 
 	/**
@@ -67,8 +72,11 @@ public class UserProcess {
 		if (!load(name, args))
 			return false;
 
-		new UThread(this).setName(name).fork();
-
+		mainThread = new UThread(this);
+		mainThread.setName(name).fork();
+		
+		++ runningProcesses;
+		
 		return true;
 	}
 
@@ -261,6 +269,7 @@ public class UserProcess {
 		} catch (EOFException e) {
 			executable.close();
 			Lib.debug(dbgProcess, "\tcoff load failed");
+			executable.close();
 			return false;
 		}
 
@@ -271,6 +280,7 @@ public class UserProcess {
 			if (section.getFirstVPN() != numPages) {
 				coff.close();
 				Lib.debug(dbgProcess, "\tfragmented executable");
+				executable.close();
 				return false;
 			}
 			numPages += section.getLength();
@@ -287,6 +297,7 @@ public class UserProcess {
 		if (argsSize > pageSize) {
 			coff.close();
 			Lib.debug(dbgProcess, "\targuments too long");
+			executable.close();
 			return false;
 		}
 
@@ -301,11 +312,15 @@ public class UserProcess {
 		numPages++;
 
 		// allocation physical pages
-		if (!allcation_physical_pages())
+		if (!allcation_physical_pages()) {
+			executable.close();
 			return false;
+		}
 		
-		if (!loadSections())
+		if (!loadSections()) {
+			executable.close();
 			return false;
+		}
 
 		// store arguments in last page
 		int entryOffset = (numPages - 1) * pageSize;
@@ -328,6 +343,8 @@ public class UserProcess {
 							new byte[] { 0 }) == 1);
 			stringOffset += 1;
 		}
+		
+		executable.close();
 
 		return true;
 	}
@@ -337,7 +354,6 @@ public class UserProcess {
 			return false;
 		remainedPages -= numPages;
 		
-		LinkedList<Segment> ownPages = new LinkedList<Segment>();
 		
 		Iterator<Segment> iter1 = allPages.iterator();
 		iter1.next();
@@ -364,7 +380,7 @@ public class UserProcess {
 				index ++;
 			}
 		}
-		//Machine.processor().setPageTable(pageTable);
+		Machine.processor().setPageTable(pageTable);
 		return true;
 	}
 
@@ -406,6 +422,14 @@ public class UserProcess {
 	 * Release any resources allocated by <tt>loadSections()</tt>.
 	 */
 	protected void unloadSections() {
+		// TODO
+		for (Segment seg : ownPages)
+			allPages.remove(seg);
+		remainedPages += numPages;
+		childs.clear();
+		for (Entry<Integer, OpenFile> entry : fileDescriptors.entrySet())
+			entry.getValue().close();
+		fileDescriptors.clear();
 	}
 
 	/**
@@ -436,6 +460,8 @@ public class UserProcess {
 	 */
 	private int handleHalt() {
 
+		if (pid != 1) return 0;
+		
 		Machine.halt();
 
 		Lib.assertNotReached("Machine.halt() did not halt machine!");
@@ -444,23 +470,51 @@ public class UserProcess {
 	
 	private int handleExit(int exitCode) {
 		// TODO
-		return exitCode;
-	}
-	
-	private int handleExec(int a0, int a1, int a2) {
-		// TODO
+		this.exitCode = exitCode;
+		normalExit = true;
+		unloadSections();
+		runningProcesses --;
+		if (runningProcesses == 0)
+			Machine.halt();
+		UThread.finish();
+		Lib.assertNotReached();
 		return 0;
 	}
 	
-	private int handleJoin(int pid, int status) {
+	private int handleExec(int a0, int argc, int argv) {
+		String name = readVirtualMemoryString(a0, 256);
+		String[] args = new String[argc];
+		byte[] buffer = new byte[4];
+		for (int i = 0; i < argc; ++ i) {
+			readVirtualMemory(argv + (4 * i), buffer);
+			int addr = Lib.bytesToInt(buffer, 0);
+			args[i] = readVirtualMemoryString(addr, 256);
+		}
+		UserProcess process = UserProcess.newUserProcess();
+		if (!process.execute(name, args))
+			return -1;
+		childs.add(process.pid);
+		return process.pid;
+	}
+	
+	private int handleJoin(int pid, int addr) {
 		// TODO
-		return 0;
+		if (childs.contains(pid) == false)
+			return -1;
+		UserProcess proc = processTable.get(pid);
+		proc.mainThread.join();
+		processTable.remove(pid);
+		byte[] buffer = new byte[4];
+		Lib.bytesFromInt(buffer, 0, 4, proc.exitCode);
+		writeVirtualMemory(addr, buffer);
+		if (proc.normalExit) return 1;
+		else return 0;
 	}
 	
 	private int handleCreate(int addr) {
 		String name = readVirtualMemoryString(addr, 256);
-		if (UserKernel.fileSystem.open(name, false) != null)
-			return -1;
+		/*if (UserKernel.fileSystem.open(name, false) != null)
+			return -1;*/
 		OpenFile file = UserKernel.fileSystem.open(name, true);
 		if (file == null) return -1;
 		fileDescriptors.put(nextFd, file);
@@ -483,7 +537,7 @@ public class UserProcess {
 		byte[] buffer = new byte[size];
 		int ret = file.read(buffer, 0, size);
 		if (ret == -1) return -1;
-		return writeVirtualMemory(addr, buffer);
+		return writeVirtualMemory(addr, buffer, 0, ret);
 	}
 
 	private int handleWrite(int fd, int addr, int size) {
@@ -491,7 +545,7 @@ public class UserProcess {
 		OpenFile file = fileDescriptors.get(fd);
 		byte[] buffer = new byte[size];
 		size = readVirtualMemory(addr, buffer);
-		if (size == -1) return -1; 
+		if (size == -1) return -1;
 		return file.write(buffer, 0, size);
 	}
 
@@ -614,6 +668,10 @@ public class UserProcess {
 
 		default:
 			Lib.debug(dbgProcess, "Unknown syscall " + syscall);
+			unloadSections();
+			mainThread.finish();
+			runningProcesses --;
+			if (runningProcesses == 0) Machine.halt();
 			Lib.assertNotReached("Unknown system call!");
 		}
 		return 0;
@@ -668,8 +726,15 @@ public class UserProcess {
 	protected TreeMap<Integer, OpenFile> fileDescriptors;
 	protected int nextFd;
 	
+	private LinkedList<Segment> ownPages = new LinkedList<Segment>();
+	
 	/** refer to the child processes **/
 	protected TreeSet<Integer> childs;
+	
+	protected int pid, exitCode;
+	protected boolean normalExit = false;
+	
+	protected UThread mainThread;
 	
 	
 	private static class Segment implements Comparable {
@@ -690,4 +755,7 @@ public class UserProcess {
 	
 	private static TreeSet<Segment> allPages = null;
 	private static int remainedPages;
+	private static int nextPID = 1;
+	private static int runningProcesses = 0;
+	public static TreeMap<Integer, UserProcess> processTable = new TreeMap<Integer, UserProcess>();
 }
