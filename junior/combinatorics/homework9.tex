@@ -1,0 +1,106 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[top=2cm,bottom=2cm]{geometry}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{amsfonts}
+\title{Homework 9}
+\author{Chengyu Lin\footnote{F1003028-5100309007}}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{itemize}
+    \item[Problem 1]
+        \begin{enumerate}[(a)]
+            \item
+                $$E(X_v) = \frac{{6 \choose 3} \times 2 \times 3!}{6!} = \frac{1}{3}$$
+
+                $$E(X) = \sum_{v} E(X_v) = 2$$
+
+                And no matter what $\sigma$ is, each triangle has one and only one seed.
+                Therefore the probability is $1$.
+
+            \item
+                $E(X)$ is the same as above.
+
+                Fix the position of 1. 
+                If another seed is 2, considering the position of 2
+                there are $4! + 2(4! - 3! - 2)$ outcomes. Otherwise 2 is
+                adjacent to 1.
+                If another seed is 3, there are $2(3! \times 2)$ outcomes.
+                Otherwise 3 is adjacent to 2 or 1.
+                If another seed is 4, there are $2 \times 2 \times 2$ outcomes.
+
+                So $Pr(X = 2) = \frac{4! + 2(4! - 3! - 2) + 2(3! + 2) + 2 \times 2 \times 2}{5!} = \frac{11}{15}$.
+
+        \end{enumerate}
+
+    \item[Problem 2]
+        For odd $n$, considering two coloring in $C_n$, events ${E_i}$ are
+        whether one edge is not monochromatic. 
+        Then $Pr(\cap_{i \in S}E_i) = \frac{1}{2^{|S|}} (S \neq [n])$,
+        but $Pr(\cap_{i \in [n]}E_i) = 0$.
+
+        Otherwise provide $n - 1$ random variables ${a_i}$.
+        The first $n - 1$ events show that $a_i = 1$.
+        And the $n$-th event shows $\sum_{i = 1}^{n - 1}a_i \equiv 1 (mod 2)$
+
+        Then $Pr(\cap_{i \in S} E_i = \frac{1}{2^{|S|}}) (S \subseteq [n-1])$.
+
+            $Pr(\cap_{i \in S} E_i \cap E_n) = \frac{1}{2^{|S| + 1}} (S \subset [n - 1])$, 
+
+            But $Pr(\cap_{i \in [n]}E_i) = \frac{1}{2^{n-1}}$.
+    \item[Problem 3]
+        Color the vertices uniformly at random.
+
+        Events: for each edge $(u, v)$ where $S(u) \cap S(v) \neq \emptyset$, one
+        event denotes that $u$ and $v$ are colored with $c$. At most $|V| \times 10 d^2$ events.
+
+        Dependency: One edge is conditional independent to another set of edges
+        if the two vertices is not adjacent to any edge of that set.
+        Because the probability for one edge $(u, v)$ to be monochromatic is 
+        $p = Pr(S_u = c)Pr(S_v = c) = \frac{1}{100d^2}$, 
+        no matter what's the color of other vertices.
+
+        Degrees: So in the dependency graph,
+        for each events there are at most $20d^2$ events adjacent to it.
+        Since each vertex has at most $d$ vertices for one color so that
+        the edge between them can be monochromatic.
+
+        $4 \times \frac{1}{100d^2} \times 20d^2 = \frac{4}{5} < 1$.
+        By L. L. L., $Pr(\text{every edge is not monochromatic}) > 0$.
+        So there exists an outcome which is a proper colouring.
+
+    \item[Problem 4]
+        \begin{enumerate}[(a)]
+            \item
+                Since every $Z_a$ has fixed length $k$,
+                the common difference will be no greater than $\frac{n}{k - 1}$.
+
+                And for every number, it could lie in at most $\frac{n}{k - 1}k$
+                a.p.s with length k since a.p. is uniquely determined by a starter
+                and a common difference.
+
+                So for any $Z_a$, there are at most $\frac{n}{k - 1} k^2$ $Z_a$s
+                can have non-empty intersection with it. Which is less than
+                $1.25kn$ when $k \ge 10$.
+            \item
+                Color every elements uniformly at random.
+
+                Events: for each $Z_a$ an event shows whether it's monochromatic.
+                The probability for one event to be true is $2^{1-k}$.
+
+                Dependency: One event $Z_a$ is independent to another set of $Z_a$s
+                if this $Z_a$ do not share any points with that set.
+                In dependency graph one event has degree less than $1.25kn = 2^{k-3}$.
+
+                $4 p d < 4 \times 2^{1-k} \times 2^{k-3} = 1$.
+                By L. L. L., $Pr(\text{every $Z_a$ is not monochromatic}) > 0$.
+                So there exists an outcome satisfies the condition.
+        \end{enumerate}
+
+\end{itemize}
+
+\end{document}
