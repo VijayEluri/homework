@@ -699,6 +699,20 @@ public class UserProcess {
 			processor.advancePC();
 			break;
 
+		case Processor.exceptionAddressError:
+		case Processor.exceptionBusError:
+		case Processor.exceptionIllegalInstruction:
+		case Processor.exceptionOverflow:
+		case Processor.exceptionPageFault:
+		case Processor.exceptionReadOnly:
+		case Processor.exceptionTLBMiss:
+			unloadSections();
+			runningProcesses --;
+			if (runningProcesses == 0)
+				Machine.halt();
+			UThread.finish();
+			break;
+			
 		default:
 			Lib.debug(dbgProcess, "Unexpected exception: "
 					+ Processor.exceptionNames[cause]);
