@@ -232,7 +232,13 @@ public class UserProcess {
 
 		for (int i = 0; i < length; ++ i) {
 			int vpage = vaddr / pageSize;
+<<<<<<< HEAD
 			if (!pageTable[vpage].valid) break;
+=======
+			if (vpage > numPages || pageTable[vpage].readOnly) break;
+			pageTable[vpage].used = true;
+			pageTable[vpage].dirty = true;
+>>>>>>> 8cb251d... Fucking ass
 			int paddr = pageTable[vpage].ppn * pageSize + (vaddr % pageSize);
 			pageTable[vpage].used = true;
 			pageTable[vpage].dirty = true;
@@ -344,7 +350,7 @@ public class UserProcess {
 			stringOffset += 1;
 		}
 		
-		executable.close();
+		//executable.close();
 
 		return true;
 	}
@@ -430,6 +436,7 @@ public class UserProcess {
 		for (Entry<Integer, OpenFile> entry : fileDescriptors.entrySet())
 			entry.getValue().close();
 		fileDescriptors.clear();
+		coff.close();
 	}
 
 	/**
@@ -483,6 +490,7 @@ public class UserProcess {
 	
 	private int handleExec(int a0, int argc, int argv) {
 		String name = readVirtualMemoryString(a0, 256);
+		if (name == null) return -1;
 		String[] args = new String[argc];
 		byte[] buffer = new byte[4];
 		for (int i = 0; i < argc; ++ i) {
@@ -667,6 +675,7 @@ public class UserProcess {
 			return handleUnlink(a0);
 
 		default:
+			//System.out.println(pid + " " + syscall);
 			Lib.debug(dbgProcess, "Unknown syscall " + syscall);
 			unloadSections();
 			mainThread.finish();
@@ -687,7 +696,6 @@ public class UserProcess {
 	 */
 	public void handleException(int cause) {
 		Processor processor = Machine.processor();
-
 		switch (cause) {
 		case Processor.exceptionSyscall:
 			int result = handleSyscall(processor.readRegister(Processor.regV0),
@@ -706,6 +714,7 @@ public class UserProcess {
 		case Processor.exceptionPageFault:
 		case Processor.exceptionReadOnly:
 		case Processor.exceptionTLBMiss:
+			//System.out.println(pid + " " + cause);
 			unloadSections();
 			runningProcesses --;
 			if (runningProcesses == 0)
