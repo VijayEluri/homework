@@ -96,19 +96,12 @@ public class VMProcess extends UserProcess {
 			handleTLBMiss();
 			break;
 		
-		/*case Processor.exceptionPageFault:
-			handlePageFault();
-			break;*/
-			
 		default:
 			super.handleException(cause);
 			break;
 		}
 	}
 	
-	private void handlePageFault() {
-	}
-
 	private void handleTLBMiss() {
 		Processor processor = Machine.processor();
 		int bvaddr = processor.readRegister(processor.regBadVAddr);
@@ -136,7 +129,7 @@ public class VMProcess extends UserProcess {
 	private int usedTLB = 0;
 	private TranslationEntry[] storedEntries = new TranslationEntry[Machine.processor().getTLBSize()];
 	
-	public static class PageIdentifier implements Comparable {
+	public static class PageIdentifier implements Comparable<PageIdentifier> {
 		public int pid, page;
 		
 		PageIdentifier(int pid, int page) {
@@ -145,8 +138,7 @@ public class VMProcess extends UserProcess {
 		}
 
 		@Override
-		public int compareTo(Object arg0) {
-			PageIdentifier p = (PageIdentifier) arg0;
+		public int compareTo(PageIdentifier p) {
 			if (pid != p.pid) return pid < p.pid ? -1 : 1;
 			if (page != p.page) return page < p.page ? -1 : 1; 
 			return 0;
