@@ -16,6 +16,7 @@ public class SwapFile {
 	public SwapFile() {
 	}
 	
+<<<<<<< HEAD
 	public static boolean contains(int pid, int page) {
 		return swapAddr.containsKey(new PageIdentifier(pid, page));
 	}
@@ -26,6 +27,8 @@ public class SwapFile {
 		swapAddr.remove(pageID);
 	}
 	
+=======
+>>>>>>> parent of 8cb251d... Fucking ass
 	public static boolean write(int pid, int page, byte[] data, int offset) {
 		if (swap == null) return false;
 		PageIdentifier pageID = new PageIdentifier(pid, page);
@@ -46,6 +49,11 @@ public class SwapFile {
 		if (!swapAddr.containsKey(pageID)) return false;
 		int addr = swapAddr.get(pageID);
 		if (swap.read(addr * pageSize, data, offset, pageSize) != pageSize) return false;
+<<<<<<< HEAD
+=======
+		swapAddr.remove(pageID);
+		collector.add(addr);
+>>>>>>> parent of 8cb251d... Fucking ass
 		return true;
 	}
 	
