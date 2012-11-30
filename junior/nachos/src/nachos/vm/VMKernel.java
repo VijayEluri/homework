@@ -39,6 +39,7 @@ public class VMKernel extends UserKernel {
 	 */
 	public void terminate() {
 		super.terminate();
+		SwapFile.close();
 	}
 
 	private static final char dbgVM = 'v';
