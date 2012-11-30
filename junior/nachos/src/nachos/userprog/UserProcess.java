@@ -25,9 +25,9 @@ public class UserProcess {
 	 */
 	public UserProcess() {
 		int numPhysPages = Machine.processor().getNumPhysPages();
-		pageTable = new TranslationEntry[numPhysPages];
+		/*pageTable = new TranslationEntry[numPhysPages];
 		for (int i = 0; i < numPhysPages; i++)
-			pageTable[i] = new TranslationEntry(i, i, false, false, false, false);
+			pageTable[i] = new TranslationEntry(i, i, false, false, false, false);*/
 		
 		fileDescriptors = new TreeMap<Integer, OpenFile>();
 		fileDescriptors.put(0, UserKernel.console.openForReading());
@@ -35,10 +35,10 @@ public class UserProcess {
 		nextFd = 2;
 		
 		if (allPages == null) {
-			remainedPages = Machine.processor().getNumPhysPages();
-			allPages = new TreeSet<Segment> ();
-			allPages.add(new Segment(-1, 1));
-			allPages.add(new Segment(remainedPages, 1));
+			int temp = Machine.processor().getNumPhysPages();
+			allPages = new TreeSet<Integer> ();
+			for (int i = 0; i < temp; ++ i)
+				allPages.add(i);
 		}
 		
 		pid = nextPID ++;
@@ -171,12 +171,11 @@ public class UserProcess {
 		length = Math.min(length, memory.length - vaddr);
 		
 		int amount = 0;
-		//System.arraycopy(memory, vaddr, data, offset, amount);
 		for (int i = 0; i < length; ++ i) {
 			int vpage = vaddr / pageSize;
-			if (!pageTable[vpage].valid) break;
-			int paddr = pageTable[vpage].ppn * pageSize + (vaddr % pageSize);
+			if (vpage > numPages) break;
 			pageTable[vpage].used = true;
+			int paddr = pageTable[vpage].ppn * pageSize + (vaddr % pageSize);
 			data[offset + i] = memory[paddr];
 			vaddr ++; amount ++;
 		}
@@ -232,10 +231,10 @@ public class UserProcess {
 
 		for (int i = 0; i < length; ++ i) {
 			int vpage = vaddr / pageSize;
-			if (!pageTable[vpage].valid) break;
-			int paddr = pageTable[vpage].ppn * pageSize + (vaddr % pageSize);
+			if (vpage > numPages) break;
 			pageTable[vpage].used = true;
-			pageTable[vpage].dirty = true;
+			pageTable[vpage].used = true;
+			int paddr = pageTable[vpage].ppn * pageSize + (vaddr % pageSize);
 			memory[paddr] = data[offset + i];
 			vaddr ++; amount ++;
 		}
@@ -310,12 +309,6 @@ public class UserProcess {
 
 		// and finally reserve 1 page for arguments
 		numPages++;
-
-		// allocation physical pages
-		if (!allcation_physical_pages()) {
-			executable.close();
-			return false;
-		}
 		
 		if (!loadSections()) {
 			executable.close();
@@ -349,41 +342,6 @@ public class UserProcess {
 		return true;
 	}
 	
-	private boolean allcation_physical_pages() {
-		if (remainedPages < numPages)
-			return false;
-		remainedPages -= numPages;
-		
-		
-		Iterator<Segment> iter1 = allPages.iterator();
-		iter1.next();
-		Iterator<Segment> iter0 = allPages.iterator();
-		int temp = numPages;
-		while (iter0.hasNext()) {
-			Segment seg0 = iter0.next();
-			Segment seg1 = iter1.next();
-			int length = seg1.offset - seg0.offset - seg0.length;
-			if (length == 0) continue;
-			int offset = seg0.offset + seg0.length;
-			length = Math.min(length, temp);
-			Segment newSeg = new Segment(offset, length);
-			ownPages.add(newSeg);
-			temp -= length;
-			if (temp <= 0) break;
-		}
-		int index = 0;
-		for (Segment seg : ownPages) {
-			allPages.add(seg);
-			for (int i = 0; i < seg.length; ++ i) {
-				pageTable[index].ppn = seg.offset + i;
-				pageTable[index].valid = true;
-				index ++;
-			}
-		}
-		Machine.processor().setPageTable(pageTable);
-		return true;
-	}
-
 	/**
 	 * Allocates memory for this process, and loads the COFF sections into
 	 * memory. If this returns successfully, the process will definitely be run
@@ -396,6 +354,14 @@ public class UserProcess {
 			coff.close();
 			Lib.debug(dbgProcess, "\tinsufficient physical memory");
 			return false;
+		}
+
+		if (allPages.size() < numPages) return false;
+		pageTable = new TranslationEntry[numPages];
+		for (int i = 0; i < numPages; ++ i) {
+			int page = allPages.pollFirst();
+			ownPages.add(page);
+			pageTable[i] = new TranslationEntry(i, page, true, false, false, false);
 		}
 
 		// load sections
@@ -422,10 +388,9 @@ public class UserProcess {
 	 * Release any resources allocated by <tt>loadSections()</tt>.
 	 */
 	protected void unloadSections() {
-		// TODO
-		for (Segment seg : ownPages)
-			allPages.remove(seg);
-		remainedPages += numPages;
+		for (int page : ownPages)
+			allPages.add(page);
+		ownPages.clear();
 		childs.clear();
 		for (Entry<Integer, OpenFile> entry : fileDescriptors.entrySet())
 			entry.getValue().close();
@@ -669,9 +634,9 @@ public class UserProcess {
 		default:
 			Lib.debug(dbgProcess, "Unknown syscall " + syscall);
 			unloadSections();
-			mainThread.finish();
 			runningProcesses --;
 			if (runningProcesses == 0) Machine.halt();
+			mainThread.finish();
 			Lib.assertNotReached("Unknown system call!");
 		}
 		return 0;
@@ -740,7 +705,7 @@ public class UserProcess {
 	protected TreeMap<Integer, OpenFile> fileDescriptors;
 	protected int nextFd;
 	
-	private LinkedList<Segment> ownPages = new LinkedList<Segment>();
+	protected TreeSet<Integer> ownPages = new TreeSet<Integer>();
 	
 	/** refer to the child processes **/
 	protected TreeSet<Integer> childs;
@@ -751,7 +716,7 @@ public class UserProcess {
 	protected UThread mainThread;
 	
 	
-	private static class Segment implements Comparable {
+	/*private static class Segment implements Comparable {
 		int offset;
 		int length;
 		
@@ -765,11 +730,10 @@ public class UserProcess {
 			Segment obj = (Segment) arg0;
 			return this.offset < obj.offset ? -1 : this.offset > obj.offset ? 1 : 0;
 		}
-	}
+	}*/
 	
-	private static TreeSet<Segment> allPages = null;
-	private static int remainedPages;
-	private static int nextPID = 1;
-	private static int runningProcesses = 0;
-	public static TreeMap<Integer, UserProcess> processTable = new TreeMap<Integer, UserProcess>();
+	protected static TreeSet<Integer> allPages;
+	protected static int nextPID = 1;
+	protected static int runningProcesses = 0;
+	protected static TreeMap<Integer, UserProcess> processTable = new TreeMap<Integer, UserProcess>();
 }
