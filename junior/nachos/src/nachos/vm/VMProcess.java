@@ -1,13 +1,7 @@
 package nachos.vm;
 
-import java.util.*;
-
-import nachos.machine.CoffSection;
-import nachos.machine.Lib;
 import nachos.machine.Machine;
 import nachos.machine.Processor;
-import nachos.machine.TranslationEntry;
-import nachos.userprog.UThread;
 import nachos.userprog.UserProcess;
 
 /**
@@ -19,10 +13,6 @@ public class VMProcess extends UserProcess {
 	 */
 	public VMProcess() {
 		super();
-		
-		if (invertPageTable == null) {
-			invertPageTable = new HashMap<Integer, PageIdentifier>();
-		}
 	}
 
 	/**
@@ -31,12 +21,6 @@ public class VMProcess extends UserProcess {
 	 */
 	public void saveState() {
 		super.saveState();
-
-		int TLBSize = Machine.processor().getTLBSize();
-		for (int i = 0; i < usedTLB; ++ i) {
-			storedEntries[i] = Machine.processor().readTLBEntry(i);
-			pageTable[storedEntries[i].vpn] = storedEntries[i];
-		}
 	}
 
 	/**
@@ -44,13 +28,7 @@ public class VMProcess extends UserProcess {
 	 * <tt>UThread.restoreState()</tt>.
 	 */
 	public void restoreState() {
-		int TLBSize = Machine.processor().getTLBSize();
-		for (int i = 0; i < TLBSize; ++ i) {
-			if (i < usedTLB)
-				Machine.processor().writeTLBEntry(i, storedEntries[i]);
-			else
-				Machine.processor().writeTLBEntry(i, pageTable[0]);
-		}
+		super.restoreState();
 	}
 
 	/**
@@ -60,22 +38,13 @@ public class VMProcess extends UserProcess {
 	 * @return <tt>true</tt> if successful.
 	 */
 	protected boolean loadSections() {
-		if (!super.loadSections())
-			return false;
-		int index = 0;
-		for (int page : ownPages) {
-			invertPageTable.put(index, new PageIdentifier(pid, page));
-			++ index;
-		}
-		return true;
+		return super.loadSections();
 	}
 
 	/**
 	 * Release any resources allocated by <tt>loadSections()</tt>.
 	 */
 	protected void unloadSections() {
-		for (int page : ownPages)
-			invertPageTable.remove(page);
 		super.unloadSections();
 	}
 
@@ -89,22 +58,14 @@ public class VMProcess extends UserProcess {
 	 */
 	public void handleException(int cause) {
 		Processor processor = Machine.processor();
-		
+
 		switch (cause) {
-			
-		case Processor.exceptionTLBMiss:
-			handleTLBMiss();
-			break;
-		
-		/*case Processor.exceptionPageFault:
-			handlePageFault();
-			break;*/
-			
 		default:
 			super.handleException(cause);
 			break;
 		}
 	}
+<<<<<<< HEAD
 	
 <<<<<<< HEAD
 =======
@@ -129,30 +90,10 @@ public class VMProcess extends UserProcess {
 		}
 		processor.writeTLBEntry(p, pageTable[bvpage]); 
 	}
+=======
+>>>>>>> parent of 050372b... nachos phase 3 task 1
 
 	private static final int pageSize = Processor.pageSize;
 	private static final char dbgProcess = 'a';
 	private static final char dbgVM = 'v';
-	
-	private static HashMap<Integer, PageIdentifier> invertPageTable;
-	
-	private int usedTLB = 0;
-	private TranslationEntry[] storedEntries = new TranslationEntry[Machine.processor().getTLBSize()];
-	
-	public static class PageIdentifier implements Comparable {
-		public int pid, page;
-		
-		PageIdentifier(int pid, int page) {
-			this.pid = pid;
-			this.page = page;
-		}
-
-		@Override
-		public int compareTo(Object arg0) {
-			PageIdentifier p = (PageIdentifier) arg0;
-			if (pid != p.pid) return pid < p.pid ? -1 : 1;
-			if (page != p.page) return page < p.page ? -1 : 1; 
-			return 0;
-		}
-	}
 }
