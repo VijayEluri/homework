@@ -19,6 +19,6 @@ int main()
 	for (i = 2; i < 10000; ++i)
 		a[i] = (a[i - 1] + a[i - 2]) % 15485863;
 
-	printf("%d\n", a[9999]);
+//	printf("%d\n", a[9999]);
     exit(0);
 }

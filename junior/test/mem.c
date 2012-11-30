@@ -21,7 +21,7 @@ int main(int argc, char* argv[])
 	a[1] = 1;
 	for (i = 2; i < 1000; ++i)
 		a[i] = (a[i - 1] + a[i - 2]) % 15485863;
-//	printf("child %d done.\n", id);
     exit(0);
 //	printf("Answer : %d\n", a[999]);
+//	printf("child %d done.\n", id);
 }
