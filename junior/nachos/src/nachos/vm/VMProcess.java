@@ -1,23 +1,15 @@
 package nachos.vm;
 
-<<<<<<< HEAD
-import nachos.machine.Machine;
-import nachos.machine.Processor;
-=======
-import java.util.*;
 
-import nachos.machine.Coff;
+import java.util.*;
+import java.util.Map.Entry;
+
 import nachos.machine.CoffSection;
 import nachos.machine.Lib;
 import nachos.machine.Machine;
 import nachos.machine.Processor;
 import nachos.machine.TranslationEntry;
-import nachos.threads.Condition;
-import nachos.threads.KThread;
 import nachos.threads.Lock;
-import nachos.threads.Semaphore;
-import nachos.userprog.UThread;
->>>>>>> 8cb251d... Fucking ass
 import nachos.userprog.UserProcess;
 
 /**
@@ -44,22 +36,21 @@ public class VMProcess extends UserProcess {
 		length = Math.min(length, numPages * pageSize - vaddr);
 		
 		int amount = 0;
+		phyLock.acquire();
 		for (int i = 0; i < length; ++ i) {
 			int vpage = vaddr / pageSize;
 			if (vpage > numPages) break;
-			if (!pageTable[vpage].valid) {
-				if (!loadPage(vpage))
-					return 0;
-			}
+			if (!pageTable[vpage].valid)
+				if (!loadPage(vpage)) {
+					phyLock.acquire();
+					break;
+				}
 			int paddr = pageTable[vpage].ppn * pageSize + (vaddr % pageSize);
-			pageTable[vpage].used = true;
 			data[offset + i] = memory[paddr];
+			pageTable[vpage].used = true;
 			vaddr ++; amount ++;
 		}
-		
-		//System.out.println(new String(data, offset, length));
-		//System.out.println(amount);
-
+		phyLock.release();
 		return amount;
 	}
 	
@@ -70,23 +61,28 @@ public class VMProcess extends UserProcess {
 
 		byte[] memory = Machine.processor().getMemory();
 
-		// for now, just assume that virtual addresses equal physical addresses
 		if (vaddr < 0 || vaddr >= numPages * pageSize)
 			return 0;
 
 		length = Math.min(length, numPages * pageSize - vaddr);
 		int amount = 0;
 
+		phyLock.acquire();
 		for (int i = 0; i < length; ++ i) {
 			int vpage = vaddr / pageSize;
 			if (vpage > numPages || pageTable[vpage].readOnly) break;
-			if (!pageTable[vpage].valid) loadPage(vpage);
+			if (!pageTable[vpage].valid)
+				if (!loadPage(vpage)) {
+					phyLock.acquire();
+					break;
+				}
 			int paddr = pageTable[vpage].ppn * pageSize + (vaddr % pageSize);
+			memory[paddr] = data[offset + i];
 			pageTable[vpage].used = true;
 			pageTable[vpage].dirty = true;
-			memory[paddr] = data[offset + i];
 			vaddr ++; amount ++;
 		}
+		phyLock.release();
 
 		return amount;
 	}
@@ -96,17 +92,15 @@ public class VMProcess extends UserProcess {
 	 * Called by <tt>UThread.saveState()</tt>.
 	 */
 	public void saveState() {
-		super.saveState();
-<<<<<<< HEAD
-=======
-
-		for (int i = 0; i < usedTLB; ++ i) {
+		for (int i = 0; i < TLBSize; ++ i) {
 			TranslationEntry trans = Machine.processor().readTLBEntry(i);
-			pageTable[trans.vpn] = trans;
-			//Lib.debug(dbgVM, trans.vpn + " " + trans.ppn + " " + trans.valid);
-			TLBPos[trans.vpn] = -1;
+			if (trans.valid) {
+				pageTable[trans.vpn].used |= trans.used;
+				pageTable[trans.vpn].dirty |= trans.dirty;
+				onTLB[trans.vpn] = -1;
+			}
+			TLBBackup[i] = trans;
 		}
->>>>>>> 8cb251d... Fucking ass
 	}
 
 	/**
@@ -114,17 +108,14 @@ public class VMProcess extends UserProcess {
 	 * <tt>UThread.restoreState()</tt>.
 	 */
 	public void restoreState() {
-<<<<<<< HEAD
-		super.restoreState();
-	}
-=======
-		int TLBSize = Machine.processor().getTLBSize();
->>>>>>> 8cb251d... Fucking ass
-
-		Lib.debug(dbgVM, "Process #" + pid + " restoring its state");
-		usedTLB = 0;
-		for (int i = 0; i < TLBSize; ++ i)
-			Machine.processor().writeTLBEntry(i, pageTable[0]);
+		for (int i = 0; i < TLBSize; ++ i) {
+			if (TLBBackup[i] == null) TLBBackup[i] = nullEntry;
+			if (TLBBackup[i].valid && !pageTable[TLBBackup[i].vpn].valid)
+				TLBBackup[i] = nullEntry;
+			if (TLBBackup[i].valid)
+				onTLB[TLBBackup[i].vpn] = i;
+			Machine.processor().writeTLBEntry(i, TLBBackup[i]);
+		}
 	}
 	/**
 	 * Initializes page tables for this process so that the executable can be
@@ -133,39 +124,36 @@ public class VMProcess extends UserProcess {
 	 * @return <tt>true</tt> if successful.
 	 */
 	protected boolean loadSections() {
-<<<<<<< HEAD
-		return super.loadSections();
-=======
-		TLBPos = new int[numPages];
+		onTLB = new int[numPages];
 		pageTable = new TranslationEntry[numPages];
 		for (int i = 0; i < numPages; ++ i) {
 			pageTable[i] = new TranslationEntry(i, i, false, false, false, false);
-			TLBPos[i] = -1;
+			onTLB[i] = -1;
 		}
 		
 		for (int i = 0; i < coff.getNumSections(); ++ i) {
 			CoffSection section = coff.getSection(i);
-			for (int j = 0; j < section.getLength(); ++ j)
-				sections.put(section.getFirstVPN() + j, i);
+			for (int j = 0; j < section.getLength(); ++ j) {
+				sections.put(section.getFirstVPN() + j, section);
+				if (section.isReadOnly())
+					pageTable[j].readOnly = true;
+			}
 		}
 		return true;
->>>>>>> 8cb251d... Fucking ass
 	}
 
 	/**
 	 * Release any resources allocated by <tt>loadSections()</tt>.
 	 */
 	protected void unloadSections() {
-<<<<<<< HEAD
-		super.unloadSections();
-=======
+		phyLock.acquire();
 		for (int page : ownPages) {
-			invertPageTable.remove(page);
+			phyTable.remove(page);
 			allPages.add(page);
 		}
-		for (int page : swappedPage)
+		phyLock.release();
+		for (int page : swappedPages)
 			SwapFile.remove(pid, page);
->>>>>>> 8cb251d... Fucking ass
 	}
 
 	/**
@@ -178,155 +166,119 @@ public class VMProcess extends UserProcess {
 	 */
 	@Override
 	public void handleException(int cause) {
-<<<<<<< HEAD
-		Processor processor = Machine.processor();
-
-		switch (cause) {
-=======
 		switch (cause) {
 			
 		case Processor.exceptionTLBMiss:
 			handleTLBMiss();
 			break;
 		
->>>>>>> 8cb251d... Fucking ass
 		default:
 			super.handleException(cause);
 			break;
 		}
 	}
-<<<<<<< HEAD
-	
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-	private void handlePageFault() {
-=======
-	private boolean unloadPage(int page) {
-		Lib.debug(dbgVM, "Process #" + pid + " unload page " + page);
-		if (page < 0 || page >= numPages) return false;
-		int ppn = pageTable[page].ppn;
-
-		boolean intStatus = Machine.interrupt().disable();
-		pageTable[page].valid = false;
-		if (TLBPos[page] != -1) {
-			pageTable[page] = Machine.processor().readTLBEntry(TLBPos[page]);
-			pageTable[page].valid = false;
-			Machine.processor().writeTLBEntry(TLBPos[page], pageTable[page]);
-		}
-		
-		if (pageTable[page].dirty == true) {
-			byte[] memory = Machine.processor().getMemory();
-			if (!SwapFile.write(pid, page, memory, ppn * pageSize))
-				return false;
-			swappedPage.add(page);
-		}
-		Machine.interrupt().restore(intStatus);
-
-		invertPageTable.remove(new PageIdentifier(pid, page));
-		ownPages.remove(ppn);
-		allPages.add(ppn);
-		return true;
->>>>>>> 8cb251d... Fucking ass
-	}
 	
 	private boolean loadPage(int page) {
-		if (page < 0 || page >= numPages)
-			return false;
-		Lib.assertTrue(pageTable[page].valid == false);
-		pageLock.acquire();
-		int ppn = Lib.random(Machine.processor().getNumPhysPages());
+		Lib.debug(dbgVM, "Process #" + pid + " loading page " + page);
+		if (page < 0 || page >= numPages) return false;
+		
+		Lib.assertTrue(phyLock.isHeldByCurrentThread());
+
+		byte[] memory = Machine.processor().getMemory();
+		int ppn = 0;
 		if (!allPages.isEmpty()) {
 			ppn = allPages.pollFirst();
 		} else {
-			PageIdentifier pageID = invertPageTable.get(ppn);
-			VMProcess proc = (VMProcess) processTable.get(pageID.pid);
-			if (!proc.unloadPage(pageID.page)) {
-				pageLock.release();
-				return false;
+			VMProcess proc = null;
+			PageIdentifier pageID = null;
+			for (int i = 0; i < 10; ++ i) {
+				ppn = Lib.random(Machine.processor().getNumPhysPages());
+				pageID = phyTable.get(ppn);
+				proc = (VMProcess) processTable.get(pageID.pid);
+				if (proc.onTLB[pageID.page] == -1) break;
 			}
-			allPages.remove(ppn);
+			
+			proc.pageTable[pageID.page].valid = false;
+			if (proc.onTLB[pageID.page] != -1) {
+				TranslationEntry trans = Machine.processor().readTLBEntry(proc.onTLB[pageID.page]);
+				Machine.processor().writeTLBEntry(proc.onTLB[pageID.page], nullEntry);
+				proc.onTLB[pageID.page] = -1;
+				if (trans.vpn == pageID.page && trans.ppn == ppn && trans.valid) {
+					proc.pageTable[pageID.page].used |= trans.used;
+					proc.pageTable[pageID.page].dirty |= trans.dirty;
+				}
+			}
+			if (proc.pageTable[pageID.page].dirty) {
+				SwapFile.write(proc.pid, pageID.page, memory, ppn * pageSize);
+				proc.swappedPages.add(pageID.page);
+			}
+
+			proc.ownPages.remove(ppn);
 		}
 
-<<<<<<< HEAD
->>>>>>> parent of 8cb251d... Fucking ass
-=======
-		Lib.debug(dbgVM, "Process #" + pid + " load virtual page " + page + " to page " + ppn);
-		
-		if (swappedPage.contains(page)) {
-			byte[] memory = Machine.processor().getMemory();
-			if (!SwapFile.read(pid, page, memory, ppn * pageSize)) {
-				Lib.debug(dbgVM, "Failed to load page " + page + " from swap");
-				pageLock.release();
-				return false;
-			}
-		} else {
-			if (sections.containsKey(page)) {
-				CoffSection section = coff.getSection(sections.get(page));
-				section.loadPage(page - section.getFirstVPN(), ppn);
-				if (section.isReadOnly())
-					pageTable[page].readOnly = true;
-			} else {
-				byte[] memory = Machine.processor().getMemory();
-				Arrays.fill(memory, ppn * pageSize, ppn * pageSize + pageSize, (byte) 0);
-			}
-		}
 		ownPages.add(ppn);
-		pageTable[page].ppn = ppn;
-		pageTable[page].dirty = pageTable[page].used = false;
-		pageTable[page].valid = true;
-		invertPageTable.put(ppn, new PageIdentifier(pid, page));
-		pageLock.release();
+		phyTable.put(ppn, new PageIdentifier(pid, page));
 		
+		if (swappedPages.contains(page))
+			SwapFile.read(pid, page, memory, ppn * pageSize);
+		else if (sections.containsKey(page)) {
+			CoffSection section = sections.get(page);
+			section.loadPage(page - section.getFirstVPN(), ppn);
+		} else {
+			Arrays.fill(memory, ppn * pageSize, (ppn + 1) * pageSize, (byte) 0);
+		}
+		pageTable[page].valid = true; pageTable[page].ppn = ppn;
+		pageTable[page].used = pageTable[page].dirty = false;
 		return true;
 	}
 	
->>>>>>> 8cb251d... Fucking ass
 	private void handleTLBMiss() {
 		Processor processor = Machine.processor();
 		int bvaddr = processor.readRegister(processor.regBadVAddr);
 		int bvpage = bvaddr / pageSize;
-				
-		if (bvpage >= numPages || bvpage < 0)
+		if (bvpage >= numPages || bvpage < 0) 
 			super.handleException(processor.exceptionTLBMiss);
-
-		if (!pageTable[bvpage].valid) {
-			if (!loadPage(bvpage)) {
-				super.handleException(processor.exceptionPageFault);
+		
+		//TLBLock.acquire();
+		int p = -1;
+		for (int i = 0; i < TLBSize; ++ i)
+			if (Machine.processor().readTLBEntry(i).valid == false) {
+				p = i;
+				break;
+			}
+		if (p == -1) {
+			p = Lib.random(TLBSize);
+			TranslationEntry trans = Machine.processor().readTLBEntry(p);
+			Machine.processor().writeTLBEntry(p, nullEntry);
+			if (trans.valid) {
+				pageTable[trans.vpn].used |= trans.used;
+				pageTable[trans.vpn].dirty |= trans.dirty;
+				onTLB[trans.vpn] = -1;
 			}
 		}
-		
-		int p = Lib.random(processor.getTLBSize());
-		if (usedTLB < processor.getTLBSize()) {
-			p = usedTLB;
-			TLBPos[bvpage] = p;
-			processor.writeTLBEntry(p, pageTable[bvpage]);
-			usedTLB ++;
-		} else {
-			TranslationEntry trans = processor.readTLBEntry(p);
-			pageTable[trans.vpn] = trans;
-			TLBPos[trans.vpn] = -1; 
-			TLBPos[bvpage] = p;
-			processor.writeTLBEntry(p, pageTable[bvpage]);
-		}
-	}
-=======
->>>>>>> parent of 050372b... nachos phase 3 task 1
 
+		phyLock.acquire();
+		if (pageTable[bvpage].valid == false)
+			loadPage(bvpage);
+
+		Machine.processor().writeTLBEntry(p, pageTable[bvpage]);
+		onTLB[bvpage] = p;
+		phyLock.release();
+	}
+
+	private static final int TLBSize = Machine.processor().getTLBSize();
 	private static final int pageSize = Processor.pageSize;
-	//private static final char dbgProcess = 'a';
+	private static final char dbgProcess = 'a';
 	private static final char dbgVM = 'v';
-<<<<<<< HEAD
-=======
+	private static HashMap<Integer, PageIdentifier> phyTable = new HashMap<Integer, PageIdentifier>();
+	private static Lock phyLock = new Lock();
+	//private static Lock TLBLock = new Lock();
 	
-	private static HashMap<Integer, PageIdentifier> invertPageTable;
-	private static Lock pageLock = new Lock();
+	private TranslationEntry[] TLBBackup = new TranslationEntry[TLBSize];
 	
-	//private Lock translationEntryLock = new Lock();
-	private TreeSet<Integer> swappedPage = new TreeSet<Integer>();
-	private TreeMap<Integer, Integer> sections = new TreeMap<Integer, Integer>();	
-	private int usedTLB = 0;
-	private int[] TLBPos;
+	private int[] onTLB;
+	private HashSet<Integer> swappedPages = new HashSet<Integer>();
+	private HashMap<Integer, CoffSection> sections = new HashMap<Integer, CoffSection>();
 	
 	public static class PageIdentifier implements Comparable<PageIdentifier> {
 		public int pid, page;
@@ -343,5 +295,6 @@ public class VMProcess extends UserProcess {
 			return 0;
 		}
 	}
->>>>>>> 8cb251d... Fucking ass
+	
+	private final TranslationEntry nullEntry = new TranslationEntry(-1, -1, false, false, false, false);
 }

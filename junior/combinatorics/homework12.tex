@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[top=2cm,bottom=2cm]{geometry}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{amsfonts}
+\title{Homework 12}
+\author{Chengyu Lin\footnote{F1003028-5100309007}}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{itemize}
+    \item[Problem 1]
+        First, we have discussed in the class that the maximum
+        size of this intersecting family is $2^{n-1}$ by pair
+        each set and its complement.
+
+        Suppose that there exists a intersecting family $\mathcal{F}$
+        with size $2^{n-1}$ such that for some $A \subset B$, 
+        $A \in \mathcal{F}$ but $B \not\in \mathcal{F}$.
+        Since $A \subset B$, every set intersects $A$ that intersects
+        $B$, $\mathcal{F} \cup \{B\}$ is also an intersecting
+        family but its size would be greater than $2^{n-1}$,
+        which is impossible. \#
+
+    \item[Problem 2]
+        ${10 \choose 3} = 120$, take every set from $2^{[12]}$
+        which contains $1$ and $2$.
+
+    \item[Problem 3]
+        Take 5 sets with size 4: $\{1,2,3,4\}, \{2,3,4,5\},
+        \{3,4,5,1\}, \{4,5,1,2\}, \{5,1,2,3\}$. The intersection
+        between any two of them has size 3. Then there are
+        6 elements remained in $[11]$ and $5 \times 6=30$.
+
+    \item[Problem 4]
+        $f(n) = 1$. The example for $m = 1$ can be constructed
+        easily.
+
+        \textbf{Proof:} by contradiction
+
+        Let $a_i = 2^i$. Assume that $m>1$ sets are picked.
+        Suppose $p$ is the largest element in
+        $\cup_{i=1}^{m} A_m$ and $p \in A_k$.
+        Since $\sum_{i=1}^{p-1} 2^i = 2^p - 1$. In order to satisfy
+        the condition $|S(A_i) - S(A_k)| < 1$ for some $i$,
+        $A_i$ must contain some elements larger than $p$,
+        which violate the assumption. \#
+
+\end{itemize}
+
+\end{document}

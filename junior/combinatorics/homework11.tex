@@ -1,0 +1,89 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[top=2cm,bottom=2cm]{geometry}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{amsfonts}
+\title{Homework 10}
+\author{Chengyu Lin\footnote{F1003028-5100309007}}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{itemize}
+    \item[Problem 1]
+        Let $\mathcal{B} = \{(A, x) | A \in \mathcal{A}, x \in A\}$.
+
+        There is a way to count $|\mathcal{B}|$: First choose one
+        $\bar{A} \in \partial \mathcal{A}$, then choose $x$ from
+        $[n] \setminus \bar{A}$, $(\bar{A} \cap \{x\}, x)$ is what we
+        want. Clearly every entries from $\mathcal{B}$ would be count
+        at least once.
+
+        Therefore $\partial \mathcal{A} (n - r) \geq \mathcal{A} (r + 1)$.
+
+        ${n \choose r+1} = \frac{{n \choose r} (n - r)}{r + 1}$.
+
+        So
+
+        $$\frac{\partial \mathcal{A}}{{n \choose r}} \geq 
+        \frac{\mathcal{A}}{{n \choose r+1}}$$
+
+    \item[Problem 2]
+        \begin{enumerate}[(a)]
+            \item
+                Chain1 : $\emptyset, \{1\}, \{1,2\}, \{1,2,3\}, \{1,2,3,4\}$
+
+                Chain2 : $\{2\}, \{2,3\}, \{2,3,4\}$
+
+                Chain3 : $\{3\}, \{1,3\}, \{1,3,4\}$
+
+                Chain4 : $\{4\}, \{1,4\}, \{1,2,4\}$
+
+                Chain5 : $\{2, 4\}$
+
+                Chain6 : $\{3, 4\}$
+
+            \item
+                For $2^{[n]}$, construct the graph with $V = 2^{[n]}$.
+                There is an edge between $A$ and $B$ ($WLOG, |A| \le |B|$)
+                iff $\exists x, A \cup \{x\} = B$.
+
+                Consider the subgraph induced by ${[n] \choose r}$
+                and ${[n] \choose r+1}$. The vertex in the former has
+                a degree of $n - r$ and in the latter has a degree
+                of $r + 1$. The vertices in smaller side has a higher
+                degree. Which means there is always a perfect matching
+                between them (number of matches equal to the size of 
+                smaller side).
+
+                And ${n \choose r} = {n \choose n - r}$, each time we
+                can pick one longest chain start at the very beginning
+                (lies in ${[n] \choose k}$) and end at the last
+                (lies in ${[n] \choose n-k}$). Which satisfies the 
+                condition.
+        \end{enumerate}
+
+    \item[Problem 3]
+        \begin{enumerate}[(a)]
+            \item $${10 \choose 5} = 252 > 200$$
+            \item $${9 \choose 4} = 126 > 100$$
+        \end{enumerate}
+
+    \item[Problem 4]
+        Create a new matrix $M_i$ for each line. The entry at row $j$
+        column $k$ represents that line $i$ has a number $k$ set at
+        column $j$ in the original matrix $A$.
+
+        Since there is no line contains the same number twice. $M_i$
+        is a permutation matrix. Let $M = \sum_{i=1}^{k} M_i$,
+        $M$ has $n - k$ 0s in each row and column.
+
+        Let $C$ be a matrix with all entries set to $1$.
+        Then $C - M$ can be factored into the sum of
+        $n - k$ permutation matrices which implies the result.
+
+\end{itemize}
+
+\end{document}

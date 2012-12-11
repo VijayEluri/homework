@@ -104,7 +104,7 @@ public class LotteryScheduler extends PriorityScheduler {
 				remove(oldPriority, thread);
 				acquire(priority, thread);
 				donatingPriority += priority - oldPriority;
-				promoteState(getThreadState(owner));
+				if (transferPriority && owner != null) promoteState(getThreadState(owner));
 			}
 		}
 		
