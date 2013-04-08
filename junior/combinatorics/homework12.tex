@@ -34,21 +34,34 @@
         \{3,4,5,1\}, \{4,5,1,2\}, \{5,1,2,3\}$. The intersection
         between any two of them has size 3. Then there are
         6 elements remained in $[11]$ and $5 \times 6=30$.
+        And with $\{1,2,3,4,5\}$ there are 31 sets.
 
     \item[Problem 4]
-        $f(n) = 1$. The example for $m = 1$ can be constructed
-        easily.
+        $f(n) = {n \choose n/2}$
 
-        \textbf{Proof:} by contradiction
+        Proof:
 
-        Let $a_i = 2^i$. Assume that $m>1$ sets are picked.
-        Suppose $p$ is the largest element in
-        $\cup_{i=1}^{m} A_m$ and $p \in A_k$.
-        Since $\sum_{i=1}^{p-1} 2^i = 2^p - 1$. In order to satisfy
-        the condition $|S(A_i) - S(A_k)| < 1$ for some $i$,
-        $A_i$ must contain some elements larger than $p$,
-        which violate the assumption. \#
+        For every subset $A$, denote $A_+ = \{\text{all positive
+        elements lie in }A\}$, $A_- = A \setminus A_+$.
 
+        If there are two distinct set $A$ and $B$,
+        $A_+ \subseteq B_+$, $B_- \subseteq A_-$ infers that
+        $|S(A) - S(B)| \ge 1$ (since every number has absolute
+        value greater than 1).
+
+        Define $A \preceq B$ iff $A_+ \subseteq B_+$ and 
+        $B_- \subseteq A_-$. This partial order is equivalent to
+        $\subseteq$ in $2^{[n]}$ (If $A$ contains positive $a_i$
+        then set the $i$-th bit as 1 otherwise 0. If $A$ contains
+        negative $a_i$ then set the $i$-th bit as 0 otherwise 1.)
+
+        Clearly $\{A_m\}$ we choose must form an anti-chain in this
+        poset, and we know that the maximum anti-chain size in $2^{[n]}$
+        is ${n \choose n/2}$. \#
+
+        Example:
+
+        Let $a_i = 1$. Choose all sets of size $n/2$.
 \end{itemize}
 
 \end{document}
