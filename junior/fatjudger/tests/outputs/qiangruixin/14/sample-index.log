@@ -1,0 +1,57 @@
+[Sun May 13 22:45:22 CST 2012] [Thread0] Connecting jdbc:fatworm://tmp?user=root&password=fatworm
+[Sun May 13 22:45:22 CST 2012] [Thread0] Connection established.
+[Sun May 13 22:45:22 CST 2012] [Thread0] Setting AUTO_COMMIT mode as false
+[Sun May 13 22:45:22 CST 2012] [Thread0] Executing: use nano
+[Sun May 13 22:45:22 CST 2012] [Thread0] isQuery? false
+[Sun May 13 22:45:22 CST 2012] [Thread0] Executing: create index idx0 on Classes(class)
+[Sun May 13 22:45:22 CST 2012] [Thread0] isQuery? false
+[Sun May 13 22:45:22 CST 2012] [Thread0] Executing: select name, numGuns
+[Sun May 13 22:45:22 CST 2012] [Thread0] from Classes, Ships
+[Sun May 13 22:45:22 CST 2012] [Thread0] where Classes.class = Ships.class
+[Sun May 13 22:45:22 CST 2012] [Thread0] isQuery? true
+[Sun May 13 22:45:22 CST 2012] [Thread0] Query executed, begin to fetch and check result
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 1 is 12
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 2 is 4
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 1 is 12
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 2 is 4
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 1 is 12
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 2 is 4
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 1 is 12
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 2 is 4
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 1 is 12
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 2 is 4
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 1 is 12
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 2 is 4
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 1 is 12
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 2 is 4
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 1 is 12
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 2 is 4
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 1 is 12
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 2 is 4
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 1 is 12
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 2 is 4
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 1 is 12
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 2 is 4
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 1 is 12
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 2 is 4
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 1 is 12
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 2 is 4
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 1 is 12
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 2 is 4
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 1 is 12
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 2 is 4
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 1 is 12
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 2 is 4
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 1 is 12
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 2 is 4
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 1 is 12
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 2 is 4
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 1 is 12
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 2 is 4
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 1 is 12
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 2 is 4
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 1 is 12
+[Sun May 13 22:45:22 CST 2012] [Thread0] Type 2 is 4
+[Sun May 13 22:45:22 CST 2012] [Thread Time] 0
+[Sun May 13 22:45:22 CST 2012] [Total Time] 24
+[Sun May 13 22:45:22 CST 2012] [Result] Correct

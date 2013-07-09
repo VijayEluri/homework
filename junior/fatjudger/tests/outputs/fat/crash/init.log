@@ -1,0 +1,30 @@
+[Sun Jun 02 18:03:55 CST 2013] [Thread0] Connecting jdbc:fatworm:///home/mrain/db?user=root&password=fatworm
+[Sun Jun 02 18:03:55 CST 2013] [Thread0] Connection established.
+[Sun Jun 02 18:03:55 CST 2013] [Thread0] Setting AUTO_COMMIT mode as true
+[Sun Jun 02 18:03:55 CST 2013] [Thread0] Executing: drop database nano
+[Sun Jun 02 18:03:55 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 18:03:55 CST 2013] [Thread0] Executing: create database nano
+[Sun Jun 02 18:03:55 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 18:03:55 CST 2013] [Thread0] Executing: use nano
+[Sun Jun 02 18:03:55 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 18:03:55 CST 2013] [Thread0] Executing: create table Salary (id INT, salary INT)
+[Sun Jun 02 18:03:55 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 18:03:55 CST 2013] [Thread0] Executing: insert into Salary values (1, 158235)
+[Sun Jun 02 18:03:55 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 18:03:55 CST 2013] [Thread0] Executing: insert into Salary values (2, 157999)
+[Sun Jun 02 18:03:55 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 18:03:55 CST 2013] [Thread0] Executing: insert into Salary values (3, 918231)
+[Sun Jun 02 18:03:55 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 18:03:55 CST 2013] [Thread0] Executing: insert into Salary values (4, 183952)
+[Sun Jun 02 18:03:55 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 18:03:55 CST 2013] [Thread0] Executing: insert into Salary values (5, 348583)
+[Sun Jun 02 18:03:55 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 18:03:55 CST 2013] [Thread0] Executing: insert into Salary values (6, 982923)
+[Sun Jun 02 18:03:55 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 18:03:55 CST 2013] [Thread0] Executing: insert into Salary values (7, 827374)
+[Sun Jun 02 18:03:55 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 18:03:55 CST 2013] [Thread0] Executing: insert into Salary values (8, 987582)
+[Sun Jun 02 18:03:55 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 18:03:55 CST 2013] [Thread Time] 78
+[Sun Jun 02 18:03:55 CST 2013] [Total Time] 111
+[Sun Jun 02 18:03:55 CST 2013] [Result] Correct

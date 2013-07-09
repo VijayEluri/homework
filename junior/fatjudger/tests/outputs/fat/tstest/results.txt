@@ -1,0 +1,8 @@
+date: Sun Jun 02 20:28:51 CST 2013
+fat	simple_ts	Wrong Answer	137
+date: Sun Jun 02 20:35:53 CST 2013
+fat	simple_ts	Correct	117
+date: Sun Jun 02 20:59:53 CST 2013
+fat	simple_ts	Correct	151
+date: Sun Jun 02 21:54:38 CST 2013
+fat	simple_ts	Correct	155

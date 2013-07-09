@@ -1,0 +1,28 @@
+[Fri May 10 17:32:32 CST 2013] [Thread0] Connecting jdbc:mysql://localhost/?user=root&password=fatworm
+[Fri May 10 17:32:32 CST 2013] [Thread0] Connection established.
+[Fri May 10 17:32:32 CST 2013] [Thread0] Setting AUTO_COMMIT mode as false
+[Fri May 10 17:32:32 CST 2013] [Thread0] Executing: use acm
+[Fri May 10 17:32:32 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:32 CST 2013] [Thread0] Executing: create index idx0 on student(id)
+[Fri May 10 17:32:32 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:32 CST 2013] [Thread0] Executing: drop index idx0 on student
+[Fri May 10 17:32:32 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:32 CST 2013] [Thread0] Executing: create index idx1 on fatworm(groupid)
+[Fri May 10 17:32:33 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:33 CST 2013] [Thread0] Executing: select name, groupid from fatworm where groupid = 'Z'
+[Fri May 10 17:32:33 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:33 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:33 CST 2013] [Thread0] Executing: drop index idx1 on fatworm
+[Fri May 10 17:32:33 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:33 CST 2013] [Thread0] Executing: create index ind on E(id)
+[Fri May 10 17:32:33 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:33 CST 2013] [Thread0] Executing: select * from A, E where A.id = E.id
+[Fri May 10 17:32:33 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:33 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:33 CST 2013] [Thread0] Executing: SELECT * FROM E as E1 WHERE id >= ALL(select ID from E where E1.id <= E.id)
+[Fri May 10 17:32:33 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:33 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:33 CST 2013] [Thread0] Executing: drop index ind on E
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:34 CST 2013] [Thread Time] 1921
+[Fri May 10 17:32:34 CST 2013] [Total Time] 2021

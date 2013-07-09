@@ -1,0 +1,18 @@
+date: Sun Jun 02 20:27:54 CST 2013
+fat	create	Correct	106
+fat	insert	Correct	3377
+fat	t1	Correct	1404
+fat	t3	Correct	492
+fat	useless	Correct	208
+date: Sun Jun 02 20:59:40 CST 2013
+fat	create	Correct	116
+fat	insert	Correct	3478
+fat	t1	Correct	1164
+fat	t3	Correct	464
+fat	useless	Correct	243
+date: Sun Jun 02 21:53:23 CST 2013
+fat	create	Correct	138
+fat	insert	Correct	3499
+fat	t1	Correct	1368
+fat	t3	Correct	528
+fat	useless	Correct	200

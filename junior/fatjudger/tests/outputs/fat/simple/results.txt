@@ -1,0 +1,180 @@
+date: Thu May 30 19:46:12 CST 2013
+fat	create	Correct	190
+fat	simple_select	Wrong Answer	108
+fat	simple_order	Wrong Answer	34
+fat	simple_group	Wrong Answer	23
+fat	simple_compare	Wrong Answer	42
+fat	simple_subquery	Wrong Answer	11
+fat	simple_opt	Wrong Answer	23
+fat	simple_timestamp	Wrong Answer	15
+fat	simple_ts	Wrong Answer	53
+fat	simple_trim	Wrong Answer	21
+fat	simple_case	Wrong Answer	26
+date: Sun Jun 02 01:18:59 CST 2013
+fat	create	Correct	159
+fat	simple_select	Wrong Answer	78
+fat	simple_order	Wrong Answer	42
+fat	simple_group	Wrong Answer	43
+fat	simple_compare	Wrong Answer	50
+fat	simple_subquery	Wrong Answer	19
+fat	simple_opt	Wrong Answer	27
+fat	simple_timestamp	Wrong Answer	19
+fat	simple_ts	Wrong Answer	27
+fat	simple_trim	Wrong Answer	21
+fat	simple_case	Wrong Answer	28
+date: Sun Jun 02 17:15:25 CST 2013
+fat	create	Correct	102
+fat	simple_select	Wrong Answer	61
+fat	simple_order	Wrong Answer	28
+fat	simple_group	Wrong Answer	22
+fat	simple_compare	Wrong Answer	22
+fat	simple_subquery	Wrong Answer	7
+fat	simple_opt	Wrong Answer	12
+fat	simple_timestamp	Wrong Answer	15
+fat	simple_ts	Wrong Answer	21
+fat	simple_trim	Wrong Answer	13
+fat	simple_case	Wrong Answer	11
+date: Sun Jun 02 20:00:59 CST 2013
+fat	create	Correct	101
+fat	simple_select	Correct	67
+fat	simple_order	Correct	19
+fat	simple_group	Wrong Answer	65
+fat	simple_compare	Correct	35
+fat	simple_subquery	Correct	11
+fat	simple_opt	Correct	21
+fat	simple_timestamp	Wrong Answer	9
+fat	simple_ts	Wrong Answer	17
+fat	simple_trim	Correct	8
+fat	simple_case	Wrong Answer	8
+date: Sun Jun 02 21:00:06 CST 2013
+fat	create	Correct	135
+fat	simple_select	Correct	91
+fat	simple_order	Correct	32
+fat	simple_group	Wrong Answer	29
+fat	simple_compare	Correct	101
+fat	simple_subquery	Correct	13
+fat	simple_opt	Correct	13
+fat	simple_timestamp	Wrong Answer	13
+fat	simple_ts	Correct	18
+fat	simple_trim	Correct	13
+fat	simple_case	Wrong Answer	9
+date: Sun Jun 02 21:02:20 CST 2013
+fat	create	Correct	124
+fat	simple_select	Correct	94
+fat	simple_order	Correct	24
+fat	simple_group	Wrong Answer	25
+fat	simple_compare	Correct	34
+fat	simple_subquery	Correct	11
+fat	simple_opt	Correct	25
+fat	simple_timestamp	Wrong Answer	15
+fat	simple_ts	Correct	26
+fat	simple_trim	Correct	10
+fat	simple_case	Wrong Answer	10
+date: Sun Jun 02 21:14:32 CST 2013
+fat	create	Correct	88
+fat	simple_select	Wrong Answer	58
+fat	simple_order	Wrong Answer	34
+fat	simple_group	Wrong Answer	8
+fat	simple_compare	Wrong Answer	37
+fat	simple_subquery	Wrong Answer	5
+fat	simple_opt	Wrong Answer	13
+fat	simple_timestamp	Wrong Answer	12
+fat	simple_ts	Wrong Answer	26
+fat	simple_trim	Wrong Answer	11
+fat	simple_case	Wrong Answer	8
+date: Sun Jun 02 21:18:43 CST 2013
+fat	create	Correct	100
+fat	simple_select	Correct	125
+fat	simple_order	Correct	21
+fat	simple_group	Wrong Answer	25
+fat	simple_compare	Correct	41
+fat	simple_subquery	Correct	6
+fat	simple_opt	Correct	18
+fat	simple_timestamp	Wrong Answer	7
+fat	simple_ts	Correct	21
+fat	simple_trim	Correct	13
+fat	simple_case	Correct	14
+date: Sun Jun 02 21:26:50 CST 2013
+fat	create	Correct	97
+fat	simple_select	Correct	75
+fat	simple_order	Correct	21
+fat	simple_group	Wrong Answer	20
+fat	simple_compare	Correct	42
+fat	simple_subquery	Correct	8
+fat	simple_opt	Correct	13
+fat	simple_timestamp	Wrong Answer	8
+fat	simple_ts	Correct	21
+fat	simple_trim	Correct	18
+fat	simple_case	Correct	11
+date: Sun Jun 02 21:28:07 CST 2013
+fat	create	Correct	101
+fat	simple_select	Correct	73
+fat	simple_order	Correct	25
+fat	simple_group	Wrong Answer	22
+fat	simple_compare	Correct	37
+fat	simple_subquery	Correct	11
+fat	simple_opt	Correct	16
+fat	simple_timestamp	Wrong Answer	8
+fat	simple_ts	Correct	21
+fat	simple_trim	Correct	12
+fat	simple_case	Correct	7
+date: Sun Jun 02 21:43:09 CST 2013
+fat	create	Correct	95
+fat	simple_select	Correct	67
+fat	simple_order	Correct	23
+fat	simple_group	Correct	29
+fat	simple_compare	Correct	35
+fat	simple_subquery	Correct	12
+fat	simple_opt	Correct	15
+fat	simple_timestamp	Wrong Answer	12
+fat	simple_ts	Correct	21
+fat	simple_trim	Correct	14
+fat	simple_case	Correct	12
+date: Sun Jun 02 21:43:20 CST 2013
+fat	create	Correct	129
+fat	simple_select	Correct	82
+fat	simple_order	Correct	37
+fat	simple_group	Correct	28
+fat	simple_compare	Correct	37
+fat	simple_subquery	Correct	9
+fat	simple_opt	Correct	12
+fat	simple_timestamp	Wrong Answer	19
+fat	simple_ts	Correct	24
+fat	simple_trim	Correct	14
+fat	simple_case	Correct	14
+date: Sun Jun 02 21:44:05 CST 2013
+fat	create	Correct	98
+fat	simple_select	Correct	77
+fat	simple_order	Correct	20
+fat	simple_group	Correct	22
+fat	simple_compare	Correct	37
+fat	simple_subquery	Correct	12
+fat	simple_opt	Correct	18
+fat	simple_timestamp	Wrong Answer	8
+fat	simple_ts	Correct	26
+fat	simple_trim	Correct	12
+fat	simple_case	Correct	11
+date: Sun Jun 02 21:45:01 CST 2013
+fat	create	Correct	100
+fat	simple_select	Correct	68
+fat	simple_order	Correct	20
+fat	simple_group	Correct	23
+fat	simple_compare	Correct	35
+fat	simple_subquery	Correct	9
+fat	simple_opt	Correct	20
+fat	simple_timestamp	Correct	10
+fat	simple_ts	Correct	30
+fat	simple_trim	Correct	13
+fat	simple_case	Correct	6
+date: Sun Jun 02 21:53:04 CST 2013
+fat	create	Correct	137
+fat	simple_select	Correct	74
+fat	simple_order	Correct	30
+fat	simple_group	Correct	23
+fat	simple_compare	Correct	38
+fat	simple_subquery	Correct	8
+fat	simple_opt	Correct	30
+fat	simple_timestamp	Correct	17
+fat	simple_ts	Correct	17
+fat	simple_trim	Correct	9
+fat	simple_case	Correct	11

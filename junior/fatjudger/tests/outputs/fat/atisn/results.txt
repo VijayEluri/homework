@@ -1,0 +1,6 @@
+date: Sun Jun 02 20:08:04 CST 2013
+fat	create	Correct	162
+fat	insert	Correct	1572
+date: Sun Jun 02 20:27:23 CST 2013
+fat	create	Correct	187
+fat	insert	Correct	1618

@@ -1,0 +1,6 @@
+date: Mon May 14 09:30:55 CST 2012
+Fatworm	int	Correct	192
+Fatworm	float	Wrong Answer	29
+Fatworm	chars	Wrong Answer	29
+Fatworm	datetime	Wrong Answer	37
+Fatworm	decimal	Wrong Answer	10

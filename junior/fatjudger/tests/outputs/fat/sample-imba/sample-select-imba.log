@@ -1,0 +1,55 @@
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] Connecting jdbc:fatworm:///home/mrain/db?user=root&password=fatworm
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] Connection established.
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] Setting AUTO_COMMIT mode as false
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] Executing: use nano
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] Executing: SELECT class, country
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] FROM Classes
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] WHERE numGuns >= 10
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] Executing: SELECT name AS shipName
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] FROM Ships
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] WHERE launched < 1918
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] Executing: SELECT ship, battle
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] FROM Outcomes
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] WHERE result = 'sunk'
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] Executing: SELECT * FROM Ships
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] WHERE name = class
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] Executing: SELECT S.name
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] FROM Ships AS S, Classes as C
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] WHERE S.class = C.class AND C.displacement > 35000
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] Executing: SELECT S.name, C.displacement, C.numGuns
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] FROM Outcomes AS O, Classes AS C, Ships AS S
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] WHERE O.battle = 'Guadalcanal' AND C.class = S.class AND O.ship = S.name
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] Executing: SELECT C1.country
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] FROM Classes AS C1, Classes as C2
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] WHERE C1.type = 'Battleship' AND C2.type = 'battlecruiser' AND C1.country = C2.country
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] Executing: SELECT O1.ship
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] FROM Outcomes AS O1, Outcomes AS O2, Battles AS B1, Battles AS B2
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] WHERE O1.ship = O2.ship AND O1.result = 'damaged' AND B1.name = O1.battle AND B2.name = O2.battle AND B1.date < B2.date
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] Executing: SELECT distinct O1.battle AS battle
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] FROM Classes AS C1, Classes AS C2, Classes AS C3,
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] Ships AS S1, Ships AS S2, Ships AS S3,
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] Outcomes AS O1, Outcomes AS O2, Outcomes AS O3
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] WHERE C1.country = C2.country AND C2.country = C3.country AND
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] C1.class = S1.class AND C2.class = S2.class AND C3.class = S3.class AND
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] S1.name = O1.ship AND S2.name = O2.ship AND S3.name = O3.ship AND
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] O1.battle = O2.battle AND O2.battle = O3.battle AND
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] O1.ship <> O2.ship AND O2.ship <> O3.ship AND O1.ship <> O3.ship
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] Query executed, begin to fetch and check result

@@ -1,0 +1,38 @@
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Connecting jdbc:fatworm:///home/mrain/db?user=root&password=fatworm
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Connection established.
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Setting AUTO_COMMIT mode as false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: drop database fatwormTypes
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: create database fatwormTypes
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: use fatwormTypes
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: create table test1(a int, c char(200))
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: insert into test1 values(5,'abcdefgihaosidngoiasndgoiansiodgjasdjg')
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: insert into test1 values(4,'aksofkokqwojpoisdgnasdgn')
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: insert into test1 values(3,'asjgojdojnposndfjopjdpfnje')
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: insert into test1 values(2,'nojconjeornoiejrnoijeoinjojsonpjspofn')
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: insert into test1 values(1,'kodsfjnoeoijnpoenopjsopdfnpodposjndfn')
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: insert into test1 values(644,'bksodfjobjeoprjhpownpbonwpobnopwnbpowb')
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: insert into test1 values(712,'mfsobpoejrnpomdsopnopdsfmnpomdsopfmnpo')
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: insert into test1 values(844,'bkosfdkopjnopenopmsdopfmnpomewpnmpsomn')
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: insert into test1 values(911,'odsfnmopdfpommnpomewponmpsdomfnpomsdpnd')
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: select * from test1 where c='odsfnmopdfpommnpomewponmpsdomfnpomsdpnd'
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: select * from test1 order by c
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:01 CST 2013] [Thread Time] 16
+[Sun Jun 02 21:53:01 CST 2013] [Total Time] 29
+[Sun Jun 02 21:53:01 CST 2013] [Result] Correct

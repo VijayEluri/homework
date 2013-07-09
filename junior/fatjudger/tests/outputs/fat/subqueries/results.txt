@@ -1,0 +1,126 @@
+date: Sun Jun 02 13:32:49 CST 2013
+fat	create	Correct	132
+fat	subqueries	Wrong Answer	66
+date: Sun Jun 02 18:04:14 CST 2013
+fat	create	Correct	141
+fat	subqueries	Wrong Answer	179
+date: Sun Jun 02 18:09:37 CST 2013
+fat	create	Correct	140
+fat	subqueries	Wrong Answer	55
+date: Sun Jun 02 18:10:10 CST 2013
+fat	create	Correct	148
+fat	subqueries	Wrong Answer	40
+date: Sun Jun 02 18:10:26 CST 2013
+fat	create	Correct	128
+fat	subqueries	Wrong Answer	37
+date: Sun Jun 02 18:10:51 CST 2013
+fat	create	Correct	136
+fat	subqueries	Wrong Answer	222
+date: Sun Jun 02 18:11:02 CST 2013
+fat	create	Correct	160
+fat	subqueries	Wrong Answer	216
+date: Sun Jun 02 18:11:16 CST 2013
+fat	create	Correct	137
+fat	subqueries	Wrong Answer	175
+date: Sun Jun 02 18:11:25 CST 2013
+fat	create	Correct	146
+fat	subqueries	Wrong Answer	214
+date: Sun Jun 02 18:13:22 CST 2013
+fat	create	Correct	142
+fat	subqueries	Wrong Answer	175
+date: Sun Jun 02 18:15:13 CST 2013
+fat	create	Correct	158
+fat	subqueries	Wrong Answer	187
+date: Sun Jun 02 18:15:23 CST 2013
+fat	create	Correct	180
+fat	subqueries	Wrong Answer	206
+date: Sun Jun 02 19:26:54 CST 2013
+fat	create	Correct	212
+fat	subqueries	Wrong Answer	179
+date: Sun Jun 02 19:28:43 CST 2013
+fat	create	Correct	155
+fat	subqueries	Wrong Answer	442
+date: Sun Jun 02 19:30:02 CST 2013
+fat	create	Correct	148
+fat	subqueries	Wrong Answer	197
+date: Sun Jun 02 19:30:46 CST 2013
+fat	create	Correct	156
+fat	subqueries	Wrong Answer	202
+date: Sun Jun 02 19:30:51 CST 2013
+fat	create	Correct	135
+fat	subqueries	Wrong Answer	219
+date: Sun Jun 02 19:38:13 CST 2013
+fat	create	Correct	139
+fat	subqueries	Wrong Answer	206
+date: Sun Jun 02 19:38:57 CST 2013
+fat	create	Correct	139
+fat	subqueries	Wrong Answer	196
+date: Sun Jun 02 19:40:00 CST 2013
+fat	create	Correct	148
+fat	subqueries	Wrong Answer	202
+date: Sun Jun 02 19:40:26 CST 2013
+fat	create	Correct	149
+fat	subqueries	Wrong Answer	190
+date: Sun Jun 02 19:41:48 CST 2013
+fat	create	Correct	134
+fat	subqueries	Wrong Answer	186
+date: Sun Jun 02 19:42:30 CST 2013
+fat	create	Correct	144
+fat	subqueries	Wrong Answer	200
+date: Sun Jun 02 19:44:09 CST 2013
+fat	create	Correct	144
+fat	subqueries	Wrong Answer	198
+date: Sun Jun 02 19:44:30 CST 2013
+fat	create	Correct	126
+fat	subqueries	Wrong Answer	252
+date: Sun Jun 02 19:45:42 CST 2013
+fat	create	Correct	138
+fat	subqueries	Wrong Answer	270
+date: Sun Jun 02 19:46:09 CST 2013
+fat	create	Correct	141
+fat	subqueries	Wrong Answer	211
+date: Sun Jun 02 19:46:35 CST 2013
+fat	create	Correct	132
+fat	subqueries	Wrong Answer	218
+date: Sun Jun 02 19:47:03 CST 2013
+fat	create	Correct	148
+fat	subqueries	Wrong Answer	206
+date: Sun Jun 02 19:47:35 CST 2013
+fat	create	Correct	139
+fat	subqueries	Wrong Answer	248
+date: Sun Jun 02 19:47:54 CST 2013
+fat	create	Correct	134
+fat	subqueries	Wrong Answer	252
+date: Sun Jun 02 19:48:31 CST 2013
+fat	create	Correct	137
+fat	subqueries	Wrong Answer	208
+date: Sun Jun 02 19:48:56 CST 2013
+fat	create	Correct	154
+fat	subqueries	Wrong Answer	359
+date: Sun Jun 02 19:50:42 CST 2013
+fat	create	Correct	135
+fat	subqueries	Wrong Answer	218
+date: Sun Jun 02 19:52:32 CST 2013
+fat	create	Correct	132
+fat	subqueries	Wrong Answer	195
+date: Sun Jun 02 19:55:14 CST 2013
+fat	create	Correct	137
+fat	subqueries	Wrong Answer	204
+date: Sun Jun 02 19:59:56 CST 2013
+fat	create	Correct	135
+fat	subqueries	Correct	240
+date: Sun Jun 02 20:06:28 CST 2013
+fat	create	Correct	148
+fat	subqueries	Correct	212
+date: Sun Jun 02 20:06:32 CST 2013
+fat	create	Correct	159
+fat	subqueries	Correct	217
+date: Sun Jun 02 20:07:55 CST 2013
+fat	create	Correct	159
+fat	subqueries	Correct	182
+date: Sun Jun 02 20:59:57 CST 2013
+fat	create	Correct	170
+fat	subqueries	Correct	254
+date: Sun Jun 02 21:54:49 CST 2013
+fat	create	Correct	174
+fat	subqueries	Correct	185

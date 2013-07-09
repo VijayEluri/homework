@@ -1,0 +1,50 @@
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Connecting jdbc:fatworm:///home/mrain/db?user=root&password=fatworm
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Connection established.
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Setting AUTO_COMMIT mode as false
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: use db
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: select * from a
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: select * from b
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: select * from a, b
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: select a from a, b
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: select b from a, b
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: select a.a from a, b
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: select b.b from a, b
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: select a, b from a,b
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: select a, b from a as c, b
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: select c.a, b from a as c, b
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: select a.a, c.a, c.b from a, c where a.a = c.a and a.a = 1
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: select a.a as a, a.a as b from a
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: select distinct a from a
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: select 1-(-2*10)
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:05 CST 2013] [Thread Time] 38
+[Sun Jun 02 21:53:05 CST 2013] [Total Time] 74
+[Sun Jun 02 21:53:05 CST 2013] [Result] Correct

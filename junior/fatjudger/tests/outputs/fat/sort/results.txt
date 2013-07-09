@@ -1,0 +1,39 @@
+date: Sun Jun 02 08:28:21 CST 2013
+fat	insert	Correct	104
+fat	sort	Wrong Answer	34
+date: Sun Jun 02 08:29:20 CST 2013
+fat	insert	Correct	105
+fat	sort	Wrong Answer	35
+date: Sun Jun 02 15:15:20 CST 2013
+fat	insert	Correct	119
+fat	sort	Wrong Answer	38
+date: Sun Jun 02 15:15:30 CST 2013
+fat	insert	Correct	74
+fat	sort	Wrong Answer	210077
+date: Sun Jun 02 15:23:12 CST 2013
+fat	insert	Correct	105
+fat	sort	Wrong Answer	24
+date: Sun Jun 02 15:24:42 CST 2013
+fat	insert	Correct	86
+fat	sort	Wrong Answer	31
+date: Sun Jun 02 15:25:46 CST 2013
+fat	insert	Correct	88
+fat	sort	Wrong Answer	24
+date: Sun Jun 02 15:25:51 CST 2013
+fat	insert	Correct	97
+date: Sun Jun 02 15:28:23 CST 2013
+fat	insert	Correct	74
+fat	sort	Wrong Answer	913530
+date: Sun Jun 02 15:45:53 CST 2013
+fat	insert	Correct	549
+date: Sun Jun 02 17:03:24 CST 2013
+fat	insert	Correct	91
+fat	sort	Wrong Answer	18
+date: Sun Jun 02 17:03:34 CST 2013
+fat	insert	Correct	83
+date: Sun Jun 02 17:11:58 CST 2013
+fat	insert	Correct	90
+fat	sort	Correct	62437
+date: Sun Jun 02 17:53:22 CST 2013
+fat	insert	Correct	100
+fat	sort	Correct	60627

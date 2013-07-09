@@ -1,0 +1,36 @@
+[Sun Jun 02 21:53:29 CST 2013] [Thread0] Connecting jdbc:fatworm:///home/mrain/db?user=root&password=fatworm
+[Sun Jun 02 21:53:29 CST 2013] [Thread0] Connection established.
+[Sun Jun 02 21:53:29 CST 2013] [Thread0] Setting AUTO_COMMIT mode as false
+[Sun Jun 02 21:53:29 CST 2013] [Thread0] Executing: USE winsconsin
+[Sun Jun 02 21:53:29 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:29 CST 2013] [Thread0] Executing: insert into tenk1 values (10001, 74001, 0, 2, 0, 10, 50, 688, 1950, 4950, 9950, 1, 100, 'ron may choi','jae kwang choi', 'u. c. berkeley')
+[Sun Jun 02 21:53:29 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:29 CST 2013] [Thread0] Executing: insert into tenk1 values (19991, 60001, 0, 2, 0, 10, 50, 688, 1950, 4950, 9950, 1, 100, 'ron may choi','jae kwang choi', 'u. c. berkeley')
+[Sun Jun 02 21:53:29 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:29 CST 2013] [Thread0] Executing: delete from tenk1 where tenk1.unique2 = 877
+[Sun Jun 02 21:53:29 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:29 CST 2013] [Thread0] Executing: delete from tenk1 where tenk1.unique2 = 876
+[Sun Jun 02 21:53:29 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:29 CST 2013] [Thread0] Executing: update tenk1 set unique2 = 10001 where tenk1.unique2 =1491
+[Sun Jun 02 21:53:29 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:29 CST 2013] [Thread0] Executing: update tenk1 set unique2 = 10023 where tenk1.unique2 =1480
+[Sun Jun 02 21:53:29 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:29 CST 2013] [Thread0] Executing: insert into tenk1  values (20002, 70002, 0, 2, 0, 10, 50, 688, 1950, 4950, 9950, 1, 100, 'ron may choi', 'jae kwang choi', 'u. c. berkeley')
+[Sun Jun 02 21:53:29 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:29 CST 2013] [Thread0] Executing: insert into tenk1  values (50002, 40002, 0, 2, 0, 10, 50, 688, 1950, 4950, 9950, 1, 100, 'ron may choi', 'jae kwang choi', 'u. c. berkeley')
+[Sun Jun 02 21:53:29 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:29 CST 2013] [Thread0] Executing: delete from tenk1 where tenk1.unique2 = 10001
+[Sun Jun 02 21:53:29 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:29 CST 2013] [Thread0] Executing: delete from tenk1 where tenk1.unique2 = 900
+[Sun Jun 02 21:53:29 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:29 CST 2013] [Thread0] Executing: update tenk1 set unique2 = 10088 where tenk1.unique2 =187
+[Sun Jun 02 21:53:29 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:29 CST 2013] [Thread0] Executing: update tenk1 set unique2 = 10003 where tenk1.unique2 =2000
+[Sun Jun 02 21:53:29 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:29 CST 2013] [Thread0] Executing: update tenk1 set unique2 = 10020 where tenk1.unique2 =1974
+[Sun Jun 02 21:53:29 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:29 CST 2013] [Thread0] Executing: update tenk1 set unique2 = 16001 where tenk1.unique2 =1140
+[Sun Jun 02 21:53:29 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:29 CST 2013] [Thread Time] 197
+[Sun Jun 02 21:53:29 CST 2013] [Total Time] 200
+[Sun Jun 02 21:53:29 CST 2013] [Result] Correct

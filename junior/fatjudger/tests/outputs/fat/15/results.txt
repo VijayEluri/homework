@@ -1,0 +1,12 @@
+date: Fri May 17 00:29:16 CST 2013
+fat	naive	Correct	1921
+date: Fri May 17 00:50:13 CST 2013
+fat	naive	Correct	2478
+date: Fri May 17 00:51:02 CST 2013
+fat	naive	Correct	1991
+date: Fri May 17 01:15:45 CST 2013
+fat	naive	Correct	2021
+date: Fri May 17 01:16:46 CST 2013
+fat	naive	Correct	1986
+date: Fri May 17 01:16:53 CST 2013
+fat	naive	Correct	1968

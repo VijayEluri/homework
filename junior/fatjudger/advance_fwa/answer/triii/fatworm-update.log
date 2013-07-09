@@ -1,0 +1,33 @@
+[Fri May 10 17:32:35 CST 2013] [Thread0] Connecting jdbc:mysql://localhost/?user=root&password=fatworm
+[Fri May 10 17:32:35 CST 2013] [Thread0] Connection established.
+[Fri May 10 17:32:35 CST 2013] [Thread0] Setting AUTO_COMMIT mode as false
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: use acm
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: update student set malesex = false where name = 'JiangXiao'
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select id, name, age, malesex from student
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: update student set id = id + 1000, id = id + id, id = id / 2 - 1000
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select id, name, age, malesex from student
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: update student set age = id, id = age, age = 250 where id > all(
+[Fri May 10 17:32:35 CST 2013] [Thread0] select student.id from fatworm where student.id = fatworm.id and fatworm.groupid = 'C')
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select id, name, age, malesex from student
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: delete from student where deathday > '1989-02-21 0:0:0'
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select id, name, age, malesex from student
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: insert into A (select * from A)
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select count(id) from A
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:36 CST 2013] [Thread Time] 12
+[Fri May 10 17:32:36 CST 2013] [Total Time] 143

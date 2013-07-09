@@ -1,0 +1,141 @@
+[Tue May 21 19:57:35 CST 2013] [Thread0] Connecting jdbc:mysql://localhost/?user=root&password=fatworm
+[Tue May 21 19:57:35 CST 2013] [Thread0] Connection established.
+[Tue May 21 19:57:35 CST 2013] [Thread0] Setting AUTO_COMMIT mode as false
+[Tue May 21 19:57:35 CST 2013] [Thread0] Executing: drop database bank
+[Tue May 21 19:57:37 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:37 CST 2013] [Thread0] Executing: create database bank
+[Tue May 21 19:57:37 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:37 CST 2013] [Thread0] Executing: use bank
+[Tue May 21 19:57:37 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:37 CST 2013] [Thread0] Executing: create table branch(
+[Tue May 21 19:57:37 CST 2013] [Thread0] branch_name varchar(15),
+[Tue May 21 19:57:37 CST 2013] [Thread0] branch_city varchar(30),
+[Tue May 21 19:57:37 CST 2013] [Thread0] assets int,
+[Tue May 21 19:57:37 CST 2013] [Thread0] primary key(branch_name))
+[Tue May 21 19:57:37 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:37 CST 2013] [Thread0] Executing: insert into branch values('Brighton', 'Brooklyn', 7100000)
+[Tue May 21 19:57:37 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:37 CST 2013] [Thread0] Executing: insert into branch values('Downtown', 'Brooklyn', 9000000)
+[Tue May 21 19:57:37 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:37 CST 2013] [Thread0] Executing: insert into branch values('Mianus', 'Horseneck', 400000)
+[Tue May 21 19:57:37 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:37 CST 2013] [Thread0] Executing: insert into branch values('North Town', 'Rye', 3700000)
+[Tue May 21 19:57:37 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:37 CST 2013] [Thread0] Executing: insert into branch values('Perryridge', 'Horseneck', 1700000)
+[Tue May 21 19:57:37 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:37 CST 2013] [Thread0] Executing: insert into branch values('Pownal', 'Bennington', 300000)
+[Tue May 21 19:57:37 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:37 CST 2013] [Thread0] Executing: insert into branch values('Redwood', 'Palo Alto', 2100000)
+[Tue May 21 19:57:37 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:37 CST 2013] [Thread0] Executing: insert into branch values('Round Hill', 'Horseneck', 8000000)
+[Tue May 21 19:57:37 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:37 CST 2013] [Thread0] Executing: create table customer(
+[Tue May 21 19:57:37 CST 2013] [Thread0] customer_name varchar(20),
+[Tue May 21 19:57:37 CST 2013] [Thread0] customer_street varchar(30),
+[Tue May 21 19:57:37 CST 2013] [Thread0] customer_city varchar(30),
+[Tue May 21 19:57:37 CST 2013] [Thread0] primary key(customer_name))
+[Tue May 21 19:57:37 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:37 CST 2013] [Thread0] Executing: insert into customer values('Adams', 'Spring', 'Pittsfied')
+[Tue May 21 19:57:37 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:37 CST 2013] [Thread0] Executing: insert into customer values('Brooks', 'Senator', 'Brooklyn')
+[Tue May 21 19:57:37 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:37 CST 2013] [Thread0] Executing: insert into customer values('Curry', 'North', 'Rye')
+[Tue May 21 19:57:37 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:37 CST 2013] [Thread0] Executing: insert into customer values('Glenn', 'Sand Hill', 'Woodside')
+[Tue May 21 19:57:37 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:37 CST 2013] [Thread0] Executing: insert into customer values('Green', 'Walnut', 'Stamford')
+[Tue May 21 19:57:37 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:37 CST 2013] [Thread0] Executing: insert into customer values('Hayes', 'Main', 'Harrison')
+[Tue May 21 19:57:37 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:37 CST 2013] [Thread0] Executing: insert into customer values('Johnson', 'Alma', 'Palo Alto')
+[Tue May 21 19:57:37 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:37 CST 2013] [Thread0] Executing: insert into customer values('Jones', 'Main', 'Harrison')
+[Tue May 21 19:57:37 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:37 CST 2013] [Thread0] Executing: insert into customer values('Lindsay', 'Park', 'Pittsfield')
+[Tue May 21 19:57:37 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:37 CST 2013] [Thread0] Executing: insert into customer values('Smith', 'North', 'Rye')
+[Tue May 21 19:57:37 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:37 CST 2013] [Thread0] Executing: insert into customer values('Turner', 'Putnam', 'Stamford')
+[Tue May 21 19:57:37 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:37 CST 2013] [Thread0] Executing: insert into customer values('Williams', 'Nassau', 'Princeton')
+[Tue May 21 19:57:37 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:37 CST 2013] [Thread0] Executing: create table loan(
+[Tue May 21 19:57:37 CST 2013] [Thread0] loan_number varchar(5),
+[Tue May 21 19:57:37 CST 2013] [Thread0] branch_name varchar(15),
+[Tue May 21 19:57:37 CST 2013] [Thread0] amount int,
+[Tue May 21 19:57:37 CST 2013] [Thread0] primary key(loan_number))
+[Tue May 21 19:57:37 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:37 CST 2013] [Thread0] Executing: insert into loan values('L-11', 'Round Hill', 900)
+[Tue May 21 19:57:37 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:37 CST 2013] [Thread0] Executing: insert into loan values('L-14', 'Downtown', 1500)
+[Tue May 21 19:57:37 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:37 CST 2013] [Thread0] Executing: insert into loan values('L-15', 'Perryridge', 1500)
+[Tue May 21 19:57:37 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:37 CST 2013] [Thread0] Executing: insert into loan values('L-16', 'Perryridge', 1300)
+[Tue May 21 19:57:37 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:37 CST 2013] [Thread0] Executing: insert into loan values('L-17', 'Downtown', 1000)
+[Tue May 21 19:57:37 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:37 CST 2013] [Thread0] Executing: insert into loan values('L-23', 'Redwood', 2000)
+[Tue May 21 19:57:37 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:37 CST 2013] [Thread0] Executing: insert into loan values('L-93', 'Mianus', 500)
+[Tue May 21 19:57:37 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:37 CST 2013] [Thread0] Executing: create table borrower(
+[Tue May 21 19:57:37 CST 2013] [Thread0] customer_name varchar(20),
+[Tue May 21 19:57:37 CST 2013] [Thread0] loan_number varchar(5),
+[Tue May 21 19:57:37 CST 2013] [Thread0] primary key(loan_number))
+[Tue May 21 19:57:38 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:38 CST 2013] [Thread0] Executing: insert into borrower values('Adams', 'L-16')
+[Tue May 21 19:57:38 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:38 CST 2013] [Thread0] Executing: insert into borrower values('Curry', 'L-93')
+[Tue May 21 19:57:38 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:38 CST 2013] [Thread0] Executing: insert into borrower values('Hayes', 'L-15')
+[Tue May 21 19:57:38 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:38 CST 2013] [Thread0] Executing: insert into borrower values('Jackson', 'L-14')
+[Tue May 21 19:57:38 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:38 CST 2013] [Thread0] Executing: insert into borrower values('Jones', 'L-17')
+[Tue May 21 19:57:38 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:38 CST 2013] [Thread0] Executing: insert into borrower values('Smith', 'L-11')
+[Tue May 21 19:57:38 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:38 CST 2013] [Thread0] Executing: insert into borrower values('Smith', 'L-23')
+[Tue May 21 19:57:38 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:38 CST 2013] [Thread0] Executing: create table account(
+[Tue May 21 19:57:38 CST 2013] [Thread0] account_number varchar(5),
+[Tue May 21 19:57:38 CST 2013] [Thread0] branch_name varchar(15),
+[Tue May 21 19:57:38 CST 2013] [Thread0] balance int,
+[Tue May 21 19:57:38 CST 2013] [Thread0] primary key(account_number))
+[Tue May 21 19:57:38 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:38 CST 2013] [Thread0] Executing: insert into account values('A-101', 'Downtown', 500)
+[Tue May 21 19:57:38 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:38 CST 2013] [Thread0] Executing: insert into account values('A-215', 'Mianus', 700)
+[Tue May 21 19:57:38 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:38 CST 2013] [Thread0] Executing: insert into account values('A-102', 'Perryridge', 400)
+[Tue May 21 19:57:38 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:38 CST 2013] [Thread0] Executing: insert into account values('A-305', 'Round Hill', 350)
+[Tue May 21 19:57:38 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:38 CST 2013] [Thread0] Executing: insert into account values('A-201', 'Brighton', 900)
+[Tue May 21 19:57:38 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:38 CST 2013] [Thread0] Executing: insert into account values('A-222', 'Redwood', 700)
+[Tue May 21 19:57:38 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:38 CST 2013] [Thread0] Executing: insert into account values('A-217', 'Brighton', 750)
+[Tue May 21 19:57:38 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:38 CST 2013] [Thread0] Executing: create table depositor(
+[Tue May 21 19:57:38 CST 2013] [Thread0] customer_name varchar(20),
+[Tue May 21 19:57:38 CST 2013] [Thread0] account_number varchar(5),
+[Tue May 21 19:57:38 CST 2013] [Thread0] primary key(account_number))
+[Tue May 21 19:57:39 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:39 CST 2013] [Thread0] Executing: insert into depositor values('Hayes', 'A-102')
+[Tue May 21 19:57:39 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:39 CST 2013] [Thread0] Executing: insert into depositor values('Johnson', 'A-101')
+[Tue May 21 19:57:39 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:39 CST 2013] [Thread0] Executing: insert into depositor values('Johnson', 'A-201')
+[Tue May 21 19:57:39 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:39 CST 2013] [Thread0] Executing: insert into depositor values('Jones', 'A-217')
+[Tue May 21 19:57:39 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:39 CST 2013] [Thread0] Executing: insert into depositor values('Lindsay', 'A-222')
+[Tue May 21 19:57:39 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:39 CST 2013] [Thread0] Executing: insert into depositor values('Smith', 'A-215')
+[Tue May 21 19:57:39 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:39 CST 2013] [Thread0] Executing: insert into depositor values('Turner', 'A-305')
+[Tue May 21 19:57:39 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:39 CST 2013] [Thread Time] 3371
+[Tue May 21 19:57:39 CST 2013] [Total Time] 3668

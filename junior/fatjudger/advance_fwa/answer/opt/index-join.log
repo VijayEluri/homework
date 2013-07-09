@@ -1,0 +1,17 @@
+[Fri May 10 17:32:06 CST 2013] [Thread0] Connecting jdbc:mysql://localhost/?user=root&password=fatworm
+[Fri May 10 17:32:06 CST 2013] [Thread0] Connection established.
+[Fri May 10 17:32:06 CST 2013] [Thread0] Setting AUTO_COMMIT mode as false
+[Fri May 10 17:32:06 CST 2013] [Thread0] Executing: use opt
+[Fri May 10 17:32:06 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:06 CST 2013] [Thread0] Executing: select TTAA.id, TTAA.val, TTBB.val
+[Fri May 10 17:32:06 CST 2013] [Thread0] from TTAA, TTBB
+[Fri May 10 17:32:06 CST 2013] [Thread0] where TTAA.id = TTBB.id
+[Fri May 10 17:32:06 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:06 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:06 CST 2013] [Thread0] Executing: select CTB.val
+[Fri May 10 17:32:06 CST 2013] [Thread0] from CTA, CTB
+[Fri May 10 17:32:06 CST 2013] [Thread0] where CTA.id = CTB.id
+[Fri May 10 17:32:06 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:06 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:06 CST 2013] [Thread Time] 222
+[Fri May 10 17:32:06 CST 2013] [Total Time] 392

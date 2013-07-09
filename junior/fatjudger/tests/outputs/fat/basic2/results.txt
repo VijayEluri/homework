@@ -1,0 +1,735 @@
+date: Fri May 31 14:31:39 CST 2013
+fat	autoinc	Wrong Answer	227
+fat	avgsum	Wrong Answer	55
+fat	count	Wrong Answer	59
+fat	default	Wrong Answer	31
+fat	delete	Correct	48
+fat	distinct	Wrong Answer	28
+fat	Expression	Correct	149
+fat	Float	Wrong Answer	71
+fat	isChar	Wrong Answer	35
+fat	isDateTime	Wrong Answer	48
+fat	minmax	Wrong Answer	28
+fat	null	Wrong Answer	31
+fat	orderby	Wrong Answer	35
+fat	update	Wrong Answer	83
+date: Fri May 31 16:31:56 CST 2013
+fat	autoinc	Wrong Answer	106
+fat	avgsum	Wrong Answer	20
+fat	count	Wrong Answer	12
+fat	default	Wrong Answer	21
+fat	delete	Correct	12
+fat	distinct	Wrong Answer	22
+fat	Expression	Correct	157
+fat	Float	Wrong Answer	60
+fat	isChar	Wrong Answer	29
+fat	isDateTime	Wrong Answer	28
+fat	minmax	Wrong Answer	6
+fat	null	Wrong Answer	28
+fat	orderby	Wrong Answer	28
+fat	update	Wrong Answer	18
+date: Sat Jun 01 21:57:10 CST 2013
+fat	autoinc	Wrong Answer	190
+fat	avgsum	Wrong Answer	53
+fat	count	Wrong Answer	47
+fat	default	Wrong Answer	28
+fat	delete	Correct	38
+fat	distinct	Wrong Answer	35
+fat	Expression	Correct	149
+fat	Float	Wrong Answer	103
+fat	isChar	Wrong Answer	35
+fat	isDateTime	Wrong Answer	39
+fat	minmax	Wrong Answer	23
+fat	null	Wrong Answer	37
+fat	orderby	Wrong Answer	37
+fat	update	Wrong Answer	38
+date: Sat Jun 01 22:07:04 CST 2013
+fat	autoinc	Wrong Answer	107
+fat	avgsum	Wrong Answer	26
+fat	count	Wrong Answer	15
+fat	default	Wrong Answer	14
+fat	delete	Correct	23
+fat	distinct	Wrong Answer	4
+fat	Expression	Wrong Answer	5
+fat	Float	Wrong Answer	4
+fat	isChar	Wrong Answer	3
+fat	isDateTime	Wrong Answer	3
+fat	minmax	Wrong Answer	4
+fat	null	Wrong Answer	2
+fat	orderby	Wrong Answer	2
+fat	update	Wrong Answer	2
+date: Sat Jun 01 22:07:17 CST 2013
+fat	autoinc	Wrong Answer	106
+fat	avgsum	Wrong Answer	20
+fat	count	Wrong Answer	14
+fat	default	Wrong Answer	16
+fat	delete	Correct	15
+fat	distinct	Wrong Answer	24
+fat	Expression	Correct	155
+fat	Float	Wrong Answer	57
+fat	isChar	Correct	19
+fat	isDateTime	Wrong Answer	35
+fat	minmax	Wrong Answer	8
+fat	null	Correct	23
+fat	orderby	Correct	25
+fat	update	Correct	14
+date: Sat Jun 01 22:07:28 CST 2013
+fat	autoinc	Wrong Answer	99
+fat	avgsum	Wrong Answer	18
+fat	count	Wrong Answer	7
+fat	default	Wrong Answer	12
+fat	delete	Correct	20
+fat	distinct	Wrong Answer	20
+fat	Expression	Correct	147
+fat	Float	Wrong Answer	66
+fat	isChar	Correct	17
+fat	isDateTime	Wrong Answer	33
+fat	minmax	Wrong Answer	6
+fat	null	Correct	19
+fat	orderby	Correct	23
+fat	update	Correct	16
+date: Sat Jun 01 22:13:35 CST 2013
+fat	autoinc	Wrong Answer	97
+fat	avgsum	Wrong Answer	18
+fat	count	Wrong Answer	9
+fat	default	Wrong Answer	16
+fat	delete	Correct	17
+fat	distinct	Wrong Answer	5
+fat	Expression	Wrong Answer	3
+fat	Float	Wrong Answer	2
+fat	isChar	Wrong Answer	3
+fat	isDateTime	Wrong Answer	2
+fat	minmax	Wrong Answer	4
+fat	null	Wrong Answer	3
+fat	orderby	Wrong Answer	5
+fat	update	Wrong Answer	4
+date: Sat Jun 01 22:13:41 CST 2013
+fat	autoinc	Wrong Answer	95
+fat	avgsum	Wrong Answer	26
+fat	count	Wrong Answer	9
+fat	default	Wrong Answer	12
+fat	delete	Correct	20
+fat	distinct	Wrong Answer	21
+fat	Expression	Correct	150
+fat	Float	Wrong Answer	52
+fat	isChar	Correct	20
+fat	isDateTime	Wrong Answer	50
+fat	minmax	Wrong Answer	5
+fat	null	Correct	18
+fat	orderby	Correct	25
+fat	update	Correct	17
+date: Sat Jun 01 22:19:52 CST 2013
+fat	autoinc	Wrong Answer	99
+fat	avgsum	Wrong Answer	18
+fat	count	Wrong Answer	12
+fat	default	Wrong Answer	14
+fat	delete	Correct	22
+fat	distinct	Wrong Answer	16
+fat	Expression	Correct	137
+fat	Float	Wrong Answer	54
+fat	isChar	Correct	19
+fat	isDateTime	Wrong Answer	36
+fat	minmax	Wrong Answer	8
+fat	null	Correct	16
+fat	orderby	Correct	29
+fat	update	Correct	14
+date: Sat Jun 01 22:40:24 CST 2013
+fat	autoinc	Wrong Answer	105
+fat	avgsum	Wrong Answer	21
+fat	count	Wrong Answer	16
+fat	default	Wrong Answer	14
+fat	delete	Correct	23
+fat	distinct	Wrong Answer	4
+fat	Expression	Wrong Answer	3
+fat	Float	Wrong Answer	3
+fat	isChar	Wrong Answer	3
+fat	isDateTime	Wrong Answer	2
+fat	minmax	Wrong Answer	2
+fat	null	Wrong Answer	3
+fat	orderby	Wrong Answer	2
+fat	update	Wrong Answer	5
+date: Sat Jun 01 22:40:30 CST 2013
+fat	autoinc	Wrong Answer	105
+fat	avgsum	Wrong Answer	21
+fat	count	Wrong Answer	10
+fat	default	Wrong Answer	16
+fat	delete	Correct	17
+fat	distinct	Wrong Answer	19
+fat	Expression	Correct	145
+fat	Float	Wrong Answer	55
+fat	isChar	Correct	27
+fat	isDateTime	Correct	41
+fat	minmax	Wrong Answer	7
+fat	null	Correct	19
+fat	orderby	Correct	26
+fat	update	Correct	19
+date: Sat Jun 01 22:48:49 CST 2013
+fat	autoinc	Wrong Answer	107
+fat	avgsum	Wrong Answer	26
+fat	count	Wrong Answer	13
+fat	default	Correct	15
+fat	delete	Correct	21
+fat	distinct	Wrong Answer	21
+fat	Expression	Correct	245
+fat	Float	Wrong Answer	61
+fat	isChar	Correct	28
+fat	isDateTime	Correct	41
+fat	minmax	Wrong Answer	11
+fat	null	Correct	22
+fat	orderby	Correct	27
+fat	update	Correct	20
+date: Sat Jun 01 22:49:59 CST 2013
+fat	autoinc	Wrong Answer	115
+fat	avgsum	Wrong Answer	36
+fat	count	Wrong Answer	28
+fat	default	Correct	19
+fat	delete	Correct	16
+fat	distinct	Wrong Answer	20
+fat	Expression	Correct	142
+fat	Float	Wrong Answer	54
+fat	isChar	Correct	20
+fat	isDateTime	Correct	46
+fat	minmax	Wrong Answer	5
+fat	null	Correct	27
+fat	orderby	Correct	24
+fat	update	Correct	20
+date: Sat Jun 01 22:51:36 CST 2013
+fat	autoinc	Correct	123
+fat	avgsum	Wrong Answer	30
+fat	count	Wrong Answer	19
+fat	default	Correct	19
+fat	delete	Correct	22
+fat	distinct	Wrong Answer	16
+fat	Expression	Correct	159
+fat	Float	Wrong Answer	53
+fat	isChar	Correct	25
+fat	isDateTime	Correct	40
+fat	minmax	Wrong Answer	8
+fat	null	Correct	21
+fat	orderby	Correct	28
+fat	update	Correct	22
+date: Sat Jun 01 22:56:30 CST 2013
+fat	autoinc	Correct	137
+fat	avgsum	Wrong Answer	52
+fat	count	Wrong Answer	25
+fat	default	Correct	18
+fat	delete	Correct	23
+fat	distinct	Wrong Answer	26
+fat	Expression	Correct	145
+fat	Float	Wrong Answer	49
+fat	isChar	Correct	30
+fat	isDateTime	Correct	41
+fat	minmax	Wrong Answer	10
+fat	null	Correct	23
+fat	orderby	Correct	38
+fat	update	Correct	20
+date: Sat Jun 01 23:01:48 CST 2013
+fat	autoinc	Correct	154
+fat	avgsum	Wrong Answer	50
+fat	count	Wrong Answer	18
+fat	default	Correct	28
+fat	delete	Correct	32
+fat	distinct	Correct	25
+fat	Expression	Correct	133
+fat	Float	Wrong Answer	54
+fat	isChar	Correct	41
+fat	isDateTime	Correct	40
+fat	minmax	Wrong Answer	18
+fat	null	Correct	30
+fat	orderby	Correct	33
+fat	update	Correct	19
+date: Sun Jun 02 01:15:24 CST 2013
+fat	autoinc	Correct	190
+fat	avgsum	Wrong Answer	64
+fat	count	Correct	26
+fat	default	Correct	31
+fat	delete	Correct	31
+fat	distinct	Correct	29
+fat	Expression	Correct	139
+fat	Float	Correct	74
+fat	isChar	Correct	29
+fat	isDateTime	Correct	46
+fat	minmax	Correct	21
+fat	null	Correct	28
+fat	orderby	Correct	29
+fat	update	Correct	27
+date: Sun Jun 02 01:18:37 CST 2013
+fat	autoinc	Correct	155
+fat	avgsum	Correct	62
+fat	count	Correct	31
+fat	default	Correct	31
+fat	delete	Correct	33
+fat	distinct	Correct	27
+fat	Expression	Correct	149
+fat	Float	Correct	58
+fat	isChar	Correct	32
+fat	isDateTime	Correct	37
+fat	minmax	Correct	27
+fat	null	Correct	28
+fat	orderby	Correct	40
+fat	update	Correct	28
+date: Sun Jun 02 08:27:55 CST 2013
+fat	autoinc	Correct	119
+fat	avgsum	Correct	28
+fat	count	Correct	21
+fat	default	Correct	17
+fat	delete	Correct	17
+fat	distinct	Correct	19
+fat	Expression	Correct	164
+fat	Float	Correct	63
+fat	isChar	Correct	29
+fat	isDateTime	Correct	39
+fat	minmax	Correct	12
+fat	null	Correct	20
+fat	orderby	Correct	25
+fat	update	Correct	18
+date: Sun Jun 02 12:45:37 CST 2013
+fat	autoinc	Correct	336
+fat	avgsum	Correct	58
+fat	count	Correct	25
+fat	default	Correct	26
+fat	delete	Correct	34
+fat	distinct	Correct	25
+fat	Expression	Correct	146
+fat	Float	Correct	66
+fat	isChar	Correct	37
+fat	isDateTime	Correct	36
+fat	minmax	Correct	17
+fat	null	Correct	27
+fat	orderby	Correct	29
+fat	update	Correct	21
+date: Sun Jun 02 13:45:49 CST 2013
+fat	autoinc	Correct	142
+fat	avgsum	Correct	53
+fat	count	Correct	23
+fat	default	Correct	21
+fat	delete	Correct	26
+fat	distinct	Correct	28
+fat	Expression	Correct	150
+fat	Float	Correct	68
+fat	isChar	Correct	29
+fat	isDateTime	Correct	45
+fat	minmax	Correct	17
+fat	null	Wrong Answer	23
+fat	orderby	Correct	25
+fat	update	Correct	22
+date: Sun Jun 02 13:47:09 CST 2013
+fat	autoinc	Correct	150
+fat	avgsum	Correct	62
+fat	count	Correct	33
+fat	default	Correct	20
+fat	delete	Correct	33
+fat	distinct	Correct	30
+fat	Expression	Correct	154
+fat	Float	Correct	64
+fat	isChar	Correct	26
+fat	isDateTime	Correct	34
+fat	minmax	Correct	20
+fat	null	Wrong Answer	22
+fat	orderby	Correct	41
+fat	update	Correct	20
+date: Sun Jun 02 13:48:00 CST 2013
+fat	autoinc	Correct	154
+fat	avgsum	Correct	62
+fat	count	Correct	24
+fat	default	Correct	24
+fat	delete	Correct	27
+fat	distinct	Correct	24
+fat	Expression	Correct	137
+fat	Float	Correct	65
+fat	isChar	Correct	33
+fat	isDateTime	Correct	34
+fat	minmax	Correct	16
+fat	null	Wrong Answer	29
+fat	orderby	Correct	30
+fat	update	Correct	20
+date: Sun Jun 02 13:49:11 CST 2013
+fat	autoinc	Correct	177
+fat	avgsum	Correct	61
+fat	count	Correct	28
+fat	default	Correct	30
+fat	delete	Correct	22
+fat	distinct	Correct	30
+fat	Expression	Correct	144
+fat	Float	Correct	54
+fat	isChar	Correct	29
+fat	isDateTime	Correct	35
+fat	minmax	Correct	17
+fat	null	Wrong Answer	29
+fat	orderby	Correct	34
+fat	update	Correct	19
+date: Sun Jun 02 13:50:24 CST 2013
+fat	autoinc	Correct	165
+fat	avgsum	Correct	56
+fat	count	Correct	26
+fat	default	Correct	26
+fat	delete	Correct	25
+fat	distinct	Correct	31
+fat	Expression	Correct	150
+fat	Float	Correct	66
+fat	isChar	Correct	28
+fat	isDateTime	Correct	37
+fat	minmax	Correct	24
+fat	null	Correct	23
+fat	orderby	Correct	32
+fat	update	Correct	21
+date: Sun Jun 02 14:27:19 CST 2013
+fat	autoinc	Correct	178
+fat	avgsum	Correct	46
+fat	count	Correct	22
+fat	default	Correct	61
+fat	delete	Correct	19
+fat	distinct	Correct	22
+fat	Expression	Correct	265
+fat	Float	Correct	62
+fat	isChar	Correct	22
+fat	isDateTime	Correct	39
+fat	minmax	Correct	9
+fat	null	Correct	26
+fat	orderby	Correct	20
+fat	update	Correct	21
+date: Sun Jun 02 17:15:20 CST 2013
+fat	autoinc	Correct	107
+fat	avgsum	Correct	25
+fat	count	Correct	22
+fat	default	Correct	16
+fat	delete	Correct	22
+fat	distinct	Correct	25
+fat	Expression	Correct	155
+fat	Float	Correct	70
+fat	isChar	Correct	19
+fat	isDateTime	Correct	62
+fat	minmax	Correct	11
+fat	null	Correct	23
+fat	orderby	Correct	27
+fat	update	Correct	19
+date: Sun Jun 02 17:19:01 CST 2013
+fat	autoinc	Correct	127
+fat	avgsum	Correct	32
+fat	count	Correct	16
+fat	default	Correct	17
+fat	delete	Correct	18
+fat	distinct	Correct	26
+fat	Expression	Correct	181
+fat	Float	Wrong Answer	133
+fat	isChar	Correct	35
+fat	isDateTime	Correct	52
+fat	minmax	Correct	16
+fat	null	Correct	22
+fat	orderby	Correct	20
+fat	update	Correct	19
+date: Sun Jun 02 17:20:15 CST 2013
+fat	autoinc	Correct	108
+fat	avgsum	Correct	38
+fat	count	Correct	21
+fat	default	Correct	10
+fat	delete	Correct	17
+fat	distinct	Correct	24
+fat	Expression	Correct	158
+fat	Float	Correct	60
+fat	isChar	Correct	18
+fat	isDateTime	Correct	42
+fat	minmax	Correct	12
+fat	null	Correct	29
+fat	orderby	Correct	40
+fat	update	Correct	14
+date: Sun Jun 02 17:27:39 CST 2013
+fat	autoinc	Correct	110
+fat	avgsum	Correct	32
+fat	count	Correct	23
+fat	default	Correct	18
+fat	delete	Correct	15
+fat	distinct	Correct	18
+fat	Expression	Correct	168
+fat	Float	Correct	62
+fat	isChar	Correct	27
+fat	isDateTime	Correct	40
+fat	minmax	Correct	15
+fat	null	Correct	22
+fat	orderby	Correct	31
+fat	update	Correct	20
+date: Sun Jun 02 17:30:28 CST 2013
+fat	autoinc	Correct	104
+fat	avgsum	Correct	29
+fat	count	Correct	19
+fat	default	Correct	13
+fat	delete	Correct	18
+fat	distinct	Correct	17
+fat	Expression	Correct	172
+fat	Float	Correct	59
+fat	isChar	Correct	24
+fat	isDateTime	Correct	39
+fat	minmax	Correct	16
+fat	null	Correct	16
+fat	orderby	Correct	31
+fat	update	Correct	16
+date: Sun Jun 02 17:31:28 CST 2013
+fat	autoinc	Correct	111
+fat	avgsum	Correct	32
+fat	count	Correct	19
+fat	default	Correct	10
+fat	delete	Correct	19
+fat	distinct	Correct	21
+fat	Expression	Correct	206
+fat	Float	Correct	57
+fat	isChar	Correct	21
+fat	isDateTime	Correct	37
+fat	minmax	Correct	11
+fat	null	Correct	19
+fat	orderby	Correct	23
+fat	update	Correct	15
+date: Sun Jun 02 17:37:47 CST 2013
+fat	autoinc	Correct	106
+fat	avgsum	Correct	30
+fat	count	Correct	16
+fat	default	Correct	18
+fat	delete	Correct	14
+fat	distinct	Correct	18
+fat	Expression	Correct	163
+fat	Float	Correct	65
+fat	isChar	Correct	25
+fat	isDateTime	Correct	43
+fat	minmax	Correct	10
+fat	null	Correct	16
+fat	orderby	Correct	31
+fat	update	Correct	15
+date: Sun Jun 02 17:40:21 CST 2013
+fat	autoinc	Correct	117
+fat	avgsum	Correct	20
+fat	count	Correct	25
+fat	default	Correct	13
+fat	delete	Correct	14
+fat	distinct	Correct	23
+fat	Expression	Correct	170
+fat	Float	Correct	61
+fat	isChar	Correct	19
+fat	isDateTime	Correct	43
+fat	minmax	Correct	15
+fat	null	Correct	32
+fat	orderby	Correct	26
+fat	update	Correct	12
+date: Sun Jun 02 17:44:26 CST 2013
+fat	autoinc	Correct	120
+fat	avgsum	Correct	45
+fat	count	Correct	21
+fat	default	Correct	14
+fat	delete	Correct	20
+fat	distinct	Correct	19
+fat	Expression	Correct	170
+fat	Float	Correct	69
+fat	isChar	Correct	21
+fat	isDateTime	Correct	47
+fat	minmax	Correct	12
+fat	null	Correct	30
+fat	orderby	Correct	30
+fat	update	Correct	15
+date: Sun Jun 02 17:45:08 CST 2013
+fat	autoinc	Correct	107
+fat	avgsum	Correct	31
+fat	count	Correct	23
+fat	default	Correct	14
+fat	delete	Correct	22
+fat	distinct	Correct	30
+fat	Expression	Correct	154
+fat	Float	Correct	66
+fat	isChar	Correct	20
+fat	isDateTime	Correct	44
+fat	minmax	Correct	13
+fat	null	Correct	19
+fat	orderby	Correct	20
+fat	update	Correct	15
+date: Sun Jun 02 17:52:53 CST 2013
+fat	autoinc	Correct	151
+fat	avgsum	Correct	29
+fat	count	Correct	20
+fat	default	Correct	15
+fat	delete	Correct	18
+fat	distinct	Correct	21
+fat	Expression	Correct	173
+fat	Float	Correct	72
+fat	isChar	Correct	32
+fat	isDateTime	Correct	56
+fat	minmax	Correct	11
+fat	null	Correct	21
+fat	orderby	Correct	24
+fat	update	Correct	12
+date: Sun Jun 02 17:58:05 CST 2013
+fat	autoinc	Correct	147
+fat	avgsum	Correct	32
+fat	count	Correct	26
+fat	default	Correct	17
+fat	delete	Correct	19
+fat	distinct	Correct	27
+fat	Expression	Correct	176
+fat	Float	Correct	65
+fat	isChar	Correct	26
+fat	isDateTime	Correct	44
+fat	minmax	Correct	12
+fat	null	Correct	19
+fat	orderby	Correct	22
+fat	update	Correct	19
+date: Sun Jun 02 18:09:50 CST 2013
+fat	autoinc	Correct	140
+fat	avgsum	Correct	46
+fat	count	Correct	29
+fat	default	Correct	15
+fat	delete	Correct	18
+fat	distinct	Correct	19
+fat	Expression	Correct	196
+fat	Float	Correct	79
+fat	isChar	Correct	21
+fat	isDateTime	Correct	42
+fat	minmax	Correct	16
+fat	null	Correct	22
+fat	orderby	Correct	24
+fat	update	Correct	13
+date: Sun Jun 02 18:10:58 CST 2013
+fat	autoinc	Correct	132
+fat	avgsum	Correct	37
+fat	count	Correct	34
+fat	default	Correct	15
+fat	delete	Correct	29
+fat	distinct	Correct	26
+fat	Expression	Correct	167
+fat	Float	Correct	71
+fat	isChar	Correct	20
+fat	isDateTime	Correct	32
+fat	minmax	Correct	15
+fat	null	Correct	15
+fat	orderby	Correct	27
+fat	update	Correct	17
+date: Sun Jun 02 18:15:19 CST 2013
+fat	autoinc	Correct	118
+fat	avgsum	Correct	35
+fat	count	Correct	33
+fat	default	Correct	14
+fat	delete	Correct	14
+fat	distinct	Correct	24
+fat	Expression	Correct	167
+fat	Float	Correct	66
+fat	isChar	Correct	23
+fat	isDateTime	Correct	42
+fat	minmax	Correct	21
+fat	null	Correct	21
+fat	orderby	Correct	26
+fat	update	Correct	18
+date: Sun Jun 02 19:54:52 CST 2013
+fat	autoinc	Wrong Answer	101
+fat	avgsum	Correct	31
+fat	count	Correct	19
+fat	default	Wrong Answer	17
+fat	delete	Wrong Answer	11
+fat	distinct	Wrong Answer	14
+fat	Expression	Wrong Answer	138
+fat	Float	Correct	53
+fat	isChar	Wrong Answer	11
+fat	isDateTime	Wrong Answer	32
+fat	minmax	Correct	22
+fat	null	Wrong Answer	5
+fat	orderby	Wrong Answer	20
+fat	update	Wrong Answer	10
+date: Sun Jun 02 19:54:59 CST 2013
+fat	autoinc	Wrong Answer	95
+fat	avgsum	Correct	34
+fat	count	Correct	18
+fat	default	Wrong Answer	12
+fat	delete	Wrong Answer	9
+fat	distinct	Wrong Answer	8
+fat	Expression	Wrong Answer	124
+fat	Float	Correct	68
+fat	isChar	Wrong Answer	13
+fat	isDateTime	Wrong Answer	14
+fat	minmax	Correct	17
+fat	null	Wrong Answer	5
+fat	orderby	Wrong Answer	17
+fat	update	Wrong Answer	16
+date: Sun Jun 02 19:59:12 CST 2013
+fat	autoinc	Correct	120
+fat	avgsum	Correct	41
+fat	count	Correct	27
+fat	default	Correct	13
+fat	delete	Correct	14
+fat	distinct	Correct	22
+fat	Expression	Correct	166
+fat	Float	Correct	69
+fat	isChar	Correct	23
+fat	isDateTime	Correct	39
+fat	minmax	Correct	10
+fat	null	Correct	23
+fat	orderby	Correct	27
+fat	update	Correct	13
+date: Sun Jun 02 20:06:20 CST 2013
+fat	autoinc	Correct	133
+fat	avgsum	Correct	37
+fat	count	Correct	35
+fat	default	Correct	21
+fat	delete	Correct	16
+fat	distinct	Correct	23
+fat	Expression	Correct	191
+fat	Float	Correct	73
+fat	isChar	Correct	20
+fat	isDateTime	Correct	45
+fat	minmax	Correct	15
+fat	null	Correct	16
+fat	orderby	Correct	26
+fat	update	Correct	12
+date: Sun Jun 02 20:35:59 CST 2013
+fat	autoinc	Correct	118
+fat	avgsum	Correct	33
+fat	count	Correct	18
+fat	default	Correct	13
+fat	delete	Correct	24
+fat	distinct	Correct	24
+fat	Expression	Correct	181
+fat	Float	Correct	68
+fat	isChar	Correct	21
+fat	isDateTime	Correct	48
+fat	minmax	Correct	9
+fat	null	Correct	21
+fat	orderby	Correct	24
+fat	update	Correct	18
+date: Sun Jun 02 20:59:24 CST 2013
+fat	autoinc	Correct	115
+fat	avgsum	Correct	34
+fat	count	Correct	22
+fat	default	Correct	12
+fat	delete	Correct	17
+fat	distinct	Correct	28
+fat	Expression	Correct	192
+fat	Float	Correct	71
+fat	isChar	Correct	21
+fat	isDateTime	Correct	49
+fat	minmax	Correct	9
+fat	null	Correct	21
+fat	orderby	Correct	21
+fat	update	Correct	12
+date: Sun Jun 02 21:43:17 CST 2013
+fat	autoinc	Correct	119
+fat	avgsum	Correct	36
+fat	count	Correct	25
+fat	default	Correct	16
+fat	delete	Correct	26
+fat	distinct	Correct	44
+fat	Expression	Correct	182
+fat	Float	Correct	63
+fat	isChar	Correct	18
+fat	isDateTime	Correct	42
+fat	minmax	Correct	12
+fat	null	Correct	27
+fat	orderby	Correct	25
+fat	update	Correct	15
+date: Sun Jun 02 21:53:14 CST 2013
+fat	autoinc	Correct	124
+fat	avgsum	Correct	46
+fat	count	Correct	29
+fat	default	Correct	20
+fat	delete	Correct	17
+fat	distinct	Correct	24
+fat	Expression	Correct	196
+fat	Float	Correct	62
+fat	isChar	Correct	19
+fat	isDateTime	Correct	44
+fat	minmax	Correct	17
+fat	null	Correct	18
+fat	orderby	Correct	28
+fat	update	Correct	15

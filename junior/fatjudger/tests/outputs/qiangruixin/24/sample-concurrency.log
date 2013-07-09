@@ -1,0 +1,87 @@
+[Mon May 14 09:30:52 CST 2012] [Thread0] Connecting jdbc:fatworm://tmp?user=root&password=fatworm
+[Mon May 14 09:30:52 CST 2012] [Thread0] Connection established.
+[Mon May 14 09:30:52 CST 2012] [Thread0] Setting AUTO_COMMIT mode as false
+[Mon May 14 09:30:52 CST 2012] [Thread0] Executing: use nano
+[Mon May 14 09:30:52 CST 2012] [Thread0] isQuery? false
+[Mon May 14 09:30:52 CST 2012] [Thread0] Executing: update Classes set numGuns=numGuns+1 where type='battlecruiser'
+[Mon May 14 09:30:52 CST 2012] [Thread0] isQuery? false
+[Mon May 14 09:30:52 CST 2012] [Thread0] Executing: select * from Classes
+[Mon May 14 09:30:52 CST 2012] [Thread0] isQuery? true
+[Mon May 14 09:30:52 CST 2012] [Thread0] Query executed, begin to fetch and check result
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 1 is 12
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 2 is 12
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 3 is 12
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 4 is 4
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 5 is 4
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 6 is 4
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 1 is 12
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 2 is 12
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 3 is 12
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 4 is 4
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 5 is 4
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 6 is 4
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 1 is 12
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 2 is 12
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 3 is 12
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 4 is 4
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 5 is 4
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 6 is 4
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 1 is 12
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 2 is 12
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 3 is 12
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 4 is 4
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 5 is 4
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 6 is 4
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 1 is 12
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 2 is 12
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 3 is 12
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 4 is 4
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 5 is 4
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 6 is 4
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 1 is 12
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 2 is 12
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 3 is 12
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 4 is 4
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 5 is 4
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 6 is 4
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 1 is 12
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 2 is 12
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 3 is 12
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 4 is 4
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 5 is 4
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 6 is 4
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 1 is 12
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 2 is 12
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 3 is 12
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 4 is 4
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 5 is 4
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 6 is 4
+[Mon May 14 09:30:52 CST 2012] [Thread0] Executing: use nano
+[Mon May 14 09:30:52 CST 2012] [Thread0] isQuery? false
+[Mon May 14 09:30:52 CST 2012] [Thread0] Executing: select avg(numGuns) from Classes,Ships
+[Mon May 14 09:30:52 CST 2012] [Thread0] where Ships.class=Classes.class and Classes.type='battleship'
+[Mon May 14 09:30:52 CST 2012] [Thread0] isQuery? true
+[Mon May 14 09:30:52 CST 2012] [Thread0] Query executed, begin to fetch and check result
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 1 is 6
+[Mon May 14 09:30:52 CST 2012] [Thread0] Executing: use nano
+[Mon May 14 09:30:52 CST 2012] [Thread0] isQuery? false
+[Mon May 14 09:30:52 CST 2012] [Thread0] Executing: select class,min(launched) from Ships group by class order by class
+[Mon May 14 09:30:52 CST 2012] [Thread0] isQuery? true
+[Mon May 14 09:30:52 CST 2012] [Thread0] Query executed, begin to fetch and check result
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 1 is 12
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 2 is 4
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 1 is 12
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 2 is 4
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 1 is 12
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 2 is 4
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 1 is 12
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 2 is 4
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 1 is 12
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 2 is 4
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 1 is 12
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 2 is 4
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 1 is 12
+[Mon May 14 09:30:52 CST 2012] [Thread0] Type 2 is 4
+[Mon May 14 09:30:52 CST 2012] [Thread Time] 17
+[Mon May 14 09:30:52 CST 2012] [Total Time] 31
+[Mon May 14 09:30:52 CST 2012] [Result] Correct

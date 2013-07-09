@@ -1,0 +1,14 @@
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] Connecting jdbc:fatworm:///home/mrain/db?user=root&password=fatworm
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] Connection established.
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] Setting AUTO_COMMIT mode as false
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] Executing: use sort
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] Executing: select * from
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] (select a.ch*10000000+b.ch*1000000+c.ch*100000+d.ch*10000+e.ch*1000+f.ch*100+g.ch*10+h.ch as ans from chars as a, chars as b, chars as c, chars as d, chars as e,chars as f,chars as g,chars as h order by ans) as tab
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] where ans <21 or ans > 99999978
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] order by ans
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 17:54:22 CST 2013] [Thread Time] 60620
+[Sun Jun 02 17:54:22 CST 2013] [Total Time] 60627
+[Sun Jun 02 17:54:22 CST 2013] [Result] Correct

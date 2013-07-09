@@ -1,0 +1,11 @@
+[Sun Jun 02 21:55:11 CST 2013] [Thread0] Connecting jdbc:fatworm:///home/mrain/db?user=root&password=fatworm
+[Sun Jun 02 21:55:11 CST 2013] [Thread0] Connection established.
+[Sun Jun 02 21:55:11 CST 2013] [Thread0] Setting AUTO_COMMIT mode as false
+[Sun Jun 02 21:55:11 CST 2013] [Thread0] Executing: use ATIS
+[Sun Jun 02 21:55:11 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:55:11 CST 2013] [Thread0] Executing: select city.cityname,state.statename,city.citycode from state,city where city.statecode=state.statecode order by city.cityname ASC
+[Sun Jun 02 21:55:11 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:55:11 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:55:11 CST 2013] [Thread Time] 11
+[Sun Jun 02 21:55:11 CST 2013] [Total Time] 23
+[Sun Jun 02 21:55:11 CST 2013] [Result] Correct

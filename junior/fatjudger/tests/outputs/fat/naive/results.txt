@@ -1,0 +1,12 @@
+date: Thu May 30 19:31:34 CST 2013
+fat	naive	Wrong Answer	184
+date: Thu May 30 19:46:05 CST 2013
+fat	naive	Wrong Answer	191
+date: Thu May 30 21:56:46 CST 2013
+fat	naive	Correct	161
+date: Sun Jun 02 01:18:50 CST 2013
+fat	naive	Correct	166
+date: Sun Jun 02 17:15:14 CST 2013
+fat	naive	Correct	98
+date: Sun Jun 02 21:55:02 CST 2013
+fat	naive	Correct	125

@@ -1,0 +1,13 @@
+[Fri May 10 17:33:50 CST 2013] [Thread0] Connecting jdbc:mysql://localhost/?user=root&password=fatworm
+[Fri May 10 17:33:50 CST 2013] [Thread0] Connection established.
+[Fri May 10 17:33:50 CST 2013] [Thread0] Setting AUTO_COMMIT mode as false
+[Fri May 10 17:33:50 CST 2013] [Thread0] Executing: USE winsconsin
+[Fri May 10 17:33:50 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:33:50 CST 2013] [Thread0] Executing: select *  from onek order by unique1 ASC, unique2 ASC
+[Fri May 10 17:33:50 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:33:50 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:33:57 CST 2013] [Thread0] Executing: select MIN(unique2) as x  from tenk1
+[Fri May 10 17:33:57 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:33:57 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:33:57 CST 2013] [Thread Time] 40
+[Fri May 10 17:33:57 CST 2013] [Total Time] 7117

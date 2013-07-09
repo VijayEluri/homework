@@ -1,0 +1,33 @@
+[Sun Jun 02 21:53:08 CST 2013] [Thread0] Connecting jdbc:fatworm:///home/mrain/db?user=root&password=fatworm
+[Sun Jun 02 21:53:08 CST 2013] [Thread0] Connection established.
+[Sun Jun 02 21:53:08 CST 2013] [Thread0] Setting AUTO_COMMIT mode as false
+[Sun Jun 02 21:53:08 CST 2013] [Thread0] Executing: drop database nano
+[Sun Jun 02 21:53:08 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:08 CST 2013] [Thread0] Executing: create database nano
+[Sun Jun 02 21:53:08 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:08 CST 2013] [Thread0] Executing: use nano
+[Sun Jun 02 21:53:08 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:08 CST 2013] [Thread0] Executing: create table Classes(
+[Sun Jun 02 21:53:08 CST 2013] [Thread0] name char(50),
+[Sun Jun 02 21:53:08 CST 2013] [Thread0] number int,
+[Sun Jun 02 21:53:08 CST 2013] [Thread0] score float,
+[Sun Jun 02 21:53:08 CST 2013] [Thread0] date DATETIME)
+[Sun Jun 02 21:53:08 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:08 CST 2013] [Thread0] Executing: insert into Classes values ('1991-01-11 11:12:00', 1, 2.1, '2009-01-11 11:12:00')
+[Sun Jun 02 21:53:08 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:08 CST 2013] [Thread0] Executing: insert into Classes values ('1991-01-11 11:11:00', 2, 2.2, '2001-01-11 11:12:01')
+[Sun Jun 02 21:53:08 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:08 CST 2013] [Thread0] Executing: insert into Classes values ('1911-01-11 11:13:00', 3, 2.4, '2005-01-11 11:12:02')
+[Sun Jun 02 21:53:08 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:08 CST 2013] [Thread0] Executing: insert into Classes values ('1991-01-11 11:01:00', 5, 2.5, '2010-01-11 11:12:04')
+[Sun Jun 02 21:53:08 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:08 CST 2013] [Thread0] Executing: insert into Classes values ('1991-01-11 11:01:00', 6, 3.5, '2008-08-08 09:56:23')
+[Sun Jun 02 21:53:08 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:08 CST 2013] [Thread0] Executing: update Classes set score = 7.8 where number = 3
+[Sun Jun 02 21:53:08 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:08 CST 2013] [Thread0] Executing: select name, number as n, score from Classes as c where c.number > ANY(select number from Classes)
+[Sun Jun 02 21:53:08 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:08 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:08 CST 2013] [Thread Time] 26
+[Sun Jun 02 21:53:08 CST 2013] [Total Time] 39
+[Sun Jun 02 21:53:08 CST 2013] [Result] Correct

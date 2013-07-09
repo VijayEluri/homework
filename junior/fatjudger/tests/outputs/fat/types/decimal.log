@@ -1,0 +1,24 @@
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Connecting jdbc:fatworm:///home/mrain/db?user=root&password=fatworm
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Connection established.
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Setting AUTO_COMMIT mode as false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: drop database fatwormTypes
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: create database fatwormTypes
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: use fatwormTypes
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: create table test1(a int, d decimal(40))
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: insert into test1 values(1,1234567891011121314)
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: insert into test1 values(2,123456789101112131415161718192021223)
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: select * from test1 where d>10
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: select d from test1 order by d
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:01 CST 2013] [Thread Time] 16
+[Sun Jun 02 21:53:01 CST 2013] [Total Time] 29
+[Sun Jun 02 21:53:01 CST 2013] [Result] Correct

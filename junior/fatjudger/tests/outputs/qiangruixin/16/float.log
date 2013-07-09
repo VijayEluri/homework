@@ -1,0 +1,58 @@
+[Mon May 14 09:30:56 CST 2012] [Thread0] Connecting jdbc:fatworm://tmp?user=root&password=fatworm
+[Mon May 14 09:30:56 CST 2012] [Thread0] Connection established.
+[Mon May 14 09:30:56 CST 2012] [Thread0] Setting AUTO_COMMIT mode as false
+[Mon May 14 09:30:56 CST 2012] [Thread0] Executing: drop database fatwormTypes
+[Mon May 14 09:30:56 CST 2012] [Thread0] isQuery? false
+[Mon May 14 09:30:56 CST 2012] [Thread0] Executing: create database fatwormTypes
+[Mon May 14 09:30:56 CST 2012] [Thread0] isQuery? false
+[Mon May 14 09:30:56 CST 2012] [Thread0] Executing: use fatwormTypes
+[Mon May 14 09:30:56 CST 2012] [Thread0] isQuery? false
+[Mon May 14 09:30:56 CST 2012] [Thread0] Executing: create table test1(a int, b float)
+[Mon May 14 09:30:56 CST 2012] [Thread0] isQuery? false
+[Mon May 14 09:30:56 CST 2012] [Thread0] Executing: insert into test1 values(1,10000.3)
+[Mon May 14 09:30:56 CST 2012] [Thread0] isQuery? false
+[Mon May 14 09:30:56 CST 2012] [Thread0] Executing: insert into test1 values(2,92385.2)
+[Mon May 14 09:30:56 CST 2012] [Thread0] isQuery? false
+[Mon May 14 09:30:56 CST 2012] [Thread0] Executing: insert into test1 values(3,83745.3)
+[Mon May 14 09:30:56 CST 2012] [Thread0] isQuery? false
+[Mon May 14 09:30:56 CST 2012] [Thread0] Executing: insert into test1 values(4,82348.1)
+[Mon May 14 09:30:56 CST 2012] [Thread0] isQuery? false
+[Mon May 14 09:30:56 CST 2012] [Thread0] Executing: insert into test1 values(5,23713.5)
+[Mon May 14 09:30:56 CST 2012] [Thread0] isQuery? false
+[Mon May 14 09:30:56 CST 2012] [Thread0] Executing: insert into test1 values(6,48241.7)
+[Mon May 14 09:30:56 CST 2012] [Thread0] isQuery? false
+[Mon May 14 09:30:56 CST 2012] [Thread0] Executing: insert into test1 values(7,48234.4)
+[Mon May 14 09:30:56 CST 2012] [Thread0] isQuery? false
+[Mon May 14 09:30:56 CST 2012] [Thread0] Executing: insert into test1 values(8,81824.5)
+[Mon May 14 09:30:56 CST 2012] [Thread0] isQuery? false
+[Mon May 14 09:30:56 CST 2012] [Thread0] Executing: insert into test1 values(9,98923.1)
+[Mon May 14 09:30:56 CST 2012] [Thread0] isQuery? false
+[Mon May 14 09:30:56 CST 2012] [Thread0] Executing: select sum(b),avg(b) from test1
+[Mon May 14 09:30:56 CST 2012] [Thread0] isQuery? true
+[Mon May 14 09:30:56 CST 2012] [Thread0] Query executed, begin to fetch and check result
+[Mon May 14 09:30:56 CST 2012] [Thread0] Type 1 is 6
+[Mon May 14 09:30:56 CST 2012] [Thread0] Type 2 is 6
+[Mon May 14 09:30:56 CST 2012] [Thread0] Executing: select a from test1 order by b
+[Mon May 14 09:30:56 CST 2012] [Thread0] isQuery? true
+[Mon May 14 09:30:56 CST 2012] [Thread0] Query executed, begin to fetch and check result
+[Mon May 14 09:30:56 CST 2012] [Thread0] Type 1 is 4
+[Mon May 14 09:30:56 CST 2012] [Thread0] Type 1 is 4
+[Mon May 14 09:30:56 CST 2012] [Thread0] Type 1 is 4
+[Mon May 14 09:30:56 CST 2012] [Thread0] Type 1 is 4
+[Mon May 14 09:30:56 CST 2012] [Thread0] Type 1 is 4
+[Mon May 14 09:30:56 CST 2012] [Thread0] Type 1 is 4
+[Mon May 14 09:30:56 CST 2012] [Thread0] Type 1 is 4
+[Mon May 14 09:30:56 CST 2012] [Thread0] Type 1 is 4
+[Mon May 14 09:30:56 CST 2012] [Thread0] Type 1 is 4
+[Mon May 14 09:30:56 CST 2012] [Thread0] Type 1 is 4
+[Mon May 14 09:30:56 CST 2012] [Thread0] Type 1 is 4
+[Mon May 14 09:30:56 CST 2012] [Thread0] Type 1 is 4
+[Mon May 14 09:30:56 CST 2012] [Thread0] Type 1 is 4
+[Mon May 14 09:30:56 CST 2012] [Thread0] Type 1 is 4
+[Mon May 14 09:30:56 CST 2012] [Thread0] Type 1 is 4
+[Mon May 14 09:30:56 CST 2012] [Thread0] Type 1 is 4
+[Mon May 14 09:30:56 CST 2012] [Thread0] Type 1 is 4
+[Mon May 14 09:30:56 CST 2012] [Thread0] Type 1 is 4
+[Mon May 14 09:30:56 CST 2012] [Thread Time] 22
+[Mon May 14 09:30:56 CST 2012] [Total Time] 29
+[Mon May 14 09:30:56 CST 2012] [Result] Wrong Answer

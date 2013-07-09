@@ -1,0 +1,17 @@
+[Sun Jun 02 21:53:27 CST 2013] [Thread0] Connecting jdbc:fatworm:///home/mrain/db?user=root&password=fatworm
+[Sun Jun 02 21:53:27 CST 2013] [Thread0] Connection established.
+[Sun Jun 02 21:53:27 CST 2013] [Thread0] Setting AUTO_COMMIT mode as false
+[Sun Jun 02 21:53:27 CST 2013] [Thread0] Executing: USE winsconsin
+[Sun Jun 02 21:53:27 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:27 CST 2013] [Thread0] Executing: select *  from tenk1 where (unique2 > 301) and (unique2 < 402) order by unique1 ASC, unique2 ASC
+[Sun Jun 02 21:53:27 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:27 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:27 CST 2013] [Thread0] Executing: select *  from tenk1 where (unique1 > 647) and (unique1 < 1648) order by unique1 ASC, unique2 ASC
+[Sun Jun 02 21:53:27 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:27 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:28 CST 2013] [Thread0] Executing: select * from tenk1 where unique2 = 2001 order by unique1 ASC, unique2 ASC
+[Sun Jun 02 21:53:28 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:28 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:28 CST 2013] [Thread Time] 386
+[Sun Jun 02 21:53:28 CST 2013] [Total Time] 1368
+[Sun Jun 02 21:53:28 CST 2013] [Result] Correct

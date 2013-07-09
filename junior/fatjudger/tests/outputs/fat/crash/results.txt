@@ -1,0 +1,6 @@
+date: Sun Jun 02 18:03:55 CST 2013
+fat	init	Correct	111
+fat	syntactic-crash	Correct	10
+fat	select	Correct	22
+fat	semantic-crash	Correct	17
+fat	select	Correct	9

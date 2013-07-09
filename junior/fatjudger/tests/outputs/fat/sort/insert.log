@@ -1,0 +1,31 @@
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] Connecting jdbc:fatworm:///home/mrain/db?user=root&password=fatworm
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] Connection established.
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] Setting AUTO_COMMIT mode as false
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] Executing: drop database sort
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] Executing: create database sort
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] Executing: use sort
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] Executing: create table chars(
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] ch int)
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] Executing: insert into chars values(1)
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] Executing: insert into chars values(2)
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] Executing: insert into chars values(3)
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] Executing: insert into chars values(4)
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] Executing: insert into chars values(7)
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] Executing: insert into chars values(8)
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] Executing: insert into chars values(9)
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] Executing: insert into chars values(0)
+[Sun Jun 02 17:53:22 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:53:22 CST 2013] [Thread Time] 70
+[Sun Jun 02 17:53:22 CST 2013] [Total Time] 100
+[Sun Jun 02 17:53:22 CST 2013] [Result] Correct

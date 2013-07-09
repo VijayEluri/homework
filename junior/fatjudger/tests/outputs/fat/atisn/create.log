@@ -1,0 +1,225 @@
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Connecting jdbc:fatworm:///home/mrain/db?user=root&password=fatworm
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Connection established.
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Setting AUTO_COMMIT mode as false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: drop database ATISN
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create database ATISN
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: use ATISN
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create table aircraft
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] (aircraftcode char(3) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] aircrafttype char(64) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] engines INT NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] category char(10) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] widebody char(3) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] wingspan float NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] length1 float NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] weight INT NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] capacity INT NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] payload INT NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] cruisingspeed INT NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] rangemiles INT NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] pressurized char(3) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] PRIMARY KEY (aircraftcode))
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create table airline
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] (airlinecode char(2) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] airlinename char(64) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] notes char(38) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] PRIMARY KEY (airlinecode))
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create table airport
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] (airportcode char(3) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] airportname char(40) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] location char(36) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] statecode char(2) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] countryname char(25) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] timezonecode char(3) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] PRIMARY KEY (airportcode))
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create table airportservice
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] (citycode char(4) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] airportcode char(3) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] milesdistant float NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] direction char(3) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] minutesdistant INT NOT NULL)
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create table city
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] (citycode char(4) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] cityname char(25) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] statecode char(2) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] countryname char(25) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] timezonecode char(3) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] PRIMARY KEY (citycode))
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create table classofservice
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] (classcode char(2) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] rank INT NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] classdescription char(80) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] PRIMARY KEY (classcode))
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create table codedescription
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] (code char(5) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] description char(110) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] PRIMARY KEY (code))
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create table compoundclass
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] (fareclass char(3) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] baseclass char(2) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] classtype char(10) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] premium char(3) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] economy char(3) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] discounted char(3) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] night char(3) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] seasonfare char(4) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] classdays char(7) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] PRIMARY KEY (fareclass))
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create table connectleg
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] (connectcode INT NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] legnumber INT NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] flightcode INT NOT NULL)
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create table fconnection
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] (connectcode INT NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] fromairport char(3) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] toairport char(3) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] departuretime INT NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] arrivaltime INT NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] flightdays char(7) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] stops INT NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] connections INT NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] timeelapsed INT NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] PRIMARY KEY (connectcode))
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create index fromairport1 on fconnection(fromairport)
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create index toairport1 on fconnection(toairport)
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create table dayname
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] (daycode INT NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] dayname char(9) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] PRIMARY KEY (daycode))
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create table dualcarrier
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] (mainairline char(2) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] dualairline char(2) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] lowflight INT NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] highflight INT NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] fconnectionname char(64) NOT NULL)
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create index mainairline1 on dualcarrier(mainairline)
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create table fare
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] (farecode char(8) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] fromairport char(3) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] toairport char(3) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] fareclass char(3) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] fareairline char(2) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] restrictcode char(5) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] onewaycost float NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] rndtripcost float NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] PRIMARY KEY (farecode))
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create index fromairport2 on fare(fromairport)
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create index toairport2 on fare(toairport)
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create table flight
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] (flightcode INT NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] flightdays char(7) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] fromairport char(3) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] toairport char(3) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] departuretime INT NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] arrivaltime INT NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] airlinecode char(2) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] flightnumber INT NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] classstring char(8) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] aircraftcode char(3) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] mealcode char(7) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] stops INT NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] dualcarrier char(1) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] timeelapsed INT NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] PRIMARY KEY (flightcode))
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create index fromairport3 on flight(fromairport)
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create index toairport3 on flight(toairport)
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create table flightclass
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] (flightcode INT NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] fareclass char(3) NOT NULL)
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create table flightday
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] (daymask char(7) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] daycode INT NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] dayname char(9) NOT NULL)
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create table flightfare
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] (flightcode INT NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] farecode char(8) NOT NULL)
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create table foodservice
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] (mealcode char(4) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] mealnumber INT NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] mealclass char(10) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] mealdescription char(10) NOT NULL)
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create table groundservice
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] (citycode char(4) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] airportcode char(3) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] transportcode char(1) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] groundfare float NOT NULL)
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create table timeinterval
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] (period char(20) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] begintime INT NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] endtime INT NOT NULL)
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create table monthname
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] (monthnumber INT NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] monthname char(9) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] PRIMARY KEY (monthnumber))
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create table restrictcarrier
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] (restrictcode char(5) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] airlinecode char(2) NOT NULL)
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create table restrictclass
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] (restrictcode char(5) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] exfareclass char(12) NOT NULL)
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create table restriction
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] (restrictcode char(5) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] application char(80) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] nodiscounts char(80) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] reserveticket INT NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] stopovers char(1) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] returnmin INT NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] returnmax INT NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] PRIMARY KEY (restrictcode))
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create table state
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] (statecode char(2) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] statename char(25) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] countryname char(25) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] PRIMARY KEY (statecode))
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create table stop
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] (flightcode INT NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] stopnumber INT NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] stopflight INT NOT NULL)
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create table timezone
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] (timezonecode char(3) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] timezonename char(32) NOT NULL)
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] Executing: create table transport
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] (transportcode char(1) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] transportdesc char(32) NOT NULL,
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] PRIMARY KEY (transportcode))
+[Sun Jun 02 20:27:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:27:23 CST 2013] [Thread Time] 94
+[Sun Jun 02 20:27:23 CST 2013] [Total Time] 187
+[Sun Jun 02 20:27:23 CST 2013] [Result] Correct

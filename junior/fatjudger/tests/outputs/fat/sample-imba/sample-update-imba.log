@@ -1,0 +1,17 @@
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] Connecting jdbc:fatworm:///home/mrain/db?user=root&password=fatworm
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] Connection established.
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] Setting AUTO_COMMIT mode as false
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] Executing: use nano
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] Executing: insert into Ships
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] (select class, class, 1920
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] from Classes
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] where not exists (select name from Ships where Ships.class = Classes.class))
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] Executing: insert into Ships
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] (select ship, 'Iowa', 1900
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] from Outcomes where ship <> ALL(select name from Ships))
+[Sun Jun 02 20:00:25 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:00:25 CST 2013] [Thread Time] 47
+[Sun Jun 02 20:00:25 CST 2013] [Total Time] 57
+[Sun Jun 02 20:00:25 CST 2013] [Result] Correct

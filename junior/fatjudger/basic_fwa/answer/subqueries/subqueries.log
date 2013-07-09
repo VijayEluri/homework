@@ -1,0 +1,98 @@
+[Tue May 21 19:57:39 CST 2013] [Thread0] Connecting jdbc:mysql://localhost/?user=root&password=fatworm
+[Tue May 21 19:57:39 CST 2013] [Thread0] Connection established.
+[Tue May 21 19:57:39 CST 2013] [Thread0] Setting AUTO_COMMIT mode as false
+[Tue May 21 19:57:39 CST 2013] [Thread0] Executing: use bank
+[Tue May 21 19:57:39 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:39 CST 2013] [Thread0] Executing: select distinct customer_name
+[Tue May 21 19:57:39 CST 2013] [Thread0] from borrower
+[Tue May 21 19:57:39 CST 2013] [Thread0] where customer_name in (select customer_name
+[Tue May 21 19:57:39 CST 2013] [Thread0] from depositor)
+[Tue May 21 19:57:39 CST 2013] [Thread0] isQuery? true
+[Tue May 21 19:57:39 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Tue May 21 19:57:39 CST 2013] [Thread0] Executing: select distinct customer_name
+[Tue May 21 19:57:39 CST 2013] [Thread0] from borrower,loan
+[Tue May 21 19:57:39 CST 2013] [Thread0] where borrower.loan_number = loan.loan_number and
+[Tue May 21 19:57:39 CST 2013] [Thread0] branch_name = 'Perryridge' and
+[Tue May 21 19:57:39 CST 2013] [Thread0] customer_name in
+[Tue May 21 19:57:39 CST 2013] [Thread0] (select customer_name
+[Tue May 21 19:57:39 CST 2013] [Thread0] from depositor, account
+[Tue May 21 19:57:39 CST 2013] [Thread0] where depositor.account_number = account.account_number) and
+[Tue May 21 19:57:39 CST 2013] [Thread0] branch_name in
+[Tue May 21 19:57:39 CST 2013] [Thread0] (select branch_name
+[Tue May 21 19:57:39 CST 2013] [Thread0] from depositor, account
+[Tue May 21 19:57:39 CST 2013] [Thread0] where depositor.account_number = account.account_number)
+[Tue May 21 19:57:39 CST 2013] [Thread0] isQuery? true
+[Tue May 21 19:57:39 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Tue May 21 19:57:39 CST 2013] [Thread0] Executing: select distinct customer_name
+[Tue May 21 19:57:39 CST 2013] [Thread0] from borrower
+[Tue May 21 19:57:39 CST 2013] [Thread0] where customer_name in (select customer_name
+[Tue May 21 19:57:39 CST 2013] [Thread0] from depositor)
+[Tue May 21 19:57:39 CST 2013] [Thread0] isQuery? true
+[Tue May 21 19:57:39 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Tue May 21 19:57:39 CST 2013] [Thread0] Executing: select branch_name
+[Tue May 21 19:57:39 CST 2013] [Thread0] from branch
+[Tue May 21 19:57:39 CST 2013] [Thread0] where assets > any (select assets
+[Tue May 21 19:57:39 CST 2013] [Thread0] from branch
+[Tue May 21 19:57:39 CST 2013] [Thread0] where branch_city = 'Brooklyn')
+[Tue May 21 19:57:39 CST 2013] [Thread0] isQuery? true
+[Tue May 21 19:57:39 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Tue May 21 19:57:39 CST 2013] [Thread0] Executing: select branch_name
+[Tue May 21 19:57:39 CST 2013] [Thread0] from branch
+[Tue May 21 19:57:39 CST 2013] [Thread0] where assets > all (select assets
+[Tue May 21 19:57:39 CST 2013] [Thread0] from branch
+[Tue May 21 19:57:39 CST 2013] [Thread0] where branch_city = 'Brooklyn')
+[Tue May 21 19:57:39 CST 2013] [Thread0] isQuery? true
+[Tue May 21 19:57:39 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Tue May 21 19:57:39 CST 2013] [Thread0] Executing: select branch_name
+[Tue May 21 19:57:39 CST 2013] [Thread0] from account
+[Tue May 21 19:57:39 CST 2013] [Thread0] group by branch_name
+[Tue May 21 19:57:39 CST 2013] [Thread0] having avg(balance) >= all(select avg(balance)
+[Tue May 21 19:57:39 CST 2013] [Thread0] from account
+[Tue May 21 19:57:39 CST 2013] [Thread0] group by branch_name)
+[Tue May 21 19:57:39 CST 2013] [Thread0] isQuery? true
+[Tue May 21 19:57:39 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Tue May 21 19:57:39 CST 2013] [Thread0] Executing: select customer_name
+[Tue May 21 19:57:39 CST 2013] [Thread0] from borrower
+[Tue May 21 19:57:39 CST 2013] [Thread0] where exists (select *
+[Tue May 21 19:57:39 CST 2013] [Thread0] from depositor
+[Tue May 21 19:57:39 CST 2013] [Thread0] where depositor.customer_name = borrower.customer_name)
+[Tue May 21 19:57:39 CST 2013] [Thread0] isQuery? true
+[Tue May 21 19:57:39 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Tue May 21 19:57:39 CST 2013] [Thread0] Executing: select distinct S.customer_name
+[Tue May 21 19:57:39 CST 2013] [Thread0] from depositor as S
+[Tue May 21 19:57:39 CST 2013] [Thread0] where not exists (select R.branch_name
+[Tue May 21 19:57:39 CST 2013] [Thread0] from depositor as T, account as R
+[Tue May 21 19:57:39 CST 2013] [Thread0] where T.account_number = R.account_number and S.customer_name = T.customer_name)
+[Tue May 21 19:57:39 CST 2013] [Thread0] isQuery? true
+[Tue May 21 19:57:39 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Tue May 21 19:57:39 CST 2013] [Thread0] Executing: select branch_name, avg_balance
+[Tue May 21 19:57:39 CST 2013] [Thread0] from (select branch_name, avg(balance) as avg_balance
+[Tue May 21 19:57:39 CST 2013] [Thread0] from account
+[Tue May 21 19:57:39 CST 2013] [Thread0] group by branch_name)
+[Tue May 21 19:57:39 CST 2013] [Thread0] as branch_avg
+[Tue May 21 19:57:39 CST 2013] [Thread0] where avg_balance > 1200
+[Tue May 21 19:57:39 CST 2013] [Thread0] isQuery? true
+[Tue May 21 19:57:39 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Tue May 21 19:57:39 CST 2013] [Thread0] Executing: select max(tot_balance)
+[Tue May 21 19:57:39 CST 2013] [Thread0] from (select branch_name, sum(balance) as tot_balance
+[Tue May 21 19:57:39 CST 2013] [Thread0] from account
+[Tue May 21 19:57:39 CST 2013] [Thread0] group by branch_name)
+[Tue May 21 19:57:39 CST 2013] [Thread0] as branch_total
+[Tue May 21 19:57:39 CST 2013] [Thread0] isQuery? true
+[Tue May 21 19:57:39 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Tue May 21 19:57:39 CST 2013] [Thread0] Executing: insert into account
+[Tue May 21 19:57:39 CST 2013] [Thread0] (select loan_number, branch_name, 200
+[Tue May 21 19:57:39 CST 2013] [Thread0] from loan
+[Tue May 21 19:57:39 CST 2013] [Thread0] where branch_name = 'Perryridge')
+[Tue May 21 19:57:39 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:39 CST 2013] [Thread0] Executing: update account
+[Tue May 21 19:57:39 CST 2013] [Thread0] set balance = (select amount
+[Tue May 21 19:57:39 CST 2013] [Thread0] from loan
+[Tue May 21 19:57:39 CST 2013] [Thread0] where branch_name = 'Mianus')
+[Tue May 21 19:57:39 CST 2013] [Thread0] where balance >= 900
+[Tue May 21 19:57:39 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:57:39 CST 2013] [Thread0] Executing: select * from account
+[Tue May 21 19:57:39 CST 2013] [Thread0] isQuery? true
+[Tue May 21 19:57:39 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Tue May 21 19:57:39 CST 2013] [Thread Time] 35
+[Tue May 21 19:57:39 CST 2013] [Total Time] 199

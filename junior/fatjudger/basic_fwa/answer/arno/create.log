@@ -1,0 +1,37 @@
+[Tue May 21 19:56:46 CST 2013] [Thread0] Connecting jdbc:mysql://localhost/?user=root&password=fatworm
+[Tue May 21 19:56:46 CST 2013] [Thread0] Connection established.
+[Tue May 21 19:56:46 CST 2013] [Thread0] Setting AUTO_COMMIT mode as false
+[Tue May 21 19:56:46 CST 2013] [Thread0] Executing: DROP DATABASE ARNO
+[Tue May 21 19:56:46 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:56:46 CST 2013] [Thread0] Executing: CREATE DATABASE ARNO
+[Tue May 21 19:56:46 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:56:46 CST 2013] [Thread0] Executing: USE ARNO
+[Tue May 21 19:56:46 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:56:46 CST 2013] [Thread0] Executing: CREATE TABLE MODEL (
+[Tue May 21 19:56:46 CST 2013] [Thread0] MODEL_ID int NOT NULL DEFAULT 0,
+[Tue May 21 19:56:46 CST 2013] [Thread0] IS_MUTAGEN char(3),
+[Tue May 21 19:56:46 CST 2013] [Thread0] LUMO int,
+[Tue May 21 19:56:46 CST 2013] [Thread0] LOGP int,
+[Tue May 21 19:56:46 CST 2013] [Thread0] PRIMARY KEY (MODEL_ID)
+[Tue May 21 19:56:46 CST 2013] [Thread0] )
+[Tue May 21 19:56:46 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:56:46 CST 2013] [Thread0] Executing: CREATE TABLE ATOM (
+[Tue May 21 19:56:46 CST 2013] [Thread0] ATOM_ID varchar(10) NOT NULL,
+[Tue May 21 19:56:46 CST 2013] [Thread0] MODEL_ID int,
+[Tue May 21 19:56:46 CST 2013] [Thread0] ELEMENT char(2),
+[Tue May 21 19:56:46 CST 2013] [Thread0] TYPE char(3),
+[Tue May 21 19:56:46 CST 2013] [Thread0] CHARGE int,
+[Tue May 21 19:56:46 CST 2013] [Thread0] PRIMARY KEY (ATOM_ID)
+[Tue May 21 19:56:46 CST 2013] [Thread0] )
+[Tue May 21 19:56:47 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:56:47 CST 2013] [Thread0] Executing: CREATE TABLE BOND (
+[Tue May 21 19:56:47 CST 2013] [Thread0] BOND_ID int NOT NULL DEFAULT 0,
+[Tue May 21 19:56:47 CST 2013] [Thread0] MODEL_ID int,
+[Tue May 21 19:56:47 CST 2013] [Thread0] ATOM1 varchar(10),
+[Tue May 21 19:56:47 CST 2013] [Thread0] ATOM2 varchar(10),
+[Tue May 21 19:56:47 CST 2013] [Thread0] TYPE char(3),
+[Tue May 21 19:56:47 CST 2013] [Thread0] PRIMARY KEY (BOND_ID)
+[Tue May 21 19:56:47 CST 2013] [Thread0] )
+[Tue May 21 19:56:47 CST 2013] [Thread0] isQuery? false
+[Tue May 21 19:56:47 CST 2013] [Thread Time] 937
+[Tue May 21 19:56:47 CST 2013] [Total Time] 1173

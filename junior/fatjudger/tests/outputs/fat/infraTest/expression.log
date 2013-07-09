@@ -1,0 +1,219 @@
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Connecting jdbc:fatworm:///home/mrain/db?user=root&password=fatworm
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Connection established.
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Setting AUTO_COMMIT mode as false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: drop database nano
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: create database nano
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: use nano
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: drop table InfraTest
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: create table InfraTest( k int)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0-1-2+3-4*5-6-7+8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0-1*2-3*4-5*6-7+8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0-1-2*3*4+5+6*7*8*9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0-1-2-3*4+5+6+7*8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0-1-2-3-4+5+6+7*8*9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0-1*2*3*4+5*6-7-8*9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0*1+2*3*4-5-6+7+8*9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1*2*3-4+5-6*7+8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1+2*3+4*5*6+7*8-9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1+2*3*4+5+6*7*8-9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1+2*3+4-5-6-7+8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0*1+2-3*4-5*6+7*8*9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1+2-3*4-5*6*7-8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0*1-2*3-4+5+6-7+8*9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1*2+3-4+5-6*7+8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0*1-2*3*4*5-6+7*8*9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1*2+3+4-5*6-7+8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0*1*2-3*4+5-6*7*8-9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0*1*2-3*4-5-6*7-8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0-1*2*3+4+5*6-7+8-9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0-1*2*3-4*5*6+7-8*9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0-1*2-3+4-5*6*7+8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1+2*3-4-5-6*7*8*9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0-1-2-3+4+5+6+7*8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0*1+2+3*4*5*6-7*8-9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1*2*3*4-5+6*7+8*9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0-1+2+3-4*5*6*7+8*9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1-2*3-4-5*6-7+8-9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0-1+2-3*4+5*6-7+8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0*1*2-3+4*5*6+7+8*9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1+2*3*4+5-6*7*8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0*1+2-3-4*5-6+7-8*9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0*1-2+3+4-5+6*7-8*9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0*1*2+3-4*5+6+7+8-9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1+2-3+4*5*6-7-8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1*2*3+4*5+6+7-8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0-1-2*3-4+5*6-7-8*9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0*1*2+3*4*5+6-7+8-9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0-1*2*3-4+5*6-7+8*9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0*1-2+3*4-5-6*7*8*9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0*1*2+3*4*5+6+7-8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0-1*2-3*4*5+6*7+8-9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0-1-2*3-4-5-6*7-8*9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0-1-2*3+4+5-6-7-8*9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0*1-2+3+4+5-6-7+8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1+2+3-4*5+6-7-8*9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1+2-3+4*5+6*7+8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0*1*2-3-4-5+6*7*8-9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1+2*3-4-5*6+7+8-9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1*2+3+4*5*6-7*8*9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0-1*2*3+4-5-6*7*8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1*2*3*4+5-6*7*8*9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0-1*2+3+4+5*6-7+8*9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0-1*2-3+4-5-6*7*8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0*1-2+3*4*5+6+7-8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0*1+2+3*4*5*6+7+8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1*2+3+4+5+6*7+8*9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1+2-3-4*5*6*7+8*9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0*1-2-3+4+5+6-7*8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0-1+2-3*4-5+6+7*8-9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0-1-2*3-4+5-6*7*8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1*2-3+4*5*6*7*8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1-2-3-4-5-6*7+8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0-1-2*3+4-5*6+7*8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0-1*2*3*4+5-6-7+8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0-1+2+3+4-5*6-7*8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1*2-3-4+5+6-7-8-9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0-1*2-3-4-5-6-7+8-9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1*2*3-4*5+6*7*8-9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0*1-2-3+4-5*6*7+8*9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0*1*2-3-4-5-6+7+8*9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0-1*2-3+4+5+6+7-8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1-2*3+4+5+6*7-8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0-1+2+3*4-5*6-7+8*9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1+2*3+4*5*6-7+8*9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1-2-3+4*5+6-7*8-9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0*1*2+3*4-5-6+7+8*9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1*2+3*4*5+6*7*8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0*1*2+3*4*5*6-7+8-9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0*1-2*3+4-5*6+7-8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0*1*2-3*4+5+6*7+8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1-2+3+4-5*6-7+8*9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1*2+3*4-5*6-7*8-9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1+2+3-4+5*6*7+8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1+2*3-4-5+6*7*8-9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0*1+2-3+4*5-6-7*8*9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1+2-3*4-5+6+7*8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1+2-3-4+5*6+7*8-9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0-1*2+3+4*5-6-7*8-9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1+2+3+4*5+6+7-8*9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1-2*3-4-5*6*7+8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0*1-2+3+4+5+6-7+8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1*2+3*4+5*6*7+8-9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0-1-2+3+4-5*6+7*8-9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1*2+3-4*5-6-7*8*9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0*1-2+3+4-5*6-7+8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1+2*3*4-5+6*7*8*9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0*1+2*3-4+5-6-7-8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0+1-2+3+4-5-6-7*8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0-1+2-3+4-5-6*7-8+9)
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: select * from InfraTest
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 17:20:41 CST 2013] [Thread Time] 118
+[Sun Jun 02 17:20:41 CST 2013] [Total Time] 159
+[Sun Jun 02 17:20:41 CST 2013] [Result] Correct

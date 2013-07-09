@@ -1,0 +1,8 @@
+date: Sun Jun 02 21:55:09 CST 2013
+fat	create	Correct	167
+fat	insert	Correct	1601
+fat	query1	Correct	38
+fat	query2	Correct	23
+fat	query3	Correct	8
+fat	query4	Correct	8
+fat	query5	Correct	442

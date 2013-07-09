@@ -1,0 +1,33 @@
+date: Thu May 30 19:09:08 CST 2013
+fat	create	Correct	110
+fat	insert	Correct	12885
+fat	query	Wrong Answer	15029
+date: Sat Jun 01 23:02:10 CST 2013
+fat	create	Correct	156
+date: Sat Jun 01 23:02:27 CST 2013
+fat	create	Correct	147
+date: Sat Jun 01 23:02:30 CST 2013
+fat	create	Correct	142
+date: Sat Jun 01 23:03:11 CST 2013
+fat	create	Correct	141
+date: Sat Jun 01 23:03:13 CST 2013
+fat	create	Correct	149
+date: Sat Jun 01 23:03:14 CST 2013
+fat	create	Correct	144
+date: Sun Jun 02 15:14:21 CST 2013
+fat	create	Correct	100
+date: Sun Jun 02 17:54:52 CST 2013
+fat	create	Correct	87
+date: Sun Jun 02 17:54:55 CST 2013
+fat	create	Correct	96
+date: Sun Jun 02 17:57:55 CST 2013
+fat	create	Correct	85
+fat	insert	Correct	1687
+fat	query	Wrong Answer	163
+date: Sun Jun 02 17:58:10 CST 2013
+fat	create	Correct	107
+fat	insert	Correct	1910
+fat	query	Wrong Answer	133
+date: Sun Jun 02 17:58:56 CST 2013
+fat	create	Correct	107
+fat	insert	Correct	1778

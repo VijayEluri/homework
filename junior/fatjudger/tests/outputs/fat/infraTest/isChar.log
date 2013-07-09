@@ -1,0 +1,48 @@
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Connecting jdbc:fatworm:///home/mrain/db?user=root&password=fatworm
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Connection established.
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Setting AUTO_COMMIT mode as false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: drop database nano
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: create database nano
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: use nano
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: drop table InfraTest
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: create table InfraTest( k int, value char(40))
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(1,'')
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(2,'1')
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(3,'123')
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(4,'1234')
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(5,'1234567890')
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(6,'9999-12-31 23:59:59')
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(7,'1988-04-19 00:10:10')
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(8,'2012-01-01 00:00:10')
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(9,'2010-06-15 21:04:00')
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: insert into InfraTest values(0,'1988-04-09 10:10:10')
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: select * from InfraTest
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: select * from InfraTest where value ='123'
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: select * from InfraTest where value =''
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Executing: select * from InfraTest where value <> '9999-12-31'
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 17:20:41 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 17:20:41 CST 2013] [Thread Time] 9
+[Sun Jun 02 17:20:41 CST 2013] [Total Time] 23
+[Sun Jun 02 17:20:41 CST 2013] [Result] Correct

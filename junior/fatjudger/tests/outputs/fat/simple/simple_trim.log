@@ -1,0 +1,22 @@
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Connecting jdbc:fatworm:///home/mrain/db?user=root&password=fatworm
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Connection established.
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Setting AUTO_COMMIT mode as false
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: use db
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: create table ctest ( a char(3) )
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: insert into ctest values ('eee')
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: select * from ctest
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: create table vctest ( a varchar(3) )
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: insert into vctest values ('eee')
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: select * from vctest
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:05 CST 2013] [Thread Time] 3
+[Sun Jun 02 21:53:05 CST 2013] [Total Time] 9
+[Sun Jun 02 21:53:05 CST 2013] [Result] Correct

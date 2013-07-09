@@ -1,0 +1,23 @@
+# select sum(b),avg(b) from test1
+5.6946e+05	31637
+;
+# select a from test1 order by b
+9
+8
+7
+6
+5
+4
+3
+2
+1
+1
+5
+7
+6
+8
+4
+3
+2
+9
+;

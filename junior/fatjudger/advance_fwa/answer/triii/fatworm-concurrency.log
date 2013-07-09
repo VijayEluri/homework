@@ -1,0 +1,294 @@
+[Fri May 10 17:32:34 CST 2013] [Thread0] Connecting jdbc:mysql://localhost/?user=root&password=fatworm
+[Fri May 10 17:32:34 CST 2013] [Thread0] Connection established.
+[Fri May 10 17:32:34 CST 2013] [Thread0] Setting AUTO_COMMIT mode as false
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: use acm
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select id as a, name as b from student as s where s.malesex = true group by name having name >= b
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select id as a, name as b from student where student.malesex = true group by b
+[Fri May 10 17:32:34 CST 2013] [Thread0] having name > any (select name from student where a < id and student.malesex = true)
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select id, name from student as s where (select id from student where s.name = name and student.malesex = true) >= id and s.malesex = true
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select id, (select name) from student where malesex = true
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: use acm
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select id, name, malesex from student
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: update student set id = id + 32767 where malesex = false
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select id, name, malesex from student
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: update student set id = id - 32767 where malesex = false
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select id, name, malesex from student
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select id, name, malesex from student
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: use acm
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select * from fatworm order by loc
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select A.name, B.id from A, B order by A.id DESC, b.id ASC, b.name
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select count(id) from student where 1 = 0
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select id from student where 1 = 0
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: use acm
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select * from student where malesex = true
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select 1+2+3+4+5
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select *, 3*5%11 from student where malesex = true
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select * from student, fatworm where malesex = true
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select a.id, a.name, student.id, student.name from fatworm as a, student where malesex = true
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: use acm
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select count(a.ID) from a, b, c, d
+[Fri May 10 17:32:34 CST 2013] [Thread0] where a.id + b.id < c.id and d.id % 2 = 1 and b.id * d.id % 3 = 0 and a.id = b.id
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select count(A.id) from
+[Fri May 10 17:32:34 CST 2013] [Thread0] (select B.id from A, A as B) as A,
+[Fri May 10 17:32:34 CST 2013] [Thread0] (select A.id from B, B as A) as B, C, D
+[Fri May 10 17:32:34 CST 2013] [Thread0] where B.id = D.id and A.id = B.id and C.id = D.id
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: use acm
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select * from (select * from student where birthday = '1989-02-24 04:44:44') as t1 where malesex = true
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select id, b from (select id as a, name as b from student where malesex = true) as sub, student where sub.a < id and student.malesex = true
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select id, name, malesex from student where id in (select id from student where malesex = false) and student.malesex = true
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select id, name from student as f where name > any (select name from student where id > f.id) and f.malesex = true
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: use acm
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select age, name, malesex from student
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: update student set age = age - 10 where malesex = false
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select age, name, malesex from student
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: update student set age = age + 10 where malesex = false
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select age, name, malesex from student
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: use acm
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select groupid, sum(loc) as sumloc, count(loc), avg(loc), min(loc), max(loc) from fatworm
+[Fri May 10 17:32:34 CST 2013] [Thread0] group by groupid order by sumloc DESC
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select sum(loc) as sumloc, avg(loc), name from fatworm group by leader
+[Fri May 10 17:32:34 CST 2013] [Thread0] having min(loc) >= all (select min(loc) from fatworm group by leader)
+[Fri May 10 17:32:34 CST 2013] [Thread0] order by sumloc
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select id from student as s
+[Fri May 10 17:32:34 CST 2013] [Thread0] where (select count(nickname) from student, fatworm, fatworm as f
+[Fri May 10 17:32:34 CST 2013] [Thread0] where student.malesex = true and fatworm.id = s.id and fatworm.groupid = f.groupid and student.id = f.id) >= 3 and malesex = true
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select id, name from student
+[Fri May 10 17:32:34 CST 2013] [Thread0] where (select count(id) from fatworm where student.id = 4 and groupid = 'H') > 0 and malesex = true
+[Fri May 10 17:32:34 CST 2013] [Thread0] order by id
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: use acm
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select distinct groupid from fatworm
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select distinct * from fatworm
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select count(cnt) from (select distinct count(name) as cnt from fatworm group by groupid) as membercnt
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select count(a.id) from a, b, c, d
+[Fri May 10 17:32:34 CST 2013] [Thread0] where a.id + b.id > c.id and d.id % 3 = 1 and b.id * d.id % 5 = 0 and a.id = b.id
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: use acm
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select *, 3*5%11 from student where malesex = true
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:34 CST 2013] [Thread0] Executing: select * from student, fatworm where malesex = true
+[Fri May 10 17:32:34 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:34 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select a.id, a.name, student.id, student.name from fatworm as a, student where malesex = true
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select * from (select * from student where birthday = '1989-02-24 04:44:44') as t1 where malesex = true
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select id, b from (select id as a, name as b from student where malesex = true) as sub, student where sub.a < id and student.malesex = true
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select id, name, malesex from student where id in (select id from student where malesex = false) and student.malesex = true
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select id, name from student as f where name > any (select name from student where id > f.id) and f.malesex = true
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select id as a, name as b from student as s where s.malesex = true group by name having name >= b
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select id as a, name as b from student where student.malesex = true group by b
+[Fri May 10 17:32:35 CST 2013] [Thread0] having name > any (select name from student where a < id and student.malesex = true)
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: use acm
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select id from student as s
+[Fri May 10 17:32:35 CST 2013] [Thread0] where (select count(nickname) from student, fatworm, fatworm as f
+[Fri May 10 17:32:35 CST 2013] [Thread0] where student.malesex = true and fatworm.id = s.id and fatworm.groupid = f.groupid and student.id = f.id) >= 3 and malesex = true
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select id, name from student
+[Fri May 10 17:32:35 CST 2013] [Thread0] where (select count(id) from fatworm where student.id = 4 and groupid = 'H') > 0 and malesex = true
+[Fri May 10 17:32:35 CST 2013] [Thread0] order by id
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select distinct groupid from fatworm
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: use acm
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select count(A.id) from
+[Fri May 10 17:32:35 CST 2013] [Thread0] (select B.id from A, A as B) as A,
+[Fri May 10 17:32:35 CST 2013] [Thread0] (select A.id from B, B as A) as B, C, D
+[Fri May 10 17:32:35 CST 2013] [Thread0] where B.id = D.id and A.id = B.id and C.id = D.id
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: use acm
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select name, malesex from student
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: update student set id = id - 99, id = id + 99 where malesex = false
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select name, malesex from student
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: use acm
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select * from student where malesex = true
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select 1+2+3+4+5
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: use acm
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select id, (select name) from student where malesex = true
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select * from fatworm order by loc
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select A.name, B.id from A, B order by A.id DESC, b.id ASC, b.name
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select count(id) from student where 1 = 0
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select id from student where 1 = 0
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select groupid, sum(loc) as sumloc, count(loc), avg(loc), min(loc), max(loc) from fatworm
+[Fri May 10 17:32:35 CST 2013] [Thread0] group by groupid order by sumloc DESC
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select sum(loc) as sumloc, avg(loc), name from fatworm group by leader
+[Fri May 10 17:32:35 CST 2013] [Thread0] having min(loc) >= all (select min(loc) from fatworm group by leader)
+[Fri May 10 17:32:35 CST 2013] [Thread0] order by sumloc
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: use acm
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select id, name from student as s where (select id from student where s.name = name and student.malesex = true) >= id and s.malesex = true
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select name, malesex from student
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: use acm
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: create table concur(
+[Fri May 10 17:32:35 CST 2013] [Thread0] col1 int,
+[Fri May 10 17:32:35 CST 2013] [Thread0] col2 int,
+[Fri May 10 17:32:35 CST 2013] [Thread0] col3 int,
+[Fri May 10 17:32:35 CST 2013] [Thread0] col4 int,
+[Fri May 10 17:32:35 CST 2013] [Thread0] col5 int,
+[Fri May 10 17:32:35 CST 2013] [Thread0] col6 int)
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select distinct * from concur
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: insert into concur values(4, 8, 15, 16, 23, 42)
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: insert into concur values(1, 1, 2, 3, 5, 8)
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: insert into concur values(13, 21, 34, 55, 89, 144)
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select * from concur order by col1
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select col3 from concur order by col4 DESC
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: drop table concur
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: use acm
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select distinct * from fatworm
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select count(cnt) from (select distinct count(name) as cnt from fatworm group by groupid) as membercnt
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select count(a.id) from a, b, c, d
+[Fri May 10 17:32:35 CST 2013] [Thread0] where a.id + b.id > c.id and d.id % 3 = 1 and b.id * d.id % 5 = 0 and a.id = b.id
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread0] Executing: select count(a.ID) from a, b, c, d
+[Fri May 10 17:32:35 CST 2013] [Thread0] where a.id + b.id < c.id and d.id % 2 = 1 and b.id * d.id % 3 = 0 and a.id = b.id
+[Fri May 10 17:32:35 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:35 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:35 CST 2013] [Thread Time] 590
+[Fri May 10 17:32:35 CST 2013] [Total Time] 1625

@@ -1,0 +1,60 @@
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] Connecting jdbc:fatworm:///home/mrain/db?user=root&password=fatworm
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] Connection established.
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] Setting AUTO_COMMIT mode as false
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] Executing: drop database nano
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] Executing: create database nano
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] Executing: use nano
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] Executing: create table InfraTest( k int, v char(10))
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] Executing: insert into InfraTest values(1, 'abc')
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] Executing: insert into InfraTest values(2, 'def')
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] Executing: insert into InfraTest values(2, 'abc')
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] Executing: insert into InfraTest values(3, 'def')
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] Executing: insert into InfraTest values(3, 'abcdef')
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] Executing: insert into InfraTest values(0, 'abcdef')
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] Executing: insert into InfraTest values(90, 'abcdef')
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] Executing: insert into InfraTest values(300, 'abcdef')
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] Executing: insert into InfraTest values(32, 'abcdef')
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] Executing: insert into InfraTest values(31, 'abcdef')
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] Executing: insert into InfraTest values(30000, 'abcdef')
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] Executing: select * from InfraTest order by k ASC, v ASC
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] Executing: select * from InfraTest order by k ASC, v DESC
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] Executing: select * from InfraTest order by k DESC, v ASC
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] Executing: select * from InfraTest order by k DESC, v DESC
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] Executing: select * from InfraTest order by v ASC, k ASC
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] Executing: select * from InfraTest order by v ASC, k DESC
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] Executing: select * from InfraTest order by v DESC, k ASC
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] Executing: select * from InfraTest order by v DESC, k DESC
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:15 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:15 CST 2013] [Thread Time] 20
+[Sun Jun 02 21:53:15 CST 2013] [Total Time] 28
+[Sun Jun 02 21:53:15 CST 2013] [Result] Correct

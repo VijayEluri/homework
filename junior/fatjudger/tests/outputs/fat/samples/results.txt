@@ -1,0 +1,312 @@
+date: Thu May 30 23:35:42 CST 2013
+fat	test1	Wrong Answer	132
+fat	test2	Wrong Answer	36
+fat	test3	Wrong Answer	24
+fat	test4	Wrong Answer	19
+fat	test5	Wrong Answer	17
+fat	test6	Wrong Answer	14
+fat	test7	Wrong Answer	11
+fat	test8	Wrong Answer	8
+fat	test9	Wrong Answer	35
+fat	test10	Wrong Answer	16
+fat	test11	Wrong Answer	23
+fat	test12	Wrong Answer	19
+date: Sun Jun 02 01:18:54 CST 2013
+fat	test1	Wrong Answer	186
+fat	test2	Wrong Answer	56
+fat	test3	Correct	43
+fat	test4	Wrong Answer	42
+fat	test5	Wrong Answer	36
+fat	test6	Wrong Answer	32
+fat	test7	Wrong Answer	18
+fat	test8	Wrong Answer	18
+fat	test9	Correct	48
+fat	test10	Wrong Answer	36
+fat	test11	Wrong Answer	27
+fat	test12	Correct	32
+date: Sun Jun 02 14:25:34 CST 2013
+fat	test1	Correct	199
+fat	test2	Wrong Answer	57
+fat	test3	Correct	31
+fat	test4	Wrong Answer	28
+fat	test5	Wrong Answer	31
+fat	test6	Wrong Answer	16
+fat	test7	Wrong Answer	8
+fat	test8	Wrong Answer	12
+fat	test9	Correct	37
+fat	test10	Wrong Answer	15
+fat	test11	Wrong Answer	27
+fat	test12	Correct	15
+date: Sun Jun 02 14:25:46 CST 2013
+fat	test1	Correct	103
+fat	test2	Wrong Answer	23
+fat	test3	Correct	26
+fat	test4	Wrong Answer	22
+fat	test5	Wrong Answer	12
+fat	test6	Wrong Answer	16
+fat	test7	Wrong Answer	8
+fat	test8	Wrong Answer	12
+fat	test9	Correct	24
+fat	test10	Wrong Answer	17
+fat	test11	Wrong Answer	24
+fat	test12	Correct	12
+date: Sun Jun 02 14:27:09 CST 2013
+fat	test1	Correct	115
+fat	test2	Correct	32
+fat	test3	Correct	35
+fat	test4	Wrong Answer	21
+fat	test5	Wrong Answer	20
+fat	test6	Wrong Answer	15
+fat	test7	Wrong Answer	13
+fat	test8	Wrong Answer	9
+fat	test9	Correct	32
+fat	test10	Wrong Answer	21
+fat	test11	Wrong Answer	22
+fat	test12	Correct	18
+date: Sun Jun 02 14:27:23 CST 2013
+fat	test1	Correct	172
+fat	test2	Correct	54
+fat	test3	Correct	33
+fat	test4	Wrong Answer	26
+fat	test5	Wrong Answer	24
+fat	test6	Wrong Answer	21
+fat	test7	Wrong Answer	12
+fat	test8	Wrong Answer	9
+fat	test9	Correct	29
+fat	test10	Wrong Answer	22
+fat	test11	Wrong Answer	30
+fat	test12	Correct	22
+date: Sun Jun 02 14:35:14 CST 2013
+fat	test1	Correct	143
+fat	test2	Correct	60
+fat	test3	Correct	28
+fat	test4	Correct	33
+fat	test5	Wrong Answer	19
+fat	test6	Correct	19
+fat	test7	Wrong Answer	13
+fat	test8	Wrong Answer	12
+fat	test9	Correct	25
+fat	test10	Correct	51
+fat	test11	Wrong Answer	23
+fat	test12	Correct	16
+date: Sun Jun 02 14:40:02 CST 2013
+fat	test1	Correct	152
+fat	test2	Correct	52
+fat	test3	Correct	26
+fat	test4	Correct	34
+fat	test5	Wrong Answer	21
+fat	test6	Correct	24
+fat	test7	Wrong Answer	9
+fat	test8	Wrong Answer	41
+fat	test9	Correct	28
+fat	test10	Correct	26
+fat	test11	Wrong Answer	25
+fat	test12	Correct	21
+date: Sun Jun 02 14:43:47 CST 2013
+fat	test1	Correct	147
+fat	test2	Correct	52
+fat	test3	Correct	31
+fat	test4	Correct	34
+fat	test5	Wrong Answer	26
+fat	test6	Correct	22
+fat	test7	Wrong Answer	12
+fat	test8	Wrong Answer	25
+fat	test9	Correct	30
+fat	test10	Correct	26
+fat	test11	Wrong Answer	24
+fat	test12	Correct	25
+date: Sun Jun 02 14:47:00 CST 2013
+fat	test1	Correct	155
+fat	test2	Correct	52
+fat	test3	Correct	30
+fat	test4	Correct	30
+fat	test5	Correct	28
+fat	test6	Correct	26
+fat	test7	Wrong Answer	18
+fat	test8	Wrong Answer	21
+fat	test9	Correct	24
+fat	test10	Correct	25
+fat	test11	Wrong Answer	28
+fat	test12	Correct	20
+date: Sun Jun 02 14:49:01 CST 2013
+fat	test1	Correct	192
+fat	test2	Correct	50
+fat	test3	Correct	31
+fat	test4	Correct	30
+fat	test5	Correct	28
+fat	test6	Correct	30
+fat	test7	Wrong Answer	18
+fat	test8	Wrong Answer	19
+fat	test9	Correct	32
+fat	test10	Correct	23
+fat	test11	Wrong Answer	25
+fat	test12	Correct	18
+date: Sun Jun 02 14:50:18 CST 2013
+fat	test1	Correct	168
+fat	test2	Correct	61
+fat	test3	Correct	34
+fat	test4	Correct	30
+fat	test5	Correct	23
+fat	test6	Correct	29
+fat	test7	Wrong Answer	18
+fat	test8	Wrong Answer	17
+fat	test9	Correct	27
+fat	test10	Correct	22
+fat	test11	Wrong Answer	29
+fat	test12	Correct	26
+date: Sun Jun 02 14:51:57 CST 2013
+fat	test1	Correct	163
+fat	test2	Correct	45
+fat	test3	Correct	39
+fat	test4	Correct	32
+fat	test5	Correct	42
+fat	test6	Correct	28
+fat	test7	Wrong Answer	14
+fat	test8	Wrong Answer	16
+fat	test9	Correct	29
+fat	test10	Correct	27
+fat	test11	Wrong Answer	31
+fat	test12	Correct	23
+date: Sun Jun 02 14:57:11 CST 2013
+fat	test1	Correct	109
+fat	test2	Correct	23
+fat	test3	Correct	25
+fat	test4	Correct	25
+fat	test5	Correct	22
+fat	test6	Correct	20
+fat	test7	Wrong Answer	9
+fat	test8	Correct	9
+fat	test9	Correct	29
+fat	test10	Correct	28
+fat	test11	Wrong Answer	22
+fat	test12	Correct	17
+date: Sun Jun 02 15:02:25 CST 2013
+fat	test1	Correct	118
+fat	test2	Correct	33
+fat	test3	Correct	27
+fat	test4	Correct	25
+fat	test5	Correct	15
+fat	test6	Correct	20
+fat	test7	Wrong Answer	16
+fat	test8	Correct	11
+fat	test9	Correct	22
+fat	test10	Correct	29
+fat	test11	Wrong Answer	74
+fat	test12	Correct	24
+date: Sun Jun 02 15:06:35 CST 2013
+fat	test1	Correct	135
+fat	test2	Correct	31
+fat	test3	Correct	29
+fat	test4	Correct	24
+fat	test5	Correct	15
+fat	test6	Correct	19
+fat	test7	Wrong Answer	12
+fat	test8	Correct	9
+fat	test9	Correct	25
+fat	test10	Correct	19
+fat	test11	Correct	23
+fat	test12	Correct	19
+date: Sun Jun 02 15:07:53 CST 2013
+fat	test1	Correct	137
+fat	test2	Correct	34
+fat	test3	Correct	30
+fat	test4	Correct	24
+fat	test5	Correct	20
+fat	test6	Correct	35
+fat	test7	Wrong Answer	38
+fat	test8	Correct	12
+fat	test9	Correct	24
+fat	test10	Correct	22
+fat	test11	Correct	28
+fat	test12	Correct	19
+date: Sun Jun 02 17:13:53 CST 2013
+fat	test1	Correct	141
+fat	test2	Correct	23
+fat	test3	Correct	32
+fat	test4	Correct	23
+fat	test5	Correct	19
+fat	test6	Correct	21
+fat	test7	Wrong Answer	9
+fat	test8	Correct	9
+fat	test9	Correct	35
+fat	test10	Correct	19
+fat	test11	Correct	24
+fat	test12	Correct	20
+date: Sun Jun 02 17:20:23 CST 2013
+fat	test1	Correct	150
+fat	test2	Correct	19
+fat	test3	Correct	32
+fat	test4	Correct	33
+fat	test5	Correct	27
+fat	test6	Correct	28
+fat	test7	Wrong Answer	8
+fat	test8	Correct	18
+fat	test9	Correct	100
+fat	test10	Correct	20
+fat	test11	Correct	26
+fat	test12	Correct	15
+date: Sun Jun 02 20:01:22 CST 2013
+fat	test1	Correct	110
+fat	test2	Correct	29
+fat	test3	Correct	30
+fat	test4	Correct	31
+fat	test5	Correct	25
+fat	test6	Correct	17
+fat	test7	Wrong Answer	8
+fat	test8	Correct	13
+fat	test9	Correct	25
+fat	test10	Correct	21
+fat	test11	Correct	20
+fat	test12	Correct	21
+date: Sun Jun 02 20:06:13 CST 2013
+fat	test1	Correct	128
+fat	test2	Correct	34
+fat	test3	Correct	33
+fat	test4	Correct	26
+fat	test5	Correct	17
+fat	test6	Correct	15
+fat	test7	Correct	9
+fat	test8	Correct	7
+fat	test9	Correct	30
+fat	test10	Correct	20
+fat	test11	Correct	23
+fat	test12	Correct	14
+date: Sun Jun 02 21:00:01 CST 2013
+fat	test1	Correct	193
+fat	test2	Correct	43
+fat	test3	Correct	30
+fat	test4	Correct	28
+fat	test5	Correct	20
+fat	test6	Correct	27
+fat	test7	Correct	8
+fat	test8	Correct	9
+fat	test9	Correct	24
+fat	test10	Correct	22
+fat	test11	Correct	23
+fat	test12	Correct	19
+date: Sun Jun 02 21:45:09 CST 2013
+fat	test1	Correct	122
+fat	test2	Correct	37
+fat	test3	Correct	29
+fat	test4	Correct	25
+fat	test5	Correct	20
+fat	test6	Correct	20
+fat	test7	Correct	10
+fat	test8	Correct	15
+fat	test9	Correct	36
+fat	test10	Correct	21
+fat	test11	Correct	24
+fat	test12	Correct	16
+date: Sun Jun 02 21:53:07 CST 2013
+fat	test1	Correct	128
+fat	test2	Correct	31
+fat	test3	Correct	36
+fat	test4	Correct	30
+fat	test5	Correct	22
+fat	test6	Correct	24
+fat	test7	Correct	8
+fat	test8	Correct	8
+fat	test9	Correct	36
+fat	test10	Correct	39
+fat	test11	Correct	23
+fat	test12	Correct	13

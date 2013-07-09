@@ -1,0 +1,13 @@
+[Fri May 10 17:32:04 CST 2013] [Thread0] Connecting jdbc:mysql://localhost/?user=root&password=fatworm
+[Fri May 10 17:32:04 CST 2013] [Thread0] Connection established.
+[Fri May 10 17:32:04 CST 2013] [Thread0] Setting AUTO_COMMIT mode as false
+[Fri May 10 17:32:04 CST 2013] [Thread0] Executing: use opt
+[Fri May 10 17:32:04 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:04 CST 2013] [Thread0] Executing: create index idxida on TTAA( id )
+[Fri May 10 17:32:05 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:05 CST 2013] [Thread0] Executing: create unique index idxidb on TTBB( id )
+[Fri May 10 17:32:05 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:05 CST 2013] [Thread0] Executing: create index idxidc on CTA( id )
+[Fri May 10 17:32:06 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:06 CST 2013] [Thread Time] 1134
+[Fri May 10 17:32:06 CST 2013] [Total Time] 1166

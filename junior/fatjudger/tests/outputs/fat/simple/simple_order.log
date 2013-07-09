@@ -1,0 +1,43 @@
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Connecting jdbc:fatworm:///home/mrain/db?user=root&password=fatworm
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Connection established.
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Setting AUTO_COMMIT mode as false
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: use db
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: create table testorder (
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] a int,
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] b varchar(200)
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] )
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: insert into testorder values (10, 'b')
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: insert into testorder values (9, 'b')
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: insert into testorder values (8, 'b')
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: insert into testorder values (4, 'b')
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: insert into testorder values (6, 'b')
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: insert into testorder values (2, 'b')
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: insert into testorder values (3, 'b')
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: insert into testorder values (1, 'b')
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: insert into testorder values (7, 'b')
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: insert into testorder values (5, 'b')
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: insert into testorder values (10, 'a')
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: insert into testorder values (10, 'c')
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: select * from testorder
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Executing: select * from testorder order by a DESC, b
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:05 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:05 CST 2013] [Thread Time] 19
+[Sun Jun 02 21:53:05 CST 2013] [Total Time] 30
+[Sun Jun 02 21:53:05 CST 2013] [Result] Correct

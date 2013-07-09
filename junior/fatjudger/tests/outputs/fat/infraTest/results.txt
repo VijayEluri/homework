@@ -1,0 +1,129 @@
+date: Sun Jun 02 13:33:25 CST 2013
+fat	default	Correct	103
+fat	autoinc	Correct	36
+fat	delete	Correct	23
+fat	expression	Correct	140
+fat	float	Correct	72
+fat	isChar	Wrong Answer	20
+fat	isDateTime	Correct	32
+fat	isVarCharStable	Wrong Answer	349
+date: Sun Jun 02 13:33:35 CST 2013
+fat	default	Correct	115
+fat	autoinc	Correct	34
+fat	delete	Correct	23
+fat	expression	Correct	144
+fat	float	Correct	68
+fat	isChar	Wrong Answer	24
+fat	isDateTime	Correct	38
+date: Sun Jun 02 13:44:03 CST 2013
+fat	default	Correct	116
+fat	autoinc	Correct	34
+fat	delete	Correct	28
+fat	expression	Correct	150
+fat	float	Correct	69
+fat	isChar	Wrong Answer	24
+fat	isDateTime	Correct	39
+date: Sun Jun 02 13:45:33 CST 2013
+fat	default	Correct	124
+fat	autoinc	Correct	48
+fat	delete	Correct	21
+fat	expression	Correct	141
+fat	float	Correct	60
+fat	isChar	Correct	21
+fat	isDateTime	Correct	38
+fat	isVarCharStable	Wrong Answer	352
+date: Sun Jun 02 13:50:41 CST 2013
+fat	default	Correct	148
+fat	autoinc	Correct	60
+fat	delete	Correct	24
+fat	expression	Correct	161
+fat	float	Correct	81
+fat	isChar	Correct	27
+fat	isDateTime	Correct	31
+fat	isVarCharStable	Wrong Answer	326
+date: Sun Jun 02 13:50:54 CST 2013
+fat	default	Correct	103
+fat	autoinc	Correct	22
+fat	delete	Correct	12
+fat	expression	Correct	152
+fat	float	Correct	72
+fat	isChar	Correct	24
+fat	isDateTime	Correct	44
+fat	isVarCharStable	Wrong Answer	368
+date: Sun Jun 02 14:06:37 CST 2013
+fat	default	Correct	148
+fat	autoinc	Correct	28
+fat	delete	Correct	24
+fat	expression	Correct	161
+fat	float	Correct	122
+fat	isChar	Correct	29
+fat	isDateTime	Correct	80
+fat	isVarCharStable	Wrong Answer	368
+date: Sun Jun 02 14:07:48 CST 2013
+fat	default	Correct	96
+fat	autoinc	Correct	29
+fat	delete	Correct	14
+fat	expression	Wrong Answer	143
+fat	float	Wrong Answer	65
+fat	isChar	Correct	19
+fat	isDateTime	Correct	43
+fat	isVarCharStable	Wrong Answer	412
+date: Sun Jun 02 14:11:08 CST 2013
+fat	default	Correct	103
+fat	autoinc	Correct	34
+fat	delete	Correct	25
+fat	expression	Correct	156
+fat	float	Correct	71
+fat	isChar	Correct	21
+fat	isDateTime	Correct	32
+fat	isVarCharStable	Wrong Answer	345
+date: Sun Jun 02 14:15:15 CST 2013
+fat	default	Correct	104
+fat	autoinc	Correct	41
+fat	delete	Correct	32
+fat	expression	Correct	146
+fat	float	Correct	74
+fat	isChar	Correct	20
+fat	isDateTime	Correct	37
+fat	isVarCharStable	Correct	952
+date: Sun Jun 02 14:15:37 CST 2013
+fat	default	Correct	126
+fat	autoinc	Correct	31
+fat	delete	Correct	26
+fat	expression	Correct	154
+fat	float	Correct	70
+fat	isChar	Correct	23
+fat	isDateTime	Correct	40
+fat	isVarCharStable	Correct	1003
+date: Sun Jun 02 14:15:54 CST 2013
+fat	default	Correct	125
+fat	autoinc	Correct	37
+fat	delete	Correct	28
+fat	expression	Correct	176
+fat	float	Correct	70
+fat	isChar	Correct	24
+fat	isDateTime	Correct	43
+fat	isVarCharStable	Correct	965
+fat	isVarCharStable2	Wrong Answer	26162
+date: Sun Jun 02 14:17:32 CST 2013
+fat	default	Correct	125
+fat	autoinc	Correct	35
+fat	delete	Correct	26
+fat	expression	Correct	160
+fat	float	Correct	62
+fat	isChar	Correct	22
+fat	isDateTime	Correct	37
+fat	isVarCharStable	Correct	979
+fat	isVarCharStable2	Correct	236349
+fat	isVarCharVarChar	Correct	123818
+date: Sun Jun 02 17:20:40 CST 2013
+fat	default	Correct	108
+fat	autoinc	Correct	44
+fat	delete	Correct	29
+fat	expression	Correct	159
+fat	float	Correct	65
+fat	isChar	Correct	23
+fat	isDateTime	Correct	39
+fat	isVarCharStable	Correct	1082
+fat	isVarCharStable2	Correct	240752
+fat	isVarCharVarChar	Correct	127631

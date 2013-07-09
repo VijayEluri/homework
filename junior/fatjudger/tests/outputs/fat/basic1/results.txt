@@ -1,0 +1,976 @@
+date: Fri May 31 16:40:54 CST 2013
+fat	create-tables	Correct	132
+fat	create-bigtables	Correct	61
+fat	insert1	Correct	31
+fat	insert2	Correct	20
+fat	insert3	Correct	52
+fat	delete1	Correct	18
+fat	delete2	Correct	22
+fat	update1	Correct	28
+fat	update2	Wrong Answer	36
+fat	select1	Correct	73
+fat	select2	Correct	65
+fat	select3	Wrong Answer	46
+fat	select4	Wrong Answer	32
+fat	select5	Correct	21
+fat	select6	Wrong Answer	41
+date: Fri May 31 16:43:12 CST 2013
+fat	create-tables	Correct	128
+fat	create-bigtables	Correct	61
+fat	insert1	Correct	39
+fat	insert2	Correct	25
+fat	insert3	Correct	38
+fat	delete1	Correct	21
+fat	delete2	Correct	31
+fat	update1	Correct	27
+fat	update2	Wrong Answer	23
+fat	select1	Correct	60
+fat	select2	Correct	61
+fat	select3	Wrong Answer	47
+fat	select4	Wrong Answer	31
+fat	select5	Correct	24
+fat	select6	Wrong Answer	38
+date: Fri May 31 16:46:28 CST 2013
+fat	create-tables	Correct	138
+fat	create-bigtables	Correct	61
+fat	insert1	Correct	41
+fat	insert2	Correct	26
+fat	insert3	Correct	35
+fat	delete1	Correct	29
+fat	delete2	Correct	27
+fat	update1	Correct	20
+fat	update2	Wrong Answer	24
+fat	select1	Correct	68
+fat	select2	Correct	64
+fat	select3	Wrong Answer	46
+fat	select4	Wrong Answer	33
+fat	select5	Correct	31
+fat	select6	Wrong Answer	34
+date: Fri May 31 16:54:57 CST 2013
+fat	create-tables	Correct	149
+fat	create-bigtables	Correct	66
+fat	insert1	Correct	34
+fat	insert2	Correct	34
+fat	insert3	Correct	44
+fat	delete1	Correct	24
+fat	delete2	Correct	24
+fat	update1	Correct	28
+fat	update2	Correct	32
+fat	select1	Correct	62
+fat	select2	Correct	79
+fat	select3	Wrong Answer	48
+fat	select4	Wrong Answer	34
+fat	select5	Correct	31
+fat	select6	Wrong Answer	35
+date: Sat Jun 01 20:41:47 CST 2013
+fat	create-tables	Correct	181
+fat	create-bigtables	Correct	55
+fat	insert1	Correct	79
+fat	insert2	Correct	42
+fat	insert3	Correct	36
+fat	delete1	Correct	26
+fat	delete2	Correct	24
+fat	update1	Correct	30
+fat	update2	Correct	36
+fat	select1	Correct	56
+fat	select2	Correct	85
+fat	select3	Wrong Answer	37
+fat	select4	Wrong Answer	28
+fat	select5	Correct	26
+fat	select6	Wrong Answer	37
+date: Sat Jun 01 21:12:09 CST 2013
+fat	create-tables	Correct	141
+fat	create-bigtables	Correct	59
+fat	insert1	Correct	39
+fat	insert2	Correct	35
+fat	insert3	Correct	47
+fat	delete1	Correct	30
+fat	delete2	Correct	25
+fat	update1	Correct	31
+fat	update2	Correct	28
+fat	select1	Correct	70
+fat	select2	Correct	63
+fat	select3	Wrong Answer	50
+fat	select4	Wrong Answer	34
+fat	select5	Correct	28
+fat	select6	Wrong Answer	34
+date: Sat Jun 01 21:36:23 CST 2013
+fat	create-tables	Correct	162
+fat	create-bigtables	Correct	58
+fat	insert1	Correct	46
+fat	insert2	Correct	48
+fat	insert3	Correct	70
+fat	delete1	Correct	37
+fat	delete2	Correct	36
+fat	update1	Correct	24
+fat	update2	Correct	24
+fat	select1	Correct	83
+fat	select2	Correct	84
+fat	select3	Wrong Answer	43
+fat	select4	Wrong Answer	36
+fat	select5	Correct	27
+fat	select6	Wrong Answer	35
+date: Sat Jun 01 21:36:42 CST 2013
+fat	create-tables	Correct	161
+fat	create-bigtables	Correct	59
+fat	insert1	Correct	44
+fat	insert2	Correct	46
+fat	insert3	Correct	45
+fat	delete1	Correct	31
+fat	delete2	Correct	30
+fat	update1	Correct	33
+fat	update2	Correct	35
+fat	select1	Correct	75
+fat	select2	Correct	69
+fat	select3	Wrong Answer	46
+fat	select4	Wrong Answer	37
+fat	select5	Correct	25
+fat	select6	Wrong Answer	38
+date: Sat Jun 01 22:52:58 CST 2013
+fat	create-tables	Correct	97
+fat	create-bigtables	Correct	40
+fat	insert1	Correct	32
+fat	insert2	Wrong Answer	21
+fat	insert3	Correct	34
+fat	delete1	Correct	13
+fat	delete2	Correct	22
+fat	update1	Correct	26
+fat	update2	Correct	34
+fat	select1	Correct	59
+fat	select2	Correct	59
+fat	select3	Wrong Answer	37
+fat	select4	Wrong Answer	25
+fat	select5	Correct	22
+fat	select6	Wrong Answer	30
+date: Sat Jun 01 22:55:00 CST 2013
+fat	create-tables	Correct	112
+fat	create-bigtables	Correct	33
+fat	insert1	Correct	29
+fat	insert2	Wrong Answer	33
+fat	insert3	Correct	26
+fat	delete1	Correct	18
+fat	delete2	Correct	26
+fat	update1	Correct	23
+fat	update2	Correct	25
+fat	select1	Correct	66
+fat	select2	Correct	65
+fat	select3	Wrong Answer	43
+fat	select4	Wrong Answer	26
+fat	select5	Correct	21
+fat	select6	Wrong Answer	30
+date: Sat Jun 01 22:56:20 CST 2013
+fat	create-tables	Correct	118
+fat	create-bigtables	Correct	54
+fat	insert1	Correct	34
+fat	insert2	Correct	21
+fat	insert3	Correct	39
+fat	delete1	Correct	15
+fat	delete2	Correct	25
+fat	update1	Correct	32
+fat	update2	Correct	27
+fat	select1	Correct	55
+fat	select2	Correct	63
+fat	select3	Wrong Answer	46
+fat	select4	Wrong Answer	25
+fat	select5	Correct	19
+fat	select6	Wrong Answer	33
+date: Sun Jun 02 00:06:32 CST 2013
+fat	create-tables	Correct	175
+fat	create-bigtables	Correct	59
+fat	insert1	Correct	46
+fat	insert2	Correct	39
+fat	insert3	Correct	49
+fat	delete1	Correct	38
+fat	delete2	Correct	37
+fat	update1	Correct	25
+fat	update2	Correct	37
+fat	select1	Correct	60
+fat	select2	Correct	85
+fat	select3	Wrong Answer	93
+fat	select4	Wrong Answer	44
+fat	select5	Correct	28
+fat	select6	Wrong Answer	48
+date: Sun Jun 02 00:09:40 CST 2013
+fat	create-tables	Correct	171
+fat	create-bigtables	Correct	77
+fat	insert1	Correct	51
+fat	insert2	Correct	51
+fat	insert3	Correct	56
+fat	delete1	Correct	25
+fat	delete2	Correct	36
+fat	update1	Correct	30
+fat	update2	Correct	31
+fat	select1	Correct	72
+fat	select2	Correct	72
+fat	select3	Wrong Answer	53
+fat	select4	Wrong Answer	48
+fat	select5	Correct	33
+fat	select6	Wrong Answer	50
+date: Sun Jun 02 00:09:48 CST 2013
+fat	create-tables	Correct	86
+fat	create-bigtables	Correct	38
+fat	insert1	Correct	27
+fat	insert2	Correct	13
+fat	insert3	Correct	30
+fat	delete1	Correct	17
+fat	delete2	Correct	21
+fat	update1	Correct	18
+fat	update2	Correct	22
+fat	select1	Correct	72
+fat	select2	Correct	67
+fat	select3	Wrong Answer	47
+fat	select4	Wrong Answer	35
+fat	select5	Correct	16
+fat	select6	Wrong Answer	43
+date: Sun Jun 02 00:14:31 CST 2013
+fat	create-tables	Correct	91
+fat	create-bigtables	Correct	31
+fat	insert1	Correct	33
+fat	insert2	Correct	14
+fat	insert3	Correct	28
+fat	delete1	Correct	18
+fat	delete2	Correct	24
+fat	update1	Correct	20
+fat	update2	Correct	31
+fat	select1	Correct	75
+fat	select2	Correct	61
+fat	select3	Wrong Answer	51
+fat	select4	Wrong Answer	38
+fat	select5	Correct	13
+fat	select6	Wrong Answer	43
+date: Sun Jun 02 00:17:18 CST 2013
+fat	create-tables	Correct	96
+fat	create-bigtables	Correct	33
+fat	insert1	Correct	29
+fat	insert2	Correct	31
+fat	insert3	Correct	28
+fat	delete1	Correct	14
+fat	delete2	Correct	19
+fat	update1	Correct	17
+fat	update2	Correct	24
+fat	select1	Correct	61
+fat	select2	Correct	62
+fat	select3	Wrong Answer	53
+fat	select4	Wrong Answer	354
+fat	select5	Correct	12
+fat	select6	Wrong Answer	32
+date: Sun Jun 02 00:24:27 CST 2013
+fat	create-tables	Correct	98
+fat	create-bigtables	Correct	52
+fat	insert1	Correct	39
+fat	insert2	Correct	19
+fat	insert3	Correct	28
+fat	delete1	Correct	22
+fat	delete2	Correct	17
+fat	update1	Correct	24
+fat	update2	Correct	25
+fat	select1	Correct	60
+fat	select2	Correct	76
+fat	select3	Correct	48
+fat	select4	Wrong Answer	315
+fat	select5	Correct	11
+fat	select6	Wrong Answer	27
+date: Sun Jun 02 00:42:09 CST 2013
+fat	create-tables	Correct	115
+fat	create-bigtables	Correct	44
+fat	insert1	Correct	31
+fat	insert2	Correct	27
+fat	insert3	Correct	29
+fat	delete1	Correct	20
+fat	delete2	Correct	25
+fat	update1	Correct	24
+fat	update2	Correct	25
+fat	select1	Wrong Answer	45
+fat	select2	Wrong Answer	31
+fat	select3	Wrong Answer	37
+fat	select4	Wrong Answer	42
+fat	select5	Wrong Answer	14
+fat	select6	Wrong Answer	46
+date: Sun Jun 02 00:42:23 CST 2013
+fat	create-tables	Correct	82
+fat	create-bigtables	Correct	34
+fat	insert1	Correct	32
+fat	insert2	Correct	13
+fat	insert3	Correct	27
+fat	delete1	Correct	12
+fat	delete2	Correct	21
+fat	update1	Correct	21
+fat	update2	Correct	21
+fat	select1	Wrong Answer	58
+fat	select2	Wrong Answer	32
+fat	select3	Wrong Answer	32
+fat	select4	Wrong Answer	32
+fat	select5	Wrong Answer	9
+fat	select6	Wrong Answer	42
+date: Sun Jun 02 00:43:12 CST 2013
+fat	create-tables	Correct	96
+fat	create-bigtables	Correct	33
+fat	insert1	Correct	30
+fat	insert2	Correct	15
+fat	insert3	Correct	25
+fat	delete1	Correct	18
+fat	delete2	Correct	26
+fat	update1	Correct	21
+fat	update2	Correct	28
+fat	select1	Correct	69
+fat	select2	Correct	67
+fat	select3	Correct	51
+fat	select4	Wrong Answer	38
+fat	select5	Correct	18
+fat	select6	Wrong Answer	51
+date: Sun Jun 02 00:47:05 CST 2013
+fat	create-tables	Correct	103
+fat	create-bigtables	Correct	34
+fat	insert1	Correct	38
+fat	insert2	Correct	23
+fat	insert3	Correct	31
+fat	delete1	Correct	16
+fat	delete2	Correct	27
+fat	update1	Correct	22
+fat	update2	Correct	26
+fat	select1	Correct	61
+fat	select2	Correct	65
+fat	select3	Correct	45
+fat	select4	Wrong Answer	346
+fat	select5	Correct	16
+fat	select6	Wrong Answer	38
+date: Sun Jun 02 00:49:31 CST 2013
+fat	create-tables	Correct	118
+fat	create-bigtables	Correct	31
+fat	insert1	Correct	32
+fat	insert2	Correct	24
+fat	insert3	Correct	44
+fat	delete1	Correct	17
+fat	delete2	Correct	18
+fat	update1	Correct	25
+fat	update2	Correct	30
+fat	select1	Correct	56
+fat	select2	Correct	67
+fat	select3	Correct	45
+fat	select4	Wrong Answer	42
+fat	select5	Correct	23
+fat	select6	Wrong Answer	41
+date: Sun Jun 02 00:50:45 CST 2013
+fat	create-tables	Correct	118
+fat	create-bigtables	Correct	36
+fat	insert1	Correct	54
+fat	insert2	Correct	19
+fat	insert3	Correct	27
+fat	delete1	Correct	19
+fat	delete2	Correct	28
+fat	update1	Correct	26
+fat	update2	Correct	24
+fat	select1	Correct	64
+fat	select2	Correct	66
+fat	select3	Correct	51
+fat	select4	Correct	346
+fat	select5	Correct	12
+fat	select6	Wrong Answer	29
+date: Sun Jun 02 00:54:50 CST 2013
+fat	create-tables	Correct	116
+fat	create-bigtables	Correct	53
+fat	insert1	Correct	39
+fat	insert2	Correct	26
+fat	insert3	Correct	34
+fat	delete1	Correct	20
+fat	delete2	Correct	31
+fat	update1	Correct	23
+fat	update2	Correct	25
+fat	select1	Correct	69
+fat	select2	Correct	63
+fat	select3	Correct	50
+fat	select4	Correct	504
+fat	select5	Correct	25
+fat	select6	Wrong Answer	44
+date: Sun Jun 02 01:15:08 CST 2013
+fat	create-tables	Correct	150
+fat	create-bigtables	Correct	53
+fat	insert1	Correct	41
+fat	insert2	Correct	29
+fat	insert3	Correct	42
+fat	delete1	Correct	21
+fat	delete2	Correct	28
+fat	update1	Correct	41
+fat	update2	Correct	26
+fat	select1	Correct	56
+fat	select2	Correct	82
+fat	select3	Correct	46
+fat	select4	Correct	367
+fat	select5	Correct	20
+fat	select6	Correct	160
+date: Sun Jun 02 01:18:41 CST 2013
+fat	create-tables	Correct	172
+fat	create-bigtables	Correct	59
+fat	insert1	Correct	44
+fat	insert2	Correct	47
+fat	insert3	Correct	46
+fat	delete1	Correct	30
+fat	delete2	Correct	35
+fat	update1	Correct	25
+fat	update2	Correct	25
+fat	select1	Correct	64
+fat	select2	Correct	103
+fat	select3	Correct	57
+fat	select4	Correct	329
+fat	select5	Correct	79
+fat	select6	Correct	112
+date: Sun Jun 02 09:17:29 CST 2013
+fat	create-tables	Correct	136
+fat	create-bigtables	Correct	38
+fat	insert1	Wrong Answer	30
+fat	insert2	Wrong Answer	26
+fat	insert3	Wrong Answer	23
+fat	delete1	Wrong Answer	17
+fat	delete2	Wrong Answer	29
+fat	update1	Wrong Answer	28
+fat	update2	Wrong Answer	24
+fat	select1	Wrong Answer	53
+fat	select2	Wrong Answer	66
+fat	select3	Wrong Answer	36
+fat	select4	Wrong Answer	390
+fat	select5	Correct	22
+fat	select6	Wrong Answer	39
+date: Sun Jun 02 09:17:50 CST 2013
+fat	create-tables	Correct	89
+fat	create-bigtables	Correct	40
+fat	insert1	Wrong Answer	28
+fat	insert2	Wrong Answer	14
+fat	insert3	Wrong Answer	25
+fat	delete1	Wrong Answer	20
+fat	delete2	Wrong Answer	15
+fat	update1	Wrong Answer	20
+fat	update2	Wrong Answer	25
+fat	select1	Wrong Answer	54
+fat	select2	Wrong Answer	89
+fat	select3	Wrong Answer	33
+fat	select4	Wrong Answer	387
+fat	select5	Correct	13
+fat	select6	Wrong Answer	41
+date: Sun Jun 02 09:20:06 CST 2013
+fat	create-tables	Correct	95
+fat	create-bigtables	Correct	25
+fat	insert1	Correct	33
+fat	insert2	Correct	22
+fat	insert3	Correct	33
+fat	delete1	Correct	13
+fat	delete2	Correct	21
+fat	update1	Correct	23
+fat	update2	Correct	28
+fat	select1	Correct	88
+fat	select2	Correct	70
+fat	select3	Wrong Answer	45
+fat	select4	Wrong Answer	358
+fat	select5	Correct	17
+fat	select6	Wrong Answer	105
+date: Sun Jun 02 09:21:12 CST 2013
+fat	create-tables	Correct	106
+fat	create-bigtables	Correct	42
+fat	insert1	Correct	35
+fat	insert2	Correct	22
+fat	insert3	Correct	37
+fat	delete1	Correct	16
+fat	delete2	Correct	26
+fat	update1	Correct	26
+fat	update2	Correct	27
+fat	select1	Correct	67
+fat	select2	Correct	78
+fat	select3	Correct	52
+fat	select4	Correct	361
+fat	select5	Correct	11
+fat	select6	Wrong Answer	116
+date: Sun Jun 02 09:22:01 CST 2013
+fat	create-tables	Correct	114
+fat	create-bigtables	Correct	83
+fat	insert1	Correct	37
+fat	insert2	Correct	20
+fat	insert3	Correct	28
+fat	delete1	Correct	15
+fat	delete2	Correct	24
+fat	update1	Correct	20
+fat	update2	Correct	30
+fat	select1	Correct	68
+fat	select2	Correct	82
+fat	select3	Correct	54
+fat	select4	Correct	293
+fat	select5	Correct	11
+fat	select6	Wrong Answer	88
+date: Sun Jun 02 09:23:36 CST 2013
+fat	create-tables	Correct	128
+fat	create-bigtables	Correct	35
+fat	insert1	Correct	36
+fat	insert2	Correct	27
+fat	insert3	Correct	32
+fat	delete1	Correct	21
+fat	delete2	Correct	18
+fat	update1	Correct	25
+fat	update2	Correct	30
+fat	select1	Correct	62
+fat	select2	Correct	76
+fat	select3	Correct	60
+fat	select4	Correct	294
+fat	select5	Correct	16
+fat	select6	Wrong Answer	90
+date: Sun Jun 02 09:25:08 CST 2013
+fat	create-tables	Correct	127
+fat	create-bigtables	Correct	40
+fat	insert1	Correct	33
+fat	insert2	Correct	21
+fat	insert3	Correct	33
+fat	delete1	Correct	23
+fat	delete2	Correct	25
+fat	update1	Correct	32
+fat	update2	Correct	25
+fat	select1	Correct	72
+fat	select2	Correct	74
+fat	select3	Correct	56
+fat	select4	Correct	373
+fat	select5	Correct	16
+fat	select6	Wrong Answer	90
+date: Sun Jun 02 09:26:38 CST 2013
+fat	create-tables	Correct	140
+fat	create-bigtables	Correct	56
+fat	insert1	Correct	33
+fat	insert2	Correct	20
+fat	insert3	Correct	35
+fat	delete1	Correct	23
+fat	delete2	Correct	24
+fat	update1	Correct	27
+fat	update2	Correct	36
+fat	select1	Correct	77
+fat	select2	Correct	74
+fat	select3	Correct	56
+fat	select4	Correct	296
+fat	select5	Correct	19
+fat	select6	Correct	107
+date: Sun Jun 02 12:45:27 CST 2013
+fat	create-tables	Correct	129
+fat	create-bigtables	Correct	48
+fat	insert1	Correct	33
+fat	insert2	Correct	21
+fat	insert3	Correct	28
+fat	delete1	Correct	5005
+fat	delete2	Correct	37
+fat	update1	Correct	28
+fat	update2	Correct	30
+fat	select1	Correct	74
+fat	select2	Correct	57
+fat	select3	Correct	47
+fat	select4	Correct	237
+fat	select5	Correct	20
+fat	select6	Correct	86
+date: Sun Jun 02 13:45:43 CST 2013
+fat	create-tables	Correct	119
+fat	create-bigtables	Correct	50
+fat	insert1	Correct	30
+fat	insert2	Correct	22
+fat	insert3	Correct	39
+fat	delete1	Correct	15
+fat	delete2	Correct	23
+fat	update1	Correct	19
+fat	update2	Correct	32
+fat	select1	Correct	72
+fat	select2	Correct	71
+fat	select3	Correct	54
+fat	select4	Correct	341
+fat	select5	Correct	14
+fat	select6	Correct	201
+date: Sun Jun 02 13:50:27 CST 2013
+fat	create-tables	Correct	268
+fat	create-bigtables	Correct	75
+fat	insert1	Correct	32
+fat	insert2	Correct	39
+fat	insert3	Correct	40
+fat	delete1	Correct	25
+fat	delete2	Correct	29
+fat	update1	Correct	36
+fat	update2	Correct	27
+fat	select1	Correct	67
+fat	select2	Correct	93
+fat	select3	Correct	60
+fat	select4	Correct	386
+fat	select5	Correct	23
+fat	select6	Correct	207
+date: Sun Jun 02 14:27:17 CST 2013
+fat	create-tables	Correct	117
+fat	create-bigtables	Correct	33
+fat	insert1	Correct	27
+fat	insert2	Correct	27
+fat	insert3	Correct	33
+fat	delete1	Correct	19
+fat	delete2	Correct	21
+fat	update1	Correct	27
+fat	update2	Correct	26
+fat	select1	Correct	62
+fat	select2	Correct	73
+fat	select3	Correct	48
+fat	select4	Correct	308
+fat	select5	Correct	17
+fat	select6	Correct	186
+date: Sun Jun 02 17:15:17 CST 2013
+fat	create-tables	Correct	144
+fat	create-bigtables	Correct	24
+fat	insert1	Correct	29
+fat	insert2	Correct	15
+fat	insert3	Correct	26
+fat	delete1	Correct	13
+fat	delete2	Correct	21
+fat	update1	Correct	23
+fat	update2	Correct	25
+fat	select1	Correct	75
+fat	select2	Correct	64
+fat	select3	Correct	50
+fat	select4	Correct	221
+fat	select5	Correct	12
+fat	select6	Correct	143
+date: Sun Jun 02 17:18:59 CST 2013
+fat	create-tables	Correct	103
+fat	create-bigtables	Correct	38
+fat	insert1	Correct	33
+fat	insert2	Correct	15
+fat	insert3	Correct	28
+fat	delete1	Correct	13
+fat	delete2	Correct	15
+fat	update1	Correct	28
+fat	update2	Correct	21
+fat	select1	Correct	86
+fat	select2	Correct	63
+fat	select3	Correct	51
+fat	select4	Correct	214
+fat	select5	Correct	20
+fat	select6	Correct	103
+date: Sun Jun 02 17:20:19 CST 2013
+fat	create-tables	Correct	93
+fat	create-bigtables	Correct	27
+fat	insert1	Correct	44
+fat	insert2	Correct	18
+fat	insert3	Correct	257
+fat	delete1	Correct	14
+fat	delete2	Correct	18
+fat	update1	Correct	19
+fat	update2	Correct	19
+fat	select1	Correct	81
+fat	select2	Correct	87
+fat	select3	Correct	46
+fat	select4	Correct	191
+fat	select5	Correct	12
+fat	select6	Correct	101
+date: Sun Jun 02 17:44:24 CST 2013
+fat	create-tables	Correct	91
+fat	create-bigtables	Correct	25
+fat	insert1	Correct	33
+fat	insert2	Correct	15
+fat	insert3	Correct	33
+fat	delete1	Correct	10
+fat	delete2	Correct	21
+fat	update1	Correct	18
+fat	update2	Correct	23
+fat	select1	Correct	79
+fat	select2	Correct	69
+fat	select3	Correct	48
+fat	select4	Correct	234
+fat	select5	Correct	14
+fat	select6	Correct	87
+date: Sun Jun 02 17:45:09 CST 2013
+fat	create-tables	Correct	103
+fat	create-bigtables	Correct	31
+fat	insert1	Correct	32
+fat	insert2	Correct	15
+fat	insert3	Correct	30
+fat	delete1	Correct	15
+fat	delete2	Correct	19
+fat	update1	Correct	25
+fat	update2	Correct	28
+fat	select1	Correct	94
+fat	select2	Correct	72
+fat	select3	Correct	48
+fat	select4	Correct	256
+fat	select5	Correct	9
+fat	select6	Correct	135
+date: Sun Jun 02 17:52:51 CST 2013
+fat	create-tables	Correct	90
+fat	create-bigtables	Correct	27
+fat	insert1	Correct	28
+fat	insert2	Correct	17
+fat	insert3	Correct	33
+fat	delete1	Correct	17
+fat	delete2	Correct	22
+fat	update1	Correct	18
+fat	update2	Correct	25
+fat	select1	Correct	83
+fat	select2	Correct	65
+fat	select3	Correct	48
+fat	select4	Correct	195
+fat	select5	Correct	16
+fat	select6	Correct	84
+date: Sun Jun 02 17:58:03 CST 2013
+fat	create-tables	Correct	88
+fat	create-bigtables	Correct	28
+fat	insert1	Correct	38
+fat	insert2	Correct	24
+fat	insert3	Correct	34
+fat	delete1	Correct	13
+fat	delete2	Correct	20
+fat	update1	Correct	19
+fat	update2	Correct	23
+fat	select1	Correct	80
+fat	select2	Correct	60
+fat	select3	Correct	49
+fat	select4	Correct	212
+fat	select5	Correct	12
+fat	select6	Correct	84
+date: Sun Jun 02 18:09:48 CST 2013
+fat	create-tables	Correct	102
+fat	create-bigtables	Correct	38
+fat	insert1	Correct	52
+fat	insert2	Correct	21
+fat	insert3	Correct	29
+fat	delete1	Correct	19
+fat	delete2	Correct	23
+fat	update1	Correct	31
+fat	update2	Correct	27
+fat	select1	Correct	62
+fat	select2	Correct	60
+fat	select3	Correct	48
+fat	select4	Correct	224
+fat	select5	Correct	14
+fat	select6	Correct	97
+date: Sun Jun 02 18:10:56 CST 2013
+fat	create-tables	Correct	98
+fat	create-bigtables	Correct	30
+fat	insert1	Correct	39
+fat	insert2	Correct	22
+fat	insert3	Correct	30
+fat	delete1	Correct	14
+fat	delete2	Correct	17
+fat	update1	Correct	27
+fat	update2	Correct	24
+fat	select1	Correct	53
+fat	select2	Correct	64
+fat	select3	Correct	43
+fat	select4	Correct	220
+fat	select5	Correct	15
+fat	select6	Correct	100
+date: Sun Jun 02 18:15:20 CST 2013
+fat	create-tables	Correct	154
+fat	create-bigtables	Correct	35
+fat	insert1	Correct	39
+fat	insert2	Correct	27
+fat	insert3	Correct	30
+fat	delete1	Correct	13
+fat	delete2	Correct	16
+fat	update1	Correct	20
+fat	update2	Correct	34
+fat	select1	Correct	75
+fat	select2	Correct	97
+fat	select3	Correct	87
+fat	select4	Correct	279
+fat	select5	Correct	16
+fat	select6	Correct	160
+date: Sun Jun 02 19:53:30 CST 2013
+fat	create-tables	Correct	106
+fat	create-bigtables	Correct	31
+fat	insert1	Wrong Answer	26
+fat	insert2	Wrong Answer	18
+fat	insert3	Wrong Answer	31
+fat	delete1	Correct	14
+fat	delete2	Wrong Answer	20
+fat	update1	Wrong Answer	20
+fat	update2	Wrong Answer	21
+fat	select1	Wrong Answer	20
+fat	select2	Wrong Answer	28
+fat	select3	Wrong Answer	21
+fat	select4	Wrong Answer	23
+fat	select5	Correct	22
+fat	select6	Wrong Answer	19
+date: Sun Jun 02 19:53:40 CST 2013
+fat	create-tables	Correct	100
+fat	create-bigtables	Correct	31
+fat	insert1	Wrong Answer	18
+fat	insert2	Wrong Answer	13
+fat	insert3	Wrong Answer	25
+fat	delete1	Correct	19
+fat	delete2	Wrong Answer	13
+fat	update1	Wrong Answer	21
+fat	update2	Wrong Answer	24
+fat	select1	Wrong Answer	18
+fat	select2	Wrong Answer	18
+fat	select3	Wrong Answer	27
+fat	select4	Wrong Answer	18
+fat	select5	Correct	28
+fat	select6	Wrong Answer	20
+date: Sun Jun 02 19:53:59 CST 2013
+fat	create-tables	Correct	83
+fat	create-bigtables	Correct	29
+fat	insert1	Wrong Answer	22
+fat	insert2	Wrong Answer	15
+fat	insert3	Wrong Answer	21
+fat	delete1	Correct	13
+fat	delete2	Wrong Answer	16
+fat	update1	Wrong Answer	20
+fat	update2	Wrong Answer	23
+fat	select1	Wrong Answer	19
+fat	select2	Wrong Answer	26
+fat	select3	Wrong Answer	22
+fat	select4	Wrong Answer	20
+fat	select5	Correct	22
+fat	select6	Wrong Answer	28
+date: Sun Jun 02 19:54:38 CST 2013
+fat	create-tables	Correct	105
+fat	create-bigtables	Correct	20
+fat	insert1	Wrong Answer	24
+fat	insert2	Wrong Answer	14
+fat	insert3	Wrong Answer	20
+fat	delete1	Correct	14
+fat	delete2	Wrong Answer	16
+fat	update1	Wrong Answer	19
+fat	update2	Wrong Answer	21
+fat	select1	Wrong Answer	18
+fat	select2	Wrong Answer	24
+fat	select3	Wrong Answer	20
+fat	select4	Wrong Answer	20
+fat	select5	Correct	19
+fat	select6	Wrong Answer	26
+date: Sun Jun 02 19:55:16 CST 2013
+fat	create-tables	Correct	102
+fat	create-bigtables	Correct	35
+fat	insert1	Wrong Answer	29
+fat	insert2	Wrong Answer	18
+fat	insert3	Wrong Answer	20
+fat	delete1	Correct	16
+fat	delete2	Wrong Answer	22
+fat	update1	Wrong Answer	22
+fat	update2	Wrong Answer	28
+fat	select1	Wrong Answer	20
+fat	select2	Wrong Answer	24
+fat	select3	Wrong Answer	25
+fat	select4	Wrong Answer	25
+fat	select5	Correct	17
+fat	select6	Wrong Answer	20
+date: Sun Jun 02 19:59:08 CST 2013
+fat	create-tables	Correct	96
+fat	create-bigtables	Correct	32
+fat	insert1	Correct	39
+fat	insert2	Correct	24
+fat	insert3	Correct	27
+fat	delete1	Correct	15
+fat	delete2	Correct	21
+fat	update1	Correct	19
+fat	update2	Correct	34
+fat	select1	Correct	72
+fat	select2	Correct	71
+fat	select3	Correct	42
+fat	select4	Correct	234
+fat	select5	Correct	10
+fat	select6	Correct	87
+date: Sun Jun 02 20:06:18 CST 2013
+fat	create-tables	Correct	106
+fat	create-bigtables	Correct	35
+fat	insert1	Correct	42
+fat	insert2	Correct	18
+fat	insert3	Correct	28
+fat	delete1	Correct	15
+fat	delete2	Correct	16
+fat	update1	Correct	22
+fat	update2	Correct	36
+fat	select1	Correct	60
+fat	select2	Correct	66
+fat	select3	Correct	54
+fat	select4	Correct	235
+fat	select5	Correct	16
+fat	select6	Correct	96
+date: Sun Jun 02 20:35:57 CST 2013
+fat	create-tables	Correct	99
+fat	create-bigtables	Correct	25
+fat	insert1	Correct	27
+fat	insert2	Correct	15
+fat	insert3	Correct	32
+fat	delete1	Correct	16
+fat	delete2	Correct	23
+fat	update1	Correct	24
+fat	update2	Correct	35
+fat	select1	Correct	69
+fat	select2	Correct	62
+fat	select3	Correct	42
+fat	select4	Correct	218
+fat	select5	Correct	12
+fat	select6	Correct	96
+date: Sun Jun 02 20:59:22 CST 2013
+fat	create-tables	Correct	90
+fat	create-bigtables	Correct	27
+fat	insert1	Correct	27
+fat	insert2	Correct	17
+fat	insert3	Correct	34
+fat	delete1	Correct	15
+fat	delete2	Correct	17
+fat	update1	Correct	17
+fat	update2	Correct	21
+fat	select1	Correct	94
+fat	select2	Correct	67
+fat	select3	Correct	49
+fat	select4	Correct	249
+fat	select5	Correct	14
+fat	select6	Correct	90
+date: Sun Jun 02 21:14:49 CST 2013
+fat	create-tables	Correct	92
+fat	create-bigtables	Correct	29
+fat	insert1	Wrong Answer	38
+fat	insert2	Wrong Answer	20
+fat	insert3	Wrong Answer	21
+fat	delete1	Correct	14
+fat	delete2	Wrong Answer	16
+fat	update1	Wrong Answer	18
+fat	update2	Wrong Answer	23
+fat	select1	Wrong Answer	38
+fat	select2	Wrong Answer	46
+fat	select3	Wrong Answer	46
+fat	select4	Wrong Answer	32
+fat	select5	Wrong Answer	15
+fat	select6	Wrong Answer	39
+date: Sun Jun 02 21:18:39 CST 2013
+fat	create-tables	Correct	77
+fat	create-bigtables	Correct	33
+fat	insert1	Correct	27
+fat	insert2	Correct	14
+fat	insert3	Correct	36
+fat	delete1	Correct	14
+fat	delete2	Correct	18
+fat	update1	Correct	22
+fat	update2	Correct	24
+fat	select1	Correct	89
+fat	select2	Correct	66
+fat	select3	Correct	48
+fat	select4	Correct	219
+fat	select5	Correct	11
+fat	select6	Correct	72
+date: Sun Jun 02 21:43:15 CST 2013
+fat	create-tables	Correct	87
+fat	create-bigtables	Correct	29
+fat	insert1	Correct	29
+fat	insert2	Correct	23
+fat	insert3	Correct	29
+fat	delete1	Correct	29
+fat	delete2	Correct	21
+fat	update1	Correct	19
+fat	update2	Correct	30
+fat	select1	Correct	67
+fat	select2	Correct	59
+fat	select3	Correct	48
+fat	select4	Correct	270
+fat	select5	Correct	9
+fat	select6	Correct	67
+date: Sun Jun 02 21:53:12 CST 2013
+fat	create-tables	Correct	94
+fat	create-bigtables	Correct	32
+fat	insert1	Correct	41
+fat	insert2	Correct	20
+fat	insert3	Correct	36
+fat	delete1	Correct	24
+fat	delete2	Correct	19
+fat	update1	Correct	21
+fat	update2	Correct	31
+fat	select1	Correct	67
+fat	select2	Correct	59
+fat	select3	Correct	46
+fat	select4	Correct	254
+fat	select5	Correct	14
+fat	select6	Correct	87

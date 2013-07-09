@@ -1,0 +1,86 @@
+[Sun Jun 02 20:28:13 CST 2013] [Thread0] Connecting jdbc:fatworm:///home/mrain/db?user=root&password=fatworm
+[Sun Jun 02 20:28:13 CST 2013] [Thread0] Connection established.
+[Sun Jun 02 20:28:13 CST 2013] [Thread0] Setting AUTO_COMMIT mode as false
+[Sun Jun 02 20:28:13 CST 2013] [Thread0] Executing: use acm
+[Sun Jun 02 20:28:13 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:28:13 CST 2013] [Thread0] Executing: select * from student where malesex = true
+[Sun Jun 02 20:28:13 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 20:28:13 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 20:28:13 CST 2013] [Thread0] Executing: select 1+2+3+4+5
+[Sun Jun 02 20:28:13 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 20:28:13 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Executing: select 1, 1*0, -1-2, -1%10, -(-1-(-1)), 1/2, 0.5+0.314, 0.0001*0.0001 from student
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Executing: select *, 3*5%11 from student
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Executing: select * from student, fatworm
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Executing: select a.id, a.name, student.id, student.name from fatworm as a, student
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Executing: select * from (select * from student where birthday = '1989-02-24 04:44:44') as t1
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Executing: select id, b from (select id as a, name as b from student where malesex = true) as sub, student where sub.a < id
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Executing: select id, name, malesex from student where id in (select id from student where malesex = false)
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Executing: select id, name from student as f where name > any (select name from student where id > f.id)
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Executing: select id, name from student as s where (select id from student where s.name = name) >= id
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Executing: select id, (select name) from student
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Executing: select * from fatworm order by loc
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Executing: select A.name, B.id from A, B order by A.id DESC, b.id ASC, b.name
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Executing: select count(id) from student where 1 = 0
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Executing: select id from student where 1 = 0
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Executing: select groupid, sum(loc) as sumloc, count(loc), avg(loc), min(loc), max(loc) from fatworm
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] group by groupid order by sumloc DESC
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Executing: select sum(loc) as sumloc, avg(loc), name from fatworm group by leader
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] having min(loc) >= all (select min(loc) from fatworm group by leader)
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] order by sumloc
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Executing: select id from student as s
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] where (select count(nickname) from student, fatworm, fatworm as f
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] where fatworm.id = s.id and fatworm.groupid = f.groupid and student.id = f.id) >= 3
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Executing: select id, name from student
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] where (select count(id) from fatworm where student.id = 4 and groupid = 'H') > 0
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] order by id
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Executing: select distinct groupid from fatworm
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Executing: select distinct * from fatworm
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Executing: select count(cnt) from (select distinct count(name) as cnt from fatworm group by groupid) as membercnt
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Executing: select count(a.id) from a, b, c, d
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] where a.id + b.id > c.id and d.id % 3 = 1 and b.id * d.id % 5 = 0 and a.id = b.id
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Executing: select count(a.ID) from a, b, c, d
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] where a.id + b.id < c.id and d.id % 2 = 1 and b.id * d.id % 3 = 0 and a.id = b.id
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Executing: select count(b0.ID) from B as b0, D as d0, B as b1, B as b2, B as b3, B as b4, B as b5, B as b6, B as b7, B as b8
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] where b0.id % 2 = 1 and b1.id % 3 = 1 and b2.id % 3 = 2 and b3.id % 4 = 1 and b4.id % 4 = 2 and d0.id >= 18
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] or b5.id % 4 = 3 and b6.id % 5 = 2 and b7.id % 5 = 3 and b8.id % 5 = 4 and d0.id <= 1
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 20:28:14 CST 2013] [Thread0] Query executed, begin to fetch and check result

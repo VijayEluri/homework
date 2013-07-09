@@ -1,0 +1,3 @@
+# select * from test1 where d>10
+# EMPTY
+;

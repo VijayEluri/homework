@@ -1,0 +1,27 @@
+[Fri May 17 00:25:41 CST 2013] [Thread0] Connecting jdbc:fatworm://tmp?user=root&password=fatworm
+[Fri May 17 00:25:41 CST 2013] [Thread0] Connection established.
+[Fri May 17 00:25:41 CST 2013] [Thread0] Setting AUTO_COMMIT mode as false
+[Fri May 17 00:25:41 CST 2013] [Thread0] Executing: drop database nano
+[Fri May 17 00:25:41 CST 2013] [Thread0] isQuery? false
+[Fri May 17 00:25:41 CST 2013] [Thread0] Executing: create database nano
+[Fri May 17 00:25:41 CST 2013] [Thread0] isQuery? false
+[Fri May 17 00:25:41 CST 2013] [Thread0] Executing: use nano
+[Fri May 17 00:25:41 CST 2013] [Thread0] isQuery? false
+[Fri May 17 00:25:41 CST 2013] [Thread0] Executing: create table Classes(
+[Fri May 17 00:25:41 CST 2013] [Thread0] a int,
+[Fri May 17 00:25:41 CST 2013] [Thread0] b int,
+[Fri May 17 00:25:41 CST 2013] [Thread0] c int)
+[Fri May 17 00:25:41 CST 2013] [Thread0] isQuery? false
+[Fri May 17 00:25:41 CST 2013] [Thread0] Executing: insert into Classes values(1,2,3)
+[Fri May 17 00:25:41 CST 2013] [Thread0] isQuery? false
+[Fri May 17 00:25:41 CST 2013] [Thread0] Executing: select a from Classes where a=1
+[Fri May 17 00:25:41 CST 2013] [Thread0] isQuery? true
+[Fri May 17 00:25:41 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 17 00:25:41 CST 2013] [Thread0] Type 1 is 4
+[Fri May 17 00:25:41 CST 2013] [Thread0] Executing: select c from Classes where a=1
+[Fri May 17 00:25:41 CST 2013] [Thread0] isQuery? true
+[Fri May 17 00:25:41 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 17 00:25:41 CST 2013] [Thread0] Type 1 is 4
+[Fri May 17 00:25:41 CST 2013] [Thread Time] 96
+[Fri May 17 00:25:41 CST 2013] [Total Time] 141
+[Fri May 17 00:25:41 CST 2013] [Result] Correct

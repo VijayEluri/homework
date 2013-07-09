@@ -1,0 +1,289 @@
+date: Thu May 30 21:58:12 CST 2013
+fat	i1_insert	Correct	428
+fat	i1_query	Wrong Answer	9
+fat	i2_insert	Correct	1304
+fat	i2_query	Wrong Answer	4
+fat	i3_insert	Correct	1062
+fat	i3_query	Wrong Answer	2
+fat	i4_insert	Correct	4195
+fat	i4_query	Wrong Answer	4
+fat	c1_insert	Correct	121
+fat	c1_query	Wrong Answer	2
+fat	c2_insert	Correct	608
+fat	c2_query	Wrong Answer	2
+fat	c3_insert	Correct	1247
+fat	c3_query	Wrong Answer	3
+fat	d1	Wrong Answer	63
+fat	d2	Wrong Answer	76
+fat	d3	Wrong Answer	536
+date: Sun Jun 02 14:24:45 CST 2013
+fat	i1_insert	Correct	374
+fat	i1_query	Wrong Answer	21
+fat	i2_insert	Correct	906
+fat	i2_query	Wrong Answer	6
+fat	i3_insert	Correct	575
+fat	i3_query	Wrong Answer	4
+date: Sun Jun 02 14:25:14 CST 2013
+fat	i1_insert	Correct	329
+fat	i1_query	Correct	135
+fat	i2_insert	Correct	936
+fat	i2_query	Correct	449
+fat	i3_insert	Correct	643
+fat	i3_query	Correct	276
+fat	i4_insert	Correct	1428
+fat	i4_query	Correct	877
+fat	c1_insert	Correct	123
+fat	c1_query	Correct	58
+fat	c2_insert	Correct	360
+fat	c2_query	Correct	133
+fat	c3_insert	Correct	352
+fat	c3_query	Correct	199
+fat	d1	Correct	19
+fat	d2	Correct	86
+fat	d3	Correct	369
+date: Sun Jun 02 17:14:48 CST 2013
+fat	i1_insert	Correct	419
+fat	i1_query	Wrong Answer	22
+fat	i2_insert	Correct	903
+fat	i2_query	Wrong Answer	3
+fat	i3_insert	Correct	553
+fat	i3_query	Wrong Answer	5
+date: Sun Jun 02 17:14:54 CST 2013
+fat	i1_insert	Correct	321
+fat	i1_query	Correct	159
+fat	i2_insert	Correct	932
+fat	i2_query	Correct	602
+fat	i3_insert	Correct	517
+fat	i3_query	Correct	306
+fat	i4_insert	Correct	1368
+fat	i4_query	Correct	905
+fat	c1_insert	Correct	97
+fat	c1_query	Correct	53
+fat	c2_insert	Correct	366
+fat	c2_query	Correct	140
+fat	c3_insert	Correct	385
+fat	c3_query	Correct	208
+fat	d1	Correct	25
+fat	d2	Correct	122
+fat	d3	Correct	365
+date: Sun Jun 02 17:27:20 CST 2013
+fat	i1_insert	Correct	405
+fat	i1_query	Wrong Answer	23
+fat	i2_insert	Correct	901
+fat	i2_query	Wrong Answer	6
+fat	i3_insert	Correct	590
+fat	i3_query	Wrong Answer	4
+date: Sun Jun 02 17:27:26 CST 2013
+fat	i1_insert	Correct	366
+fat	i1_query	Correct	136
+fat	i2_insert	Correct	980
+fat	i2_query	Correct	538
+fat	i3_insert	Correct	586
+fat	i3_query	Correct	272
+fat	i4_insert	Correct	1392
+fat	i4_query	Correct	931
+fat	c1_insert	Correct	94
+fat	c1_query	Correct	36
+fat	c2_insert	Correct	436
+fat	c2_query	Correct	121
+fat	c3_insert	Correct	381
+fat	c3_query	Correct	252
+fat	d1	Correct	53
+fat	d2	Correct	71
+fat	d3	Correct	432
+date: Sun Jun 02 17:27:41 CST 2013
+fat	i1_insert	Correct	441
+fat	i1_query	Wrong Answer	8
+fat	i2_insert	Correct	1113
+fat	i2_query	Wrong Answer	6
+date: Sun Jun 02 17:28:46 CST 2013
+fat	i1_insert	Correct	361
+fat	i1_query	Wrong Answer	10
+date: Sun Jun 02 17:29:10 CST 2013
+fat	i1_insert	Correct	358
+fat	i1_query	Correct	151
+fat	i2_insert	Correct	917
+fat	i2_query	Correct	503
+fat	i3_insert	Correct	546
+fat	i3_query	Correct	208
+fat	i4_insert	Correct	1519
+fat	i4_query	Correct	942
+fat	c1_insert	Correct	105
+fat	c1_query	Correct	55
+fat	c2_insert	Correct	325
+fat	c2_query	Correct	123
+fat	c3_insert	Correct	398
+fat	c3_query	Correct	244
+fat	d1	Correct	15
+fat	d2	Correct	68
+fat	d3	Correct	490
+date: Sun Jun 02 17:30:17 CST 2013
+fat	i1_insert	Correct	365
+fat	i1_query	Correct	135
+fat	i2_insert	Correct	933
+fat	i2_query	Correct	448
+fat	i3_insert	Correct	665
+fat	i3_query	Correct	278
+fat	i4_insert	Correct	1379
+fat	i4_query	Correct	910
+fat	c1_insert	Correct	82
+fat	c1_query	Correct	39
+fat	c2_insert	Correct	442
+fat	c2_query	Correct	166
+fat	c3_insert	Correct	387
+fat	c3_query	Correct	216
+fat	d1	Correct	19
+fat	d2	Correct	60
+fat	d3	Correct	430
+date: Sun Jun 02 17:30:36 CST 2013
+fat	i1_insert	Correct	351
+fat	i1_query	Wrong Answer	14
+fat	i2_insert	Correct	887
+date: Sun Jun 02 17:31:31 CST 2013
+date: Sun Jun 02 17:31:36 CST 2013
+fat	i1_insert	Correct	372
+fat	i1_query	Wrong Answer	15
+date: Sun Jun 02 17:40:25 CST 2013
+fat	i1_insert	Correct	351
+fat	i1_query	Correct	135
+fat	i2_insert	Correct	982
+fat	i2_query	Correct	522
+fat	i3_insert	Correct	524
+fat	i3_query	Correct	232
+fat	i4_insert	Correct	1438
+fat	i4_query	Correct	971
+fat	c1_insert	Correct	104
+fat	c1_query	Correct	65
+fat	c2_insert	Correct	443
+fat	c2_query	Correct	119
+fat	c3_insert	Correct	387
+fat	c3_query	Correct	195
+fat	d1	Correct	45
+fat	d2	Correct	102
+fat	d3	Correct	447
+date: Sun Jun 02 17:44:29 CST 2013
+fat	i1_insert	Correct	423
+fat	i1_query	Correct	156
+fat	i2_insert	Correct	1100
+fat	i2_query	Correct	640
+fat	i3_insert	Correct	601
+fat	i3_query	Correct	286
+fat	i4_insert	Correct	1414
+fat	i4_query	Correct	900
+fat	c1_insert	Correct	94
+fat	c1_query	Correct	39
+fat	c2_insert	Correct	428
+fat	c2_query	Correct	141
+fat	c3_insert	Correct	385
+fat	c3_query	Correct	208
+fat	d1	Correct	22
+fat	d2	Correct	72
+fat	d3	Correct	507
+date: Sun Jun 02 17:45:13 CST 2013
+fat	i1_insert	Correct	392
+fat	i1_query	Correct	136
+fat	i2_insert	Correct	936
+fat	i2_query	Correct	449
+fat	i3_insert	Correct	585
+fat	i3_query	Correct	335
+fat	i4_insert	Correct	1435
+fat	i4_query	Correct	909
+fat	c1_insert	Correct	101
+fat	c1_query	Correct	59
+fat	c2_insert	Correct	441
+fat	c2_query	Correct	127
+fat	c3_insert	Correct	364
+fat	c3_query	Correct	194
+fat	d1	Correct	30
+fat	d2	Correct	65
+fat	d3	Correct	434
+date: Sun Jun 02 17:52:57 CST 2013
+fat	i1_insert	Correct	405
+fat	i1_query	Correct	149
+fat	i2_insert	Correct	999
+fat	i2_query	Correct	567
+fat	i3_insert	Correct	574
+fat	i3_query	Correct	289
+fat	i4_insert	Correct	1411
+fat	i4_query	Correct	1020
+fat	c1_insert	Correct	87
+fat	c1_query	Correct	65
+fat	c2_insert	Correct	380
+fat	c2_query	Correct	143
+fat	c3_insert	Correct	377
+fat	c3_query	Correct	195
+fat	d1	Correct	22
+fat	d2	Correct	95
+fat	d3	Correct	453
+date: Sun Jun 02 18:09:54 CST 2013
+fat	i1_insert	Correct	496
+fat	i1_query	Correct	137
+fat	i2_insert	Correct	964
+fat	i2_query	Correct	485
+fat	i3_insert	Correct	605
+fat	i3_query	Correct	362
+fat	i4_insert	Correct	1399
+fat	i4_query	Correct	908
+fat	c1_insert	Correct	96
+fat	c1_query	Correct	54
+fat	c2_insert	Correct	430
+fat	c2_query	Correct	135
+fat	c3_insert	Correct	408
+fat	c3_query	Correct	188
+fat	d1	Correct	38
+fat	d2	Correct	91
+fat	d3	Correct	462
+date: Sun Jun 02 20:00:03 CST 2013
+fat	i1_insert	Correct	364
+fat	i1_query	Correct	114
+fat	i2_insert	Correct	984
+fat	i2_query	Correct	565
+fat	i3_insert	Correct	644
+fat	i3_query	Correct	299
+fat	i4_insert	Correct	1404
+fat	i4_query	Correct	890
+fat	c1_insert	Correct	93
+fat	c1_query	Correct	51
+fat	c2_insert	Correct	388
+fat	c2_query	Correct	529
+fat	c3_insert	Correct	393
+fat	c3_query	Correct	204
+fat	d1	Correct	18
+fat	d2	Correct	1068
+fat	d3	Correct	473
+date: Sun Jun 02 20:59:27 CST 2013
+fat	i1_insert	Correct	427
+fat	i1_query	Correct	154
+fat	i2_insert	Correct	1107
+fat	i2_query	Correct	759
+fat	i3_insert	Correct	749
+fat	i3_query	Correct	283
+fat	i4_insert	Correct	1461
+fat	i4_query	Correct	866
+fat	c1_insert	Correct	86
+fat	c1_query	Correct	37
+fat	c2_insert	Correct	381
+fat	c2_query	Correct	205
+fat	c3_insert	Correct	396
+fat	c3_query	Correct	203
+fat	d1	Correct	22
+fat	d2	Correct	57
+fat	d3	Correct	504
+date: Sun Jun 02 21:53:41 CST 2013
+fat	i1_insert	Correct	435
+fat	i1_query	Correct	173
+fat	i2_insert	Correct	1094
+fat	i2_query	Correct	556
+fat	i3_insert	Correct	717
+fat	i3_query	Correct	508
+fat	i4_insert	Correct	1486
+fat	i4_query	Correct	963
+fat	c1_insert	Correct	147
+fat	c1_query	Correct	71
+fat	c2_insert	Correct	468
+fat	c2_query	Correct	123
+fat	c3_insert	Correct	398
+fat	c3_query	Correct	196
+fat	d1	Correct	18
+fat	d2	Correct	76
+fat	d3	Correct	658

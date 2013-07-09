@@ -1,0 +1,96 @@
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] Connecting jdbc:fatworm:///home/mrain/db?user=root&password=fatworm
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] Connection established.
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] Setting AUTO_COMMIT mode as false
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] Executing: DROP DATABASE winsconsin
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] Executing: CREATE DATABASE winsconsin
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] Executing: USE winsconsin
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] Executing: create table onek (
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] unique1 int NOT NULL,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] unique2 int NOT NULL,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] two int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] four int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] ten int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] twenty int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] hundred int NOT NULL,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] thousand int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] twothousand int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] fivethous int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] tenthous int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] odd int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] even int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] stringu1 char(16),
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] stringu2 char(16),
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] string4 char(16)
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] )
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] Executing: create index hundred1 on onek(hundred)
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] Executing: create table tenk1 (
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] unique1 int NOT NULL,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] unique2 int NOT NULL,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] two int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] four int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] ten int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] twenty int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] hundred int NOT NULL,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] thousand int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] twothousand int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] fivethous int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] tenthous int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] odd int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] even int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] stringu1 char(16),
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] stringu2 char(16),
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] string4 char(16)
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] )
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] Executing: create index hundred2 on tenk1(hundred)
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] Executing: create table tenk2 (
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] unique1 int NOT NULL,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] unique2 int NOT NULL,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] two int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] four int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] ten int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] twenty int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] hundred int NOT NULL,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] thousand int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] twothousand int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] fivethous int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] tenthous int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] odd int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] even int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] stringu1 char(16),
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] stringu2 char(16),
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] string4 char(16)
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] )
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] Executing: create index hundred3 on tenk2(hundred)
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] Executing: create table Bprime (
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] unique1 int NOT NULL,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] unique2 int NOT NULL,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] two int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] four int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] ten int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] twenty int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] hundred int NOT NULL,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] thousand int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] twothousand int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] fivethous int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] tenthous int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] odd int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] even int,
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] stringu1 char(16),
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] stringu2 char(16),
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] string4 char(16)
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] )
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] Executing: create index hundred4 on Bprime(hundred)
+[Sun Jun 02 21:53:23 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:23 CST 2013] [Thread Time] 93
+[Sun Jun 02 21:53:23 CST 2013] [Total Time] 138
+[Sun Jun 02 21:53:23 CST 2013] [Result] Correct

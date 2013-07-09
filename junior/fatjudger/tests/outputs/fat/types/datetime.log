@@ -1,0 +1,56 @@
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Connecting jdbc:fatworm:///home/mrain/db?user=root&password=fatworm
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Connection established.
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Setting AUTO_COMMIT mode as false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: drop database fatwormTypes
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: create database fatwormTypes
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: use fatwormTypes
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: create table test1(a int, d datetime)
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: insert into test1 values(1,'1988-04-09 10:10:10')
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: insert into test1 values(2,'1988-04-10 10:10:10')
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: insert into test1 values(3,'1988-04-11 10:10:10')
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: insert into test1 values(4,'1988-04-12 10:10:10')
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: insert into test1 values(5,'1988-04-13 10:10:10')
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: insert into test1 values(6,'1988-04-13 10:10:09')
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: insert into test1 values(7,'1988-04-12 10:10:09')
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: insert into test1 values(8,'1988-04-11 10:10:09')
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: insert into test1 values(9,'1988-04-10 10:10:09')
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: insert into test1 values(10,'1988-04-09 10:10:09')
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: insert into test1 values(11,'1988-04-09 10:10:10')
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: insert into test1 values(12,'1988-04-10 10:10:10')
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: insert into test1 values(13,'1988-04-11 10:10:10')
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: insert into test1 values(14,'1988-04-12 10:10:10')
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: insert into test1 values(15,'1988-04-13 10:10:10')
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: select * from test1 where d='1988-04-12 10:10:10'
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: select count(a) from test1 where d>'1988-04-12 10:10:10'
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: select count(d) from test1 where d>'1988-04-12 10:10:10' and d<'2222-02-22 00:00:00'
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Executing: select d from test1 order by d
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:01 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:01 CST 2013] [Thread Time] 29
+[Sun Jun 02 21:53:01 CST 2013] [Total Time] 43
+[Sun Jun 02 21:53:01 CST 2013] [Result] Correct

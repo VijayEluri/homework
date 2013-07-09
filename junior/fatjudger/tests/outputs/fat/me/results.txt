@@ -1,0 +1,39 @@
+date: Thu May 30 19:21:52 CST 2013
+fat	insert1	Wrong Answer	226
+date: Thu May 30 19:31:14 CST 2013
+fat	insert1	Wrong Answer	192
+date: Thu May 30 19:31:31 CST 2013
+fat	insert1	Wrong Answer	212
+date: Thu May 30 19:36:51 CST 2013
+fat	insert1	Wrong Answer	225
+date: Thu May 30 19:36:54 CST 2013
+fat	insert1	Wrong Answer	211
+date: Thu May 30 19:37:08 CST 2013
+fat	insert1	Wrong Answer	197
+date: Thu May 30 19:37:31 CST 2013
+fat	insert1	Wrong Answer	179
+date: Thu May 30 19:38:05 CST 2013
+date: Thu May 30 19:38:16 CST 2013
+date: Thu May 30 19:38:33 CST 2013
+date: Thu May 30 19:40:05 CST 2013
+fat	insert1	Wrong Answer	102
+date: Thu May 30 19:41:07 CST 2013
+fat	insert1	Wrong Answer	206
+date: Thu May 30 19:44:28 CST 2013
+fat	insert1	Wrong Answer	215
+date: Thu May 30 19:45:27 CST 2013
+fat	insert1	Wrong Answer	233
+date: Thu May 30 19:45:59 CST 2013
+fat	insert1	Correct	276
+date: Thu May 30 19:46:08 CST 2013
+fat	insert1	Correct	255
+date: Thu May 30 19:46:25 CST 2013
+fat	insert1	Correct	203
+date: Thu May 30 19:48:17 CST 2013
+fat	insert1	Correct	176
+date: Thu May 30 19:48:21 CST 2013
+fat	insert1	Correct	232
+date: Thu May 30 21:56:43 CST 2013
+fat	insert1	Correct	117
+date: Fri May 31 13:24:36 CST 2013
+fat	insert1	Correct	188

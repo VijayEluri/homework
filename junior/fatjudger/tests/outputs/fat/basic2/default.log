@@ -1,0 +1,27 @@
+[Sun Jun 02 21:53:14 CST 2013] [Thread0] Connecting jdbc:fatworm:///home/mrain/db?user=root&password=fatworm
+[Sun Jun 02 21:53:14 CST 2013] [Thread0] Connection established.
+[Sun Jun 02 21:53:14 CST 2013] [Thread0] Setting AUTO_COMMIT mode as false
+[Sun Jun 02 21:53:14 CST 2013] [Thread0] Executing: drop database nano
+[Sun Jun 02 21:53:14 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:14 CST 2013] [Thread0] Executing: create database nano
+[Sun Jun 02 21:53:14 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:14 CST 2013] [Thread0] Executing: use nano
+[Sun Jun 02 21:53:14 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:14 CST 2013] [Thread0] Executing: create table InfraTest( k int default 10, v char(10) default 'miemiemie')
+[Sun Jun 02 21:53:14 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:14 CST 2013] [Thread0] Executing: insert into InfraTest values(1, default)
+[Sun Jun 02 21:53:14 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:14 CST 2013] [Thread0] Executing: insert into InfraTest values(2, default)
+[Sun Jun 02 21:53:14 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:14 CST 2013] [Thread0] Executing: insert into InfraTest values(default, default)
+[Sun Jun 02 21:53:14 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:14 CST 2013] [Thread0] Executing: insert into InfraTest values(default, '123')
+[Sun Jun 02 21:53:14 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:14 CST 2013] [Thread0] Executing: insert into InfraTest values(1, '23')
+[Sun Jun 02 21:53:14 CST 2013] [Thread0] isQuery? false
+[Sun Jun 02 21:53:14 CST 2013] [Thread0] Executing: select * from InfraTest
+[Sun Jun 02 21:53:14 CST 2013] [Thread0] isQuery? true
+[Sun Jun 02 21:53:14 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Sun Jun 02 21:53:14 CST 2013] [Thread Time] 10
+[Sun Jun 02 21:53:14 CST 2013] [Total Time] 20
+[Sun Jun 02 21:53:14 CST 2013] [Result] Correct

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project default = "compile" basedir=".">
+
+  <property name="src.dir" value="src"/>
+  <property name="lib.dir" value="lib"/>
+  <property name="bin.dir" value="bin"/>
+  <property name="dst.dir" value="dst"/>
+
+  <path id="classpath">
+    <fileset dir="${lib.dir}">
+      <include name="**/*.jar"/>
+    </fileset>
+  </path>
+
+  <target name="compile">
+    <mkdir dir="${bin.dir}"/>
+    <javac srcdir="${src.dir}" destdir="${bin.dir}" nowarn="true">
+      <classpath refid="classpath"/>
+    </javac>
+  </target>
+
+  <target name="deploy" depends="compile">
+    <mkdir dir="${dst.dir}"/>
+    <mkdir dir="${dst.dir}/db"/>
+    <jar jarfile="${dst.dir}/jdbctaste.jar" basedir="${bin.dir}">
+      <zipfileset includes="**/*.class" src="lib/sqlite-jdbc-3.7.2.jar"/>
+      <manifest>
+        <attribute name="Main-class" value="cn.edu.sjtu.acm.jdbctaste.Taste"/>
+      </manifest>
+    </jar>
+  </target>
+
+  <target name="clean">
+    <delete dir="${bin.dir}"/>
+    <delete dir="${dst.dir}"/>
+  </target>
+
+</project>
+

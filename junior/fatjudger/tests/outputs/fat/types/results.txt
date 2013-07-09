@@ -1,0 +1,178 @@
+date: Sun Jun 02 01:19:11 CST 2013
+fat	int	Wrong Answer	176
+fat	float	Wrong Answer	56
+fat	chars	Correct	42
+fat	datetime	Wrong Answer	51
+fat	decimal	Wrong Answer	31
+date: Sun Jun 02 01:19:31 CST 2013
+fat	int	Wrong Answer	99
+fat	float	Wrong Answer	22
+fat	chars	Correct	31
+fat	datetime	Wrong Answer	25
+fat	decimal	Wrong Answer	12
+date: Sun Jun 02 08:29:25 CST 2013
+fat	int	Wrong Answer	151
+date: Sun Jun 02 08:32:26 CST 2013
+fat	int	Wrong Answer	127
+date: Sun Jun 02 08:35:01 CST 2013
+fat	int	Wrong Answer	126
+date: Sun Jun 02 09:17:25 CST 2013
+fat	int	Wrong Answer	143
+date: Sun Jun 02 12:46:02 CST 2013
+fat	int	Correct	158
+date: Sun Jun 02 12:46:24 CST 2013
+fat	int	Correct	147
+fat	float	Correct	56
+fat	chars	Correct	29
+fat	datetime	Wrong Answer	44
+fat	decimal	Wrong Answer	22
+date: Sun Jun 02 12:46:51 CST 2013
+fat	int	Correct	165
+fat	float	Correct	64
+fat	chars	Correct	30
+fat	datetime	Wrong Answer	47
+fat	decimal	Wrong Answer	25
+date: Sun Jun 02 13:20:10 CST 2013
+fat	int	Correct	108
+fat	float	Correct	26
+fat	chars	Correct	23
+fat	datetime	Wrong Answer	37
+fat	decimal	Wrong Answer	14
+date: Sun Jun 02 13:20:16 CST 2013
+fat	int	Correct	107
+fat	float	Correct	26
+fat	chars	Correct	19
+fat	datetime	Wrong Answer	34
+fat	decimal	Wrong Answer	11
+date: Sun Jun 02 13:22:26 CST 2013
+fat	int	Correct	99
+fat	float	Correct	22
+fat	chars	Correct	25
+fat	datetime	Correct	37
+fat	decimal	Wrong Answer	13
+date: Sun Jun 02 13:22:39 CST 2013
+fat	int	Correct	102
+fat	float	Correct	29
+fat	chars	Correct	19
+fat	datetime	Correct	35
+fat	decimal	Wrong Answer	13
+date: Sun Jun 02 13:27:53 CST 2013
+fat	int	Correct	115
+fat	float	Correct	23
+fat	chars	Correct	20
+fat	datetime	Correct	39
+fat	decimal	Wrong Answer	19
+date: Sun Jun 02 13:30:23 CST 2013
+fat	int	Correct	101
+fat	float	Correct	26
+fat	chars	Correct	23
+fat	datetime	Correct	37
+fat	decimal	Wrong Answer	16
+date: Sun Jun 02 13:32:29 CST 2013
+fat	int	Correct	99
+fat	float	Correct	24
+fat	chars	Correct	27
+fat	datetime	Correct	44
+fat	decimal	Correct	14
+date: Sun Jun 02 13:50:31 CST 2013
+fat	int	Correct	152
+fat	float	Correct	58
+fat	chars	Correct	33
+fat	datetime	Correct	51
+fat	decimal	Correct	30
+date: Sun Jun 02 17:40:43 CST 2013
+fat	int	Correct	110
+fat	float	Correct	28
+fat	chars	Correct	20
+fat	datetime	Wrong Answer	44
+fat	decimal	Correct	33
+date: Sun Jun 02 17:44:20 CST 2013
+fat	int	Correct	106
+fat	float	Correct	27
+fat	chars	Correct	25
+fat	datetime	Wrong Answer	35
+fat	decimal	Correct	10
+date: Sun Jun 02 17:44:40 CST 2013
+fat	int	Correct	117
+fat	float	Correct	25
+fat	chars	Correct	24
+fat	datetime	Wrong Answer	41
+fat	decimal	Correct	14
+date: Sun Jun 02 17:44:59 CST 2013
+fat	int	Correct	124
+fat	float	Correct	30
+fat	chars	Correct	23
+fat	datetime	Wrong Answer	43
+fat	decimal	Correct	27
+date: Sun Jun 02 17:45:26 CST 2013
+fat	int	Correct	106
+fat	float	Correct	27
+fat	chars	Correct	22
+fat	datetime	Wrong Answer	35
+fat	decimal	Correct	16
+date: Sun Jun 02 17:47:20 CST 2013
+fat	int	Correct	103
+fat	float	Correct	38
+fat	chars	Correct	30
+fat	datetime	Wrong Answer	34
+fat	decimal	Correct	14
+date: Sun Jun 02 17:52:46 CST 2013
+fat	int	Correct	120
+fat	float	Correct	28
+fat	chars	Correct	31
+fat	datetime	Correct	49
+fat	decimal	Correct	15
+date: Sun Jun 02 17:58:08 CST 2013
+fat	int	Correct	132
+fat	float	Correct	31
+fat	chars	Correct	28
+fat	datetime	Correct	55
+fat	decimal	Correct	17
+date: Sun Jun 02 18:10:04 CST 2013
+fat	int	Correct	127
+fat	float	Correct	35
+fat	chars	Correct	26
+fat	datetime	Correct	46
+fat	decimal	Correct	11
+date: Sun Jun 02 20:01:14 CST 2013
+fat	int	Correct	106
+fat	float	Correct	26
+fat	chars	Correct	28
+fat	datetime	Correct	46
+fat	decimal	Correct	36
+date: Sun Jun 02 20:36:02 CST 2013
+fat	int	Wrong Answer	126
+fat	float	Correct	34
+fat	chars	Correct	30
+fat	datetime	Correct	54
+fat	decimal	Correct	18
+date: Sun Jun 02 20:36:35 CST 2013
+fat	int	Wrong Answer	111
+fat	float	Correct	28
+fat	chars	Correct	30
+fat	datetime	Correct	42
+fat	decimal	Correct	15
+date: Sun Jun 02 20:59:18 CST 2013
+fat	int	Correct	114
+fat	float	Correct	30
+fat	chars	Correct	22
+fat	datetime	Correct	38
+fat	decimal	Correct	15
+date: Sun Jun 02 21:45:15 CST 2013
+fat	int	Correct	116
+fat	float	Correct	51
+fat	chars	Correct	37
+fat	datetime	Wrong Answer	39
+fat	decimal	Correct	14
+date: Sun Jun 02 21:47:51 CST 2013
+fat	int	Correct	115
+fat	float	Correct	37
+fat	chars	Correct	35
+fat	datetime	Wrong Answer	34
+fat	decimal	Correct	14
+date: Sun Jun 02 21:53:01 CST 2013
+fat	int	Correct	128
+fat	float	Correct	33
+fat	chars	Correct	29
+fat	datetime	Correct	43
+fat	decimal	Correct	29

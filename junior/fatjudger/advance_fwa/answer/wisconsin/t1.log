@@ -1,0 +1,16 @@
+[Fri May 10 17:32:58 CST 2013] [Thread0] Connecting jdbc:mysql://localhost/?user=root&password=fatworm
+[Fri May 10 17:32:58 CST 2013] [Thread0] Connection established.
+[Fri May 10 17:32:58 CST 2013] [Thread0] Setting AUTO_COMMIT mode as false
+[Fri May 10 17:32:58 CST 2013] [Thread0] Executing: USE winsconsin
+[Fri May 10 17:32:58 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:32:58 CST 2013] [Thread0] Executing: select *  from tenk1 where (unique2 > 301) and (unique2 < 402) order by unique1 ASC, unique2 ASC
+[Fri May 10 17:32:58 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:58 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:32:59 CST 2013] [Thread0] Executing: select *  from tenk1 where (unique1 > 647) and (unique1 < 1648) order by unique1 ASC, unique2 ASC
+[Fri May 10 17:32:59 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:32:59 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:33:07 CST 2013] [Thread0] Executing: select * from tenk1 where unique2 = 2001 order by unique1 ASC, unique2 ASC
+[Fri May 10 17:33:07 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:33:07 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:33:07 CST 2013] [Thread Time] 299
+[Fri May 10 17:33:07 CST 2013] [Total Time] 8450

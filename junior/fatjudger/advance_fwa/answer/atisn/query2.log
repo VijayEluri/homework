@@ -1,0 +1,27 @@
+[Fri May 10 17:29:02 CST 2013] [Thread0] Connecting jdbc:mysql://localhost/?user=root&password=fatworm
+[Fri May 10 17:29:02 CST 2013] [Thread0] Connection established.
+[Fri May 10 17:29:02 CST 2013] [Thread0] Setting AUTO_COMMIT mode as false
+[Fri May 10 17:29:02 CST 2013] [Thread0] Executing: use ATISN
+[Fri May 10 17:29:02 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:29:02 CST 2013] [Thread0] Executing: select distinct category from aircraft order by category
+[Fri May 10 17:29:02 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:29:02 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:29:02 CST 2013] [Thread0] Executing: select distinct fromairport from flight order by fromairport
+[Fri May 10 17:29:02 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:29:02 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:29:02 CST 2013] [Thread0] Executing: select distinct aircraftcode from flight order by aircraftcode
+[Fri May 10 17:29:02 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:29:02 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:29:02 CST 2013] [Thread0] Executing: use ATISN
+[Fri May 10 17:29:02 CST 2013] [Thread0] isQuery? false
+[Fri May 10 17:29:02 CST 2013] [Thread0] Executing: select distinct flightcode from flightfare order by flightcode
+[Fri May 10 17:29:02 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:29:02 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:29:02 CST 2013] [Thread0] Executing: select distinct flight.flightcode,aircraft.aircrafttype from flight,aircraft where flight.aircraftcode=aircraft.aircraftcode order by flight.flightcode,aircraft.aircrafttype
+[Fri May 10 17:29:02 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:29:02 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:29:02 CST 2013] [Thread0] Executing: select distinct airline.airlinename,aircraft.aircrafttype from aircraft,airline,flight where flight.aircraftcode=aircraft.aircraftcode and flight.airlinecode=airline.airlinecode order by airline.airlinename,aircraft.aircrafttype
+[Fri May 10 17:29:02 CST 2013] [Thread0] isQuery? true
+[Fri May 10 17:29:02 CST 2013] [Thread0] Query executed, begin to fetch and check result
+[Fri May 10 17:29:02 CST 2013] [Thread Time] 140
+[Fri May 10 17:29:02 CST 2013] [Total Time] 306
